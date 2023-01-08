@@ -3,8 +3,11 @@
 1. Download [self-extracting package].  
 2. Unzip or install into path `C:\Apps`.  
 3. Open Microsoft Excel to [activate addins].  
-4. [Import] custom ribbon.  
 
+<img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-xls-addin-activate.png">
+<img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-xls-addin-import.png">
+
+5. [Import] custom ribbon.  
 
 <img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-exceladdin-20230109.png">
 
