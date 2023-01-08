@@ -4,10 +4,11 @@
 2. Unzip or install into path `C:\Apps`.  
 3. Open Microsoft Excel to [activate addins].  
 
-<img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-xls-addin-activate.png" width="50%">
-<img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-xls-addin-import.png" width="50%">
+<img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-xls-addin-activate.png" width="50%"><img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-xls-addin-load.png" width="50%">
 
 5. [Import] custom ribbon.  
+
+<img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-xls-addin-import.png" width="50%">
 
 <img src="https://github.com/ry4nkovaks/excel/blob/main/lib/img/img-exceladdin-20230109.png">
 
