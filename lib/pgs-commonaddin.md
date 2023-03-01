@@ -41,7 +41,7 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 
 <br>
 
----
+##
 <sup>[Excel](https://github.com/ry4nyeo/lab-excel) > 
 [Common Excel Addin](../docs/pgs-commonaddin.md)
 </sup>
