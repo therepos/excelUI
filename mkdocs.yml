@@ -1,0 +1,5 @@
+site_name: My Documentation  # Name of your site
+nav:
+  - Home: index.md           # Navigation menu
+theme:
+  name: mkdocs               # Default theme
