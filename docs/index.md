@@ -1,6 +1,6 @@
 # Exceladdin
 
-0. Latest version 20230109..
+0. Latest version 20230109...
 1. Download [self-extracting package]. 
 2. Unzip or install into path `C:\Apps`.  
 3. Open Microsoft Excel to [activate addins].  
