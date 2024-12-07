@@ -4,13 +4,12 @@ site_author: Coder
 site_url: https://therepos.github.io/excel/
 
 theme:
-  name: material
   palette:
-    primary: indigo
-    accent: pink
+    primary: black
+    accent: white
   font:
-    text: "Roboto"
-    code: "Roboto Mono"
+    text: Roboto
+    code: Roboto Mono
   logo:
     icon: material-code-tags
   favicon: assets/favicon.ico
@@ -30,6 +29,10 @@ extra_css:
 
 plugins:
   - search
+  - pymdownx.superfences
+markdown_extensions:
+  - pymdownx.superfences
+
 
 
 # [![Install Now](https://img.shields.io/badge/Install-Now-brightgreen)](https://coder.com/docs)

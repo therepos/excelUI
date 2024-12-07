@@ -1,29 +1,120 @@
-/* Match header and navbar styles */
+@media screen and (max-width: 768px) {
+  .md-sidebar {
+    display: none;
+  }
+
+  .md-content {
+    max-width: 100%;
+    padding: 1em;
+  }
+}
+
+/* Set the background and text color to black-and-white */
+body {
+  background-color: #ffffff; /* White background */
+  color: #000000;           /* Black text */
+}
+
+/* Adjust header styles */
 .md-header {
-    background-color: #3f51b5; /* Indigo */
-    color: #fff;
-  }
-  
-  .md-nav__title {
-    font-weight: bold;
-    font-size: 1.25em;
-  }
-  
-  /* Footer styling */
-  .md-footer {
-    background-color: #f5f5f5;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  /* Table styles for better readability */
-  .md-typeset table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  .md-typeset th, .md-typeset td {
-    border: 1px solid #ddd;
-    padding: 8px;
-  }
-  
+  background-color: #000000; /* Black header */
+  color: #ffffff;           /* White text */
+}
+
+.md-header__title {
+  font-size: 1.5em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+/* Clean and modern navigation styles */
+.md-nav {
+  background-color: #f8f8f8; /* Light gray navigation background */
+}
+
+.md-nav__list-item {
+  color: #000000;
+  padding: 0.5em 1em;
+  font-size: 1em;
+}
+
+.md-nav__list-item--active {
+  font-weight: bold;
+  color: #000000;
+}
+
+/* Table styles for a clean, black-and-white look */
+.md-typeset table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.md-typeset th,
+.md-typeset td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+/* Code block styles */
+.md-typeset pre {
+  background-color: #f5f5f5; /* Light gray */
+  color: #000000;
+  padding: 1em;
+  border-radius: 4px;
+}
+
+.md-typeset code {
+  background-color: #f0f0f0; /* Very light gray */
+  color: #000000;
+  padding: 0.2em 0.4em;
+  border-radius: 3px;
+}
+
+
+/* Footer styles */
+.md-footer {
+  background-color: #f8f8f8; /* Light gray footer */
+  color: #000000;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Minimal button styles */
+.md-button {
+  background-color: #000000;
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  font-size: 0.9em;
+}
+
+.md-button:hover {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+/* Adjust link styles */
+a {
+  color: #000000;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Adjust the width of the content and sidebar */
+.md-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.md-sidebar {
+  width: 280px;
+}
+
+.md-content {
+  max-width: 900px;
+}
