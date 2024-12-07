@@ -1,108 +1,114 @@
-/* Background - Ensure the entire site is black */
+/* General Background and Text */
 body, .md-container, .md-content {
-  background-color: #000000; /* Black background */
-  color: #ffffff;           /* White text */
+  background-color: #121212; /* Dark gray background */
+  color: #e0e0e0;           /* Off-white text */
+}
+
+a {
+  color: #90caf9; /* Light blue links */
+  text-decoration: none;
+}
+
+a:hover {
+  color: #ffffff; /* White on hover */
+  text-decoration: underline;
 }
 
 /* Header */
 .md-header {
-  background-color: #000000; /* Black header */
-  color: #ffffff;           /* White text */
+  background-color: #121212; /* Dark gray */
+  color: #e0e0e0;           /* Off-white */
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow */
 }
 
 .md-header__title {
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: bold;
   text-transform: uppercase;
 }
 
 /* Navigation Bar */
 .md-nav {
-  background-color: #000000; /* Black navigation background */
-  color: #ffffff;           /* White text */
+  background-color: #1e1e1e; /* Slightly lighter dark gray */
+  color: #e0e0e0;           /* Off-white */
 }
 
-.md-nav__list-item {
-  color: #ffffff; /* White links */
+.md-nav__list-item a {
+  color: #e0e0e0; /* Off-white text */
   padding: 0.5em 1em;
-  font-size: 1em;
+  display: block;
+  border-radius: 4px;
 }
 
-.md-nav__list-item--active {
+.md-nav__list-item a:hover {
+  background-color: #333333; /* Darker gray on hover */
+  color: #ffffff;            /* White text */
+}
+
+.md-nav__list-item--active a {
   font-weight: bold;
-  color: #cccccc; /* Lighter color for active item */
+  border-bottom: 2px solid #90caf9; /* Light blue underline */
 }
 
 /* Sidebar */
 .md-sidebar {
-  background-color: #000000; /* Black sidebar */
-  color: #ffffff;           /* White text */
+  background-color: #1e1e1e; /* Lighter dark gray */
+  color: #e0e0e0;           /* Off-white */
 }
 
 .md-sidebar a {
-  color: #ffffff; /* White links */
+  color: #90caf9; /* Light blue links */
 }
 
 .md-sidebar a:hover {
-  color: #cccccc; /* Slightly lighter hover */
+  color: #ffffff; /* White text */
+  background-color: #333333; /* Darker gray hover background */
 }
 
 /* Table */
 .md-typeset table {
   border-collapse: collapse;
   width: 100%;
+  background-color: #1e1e1e; /* Match sidebar */
+  color: #e0e0e0;           /* Off-white text */
 }
 
 .md-typeset th,
 .md-typeset td {
-  border: 1px solid #ddd;
+  border: 1px solid #333333; /* Subtle dark border */
   padding: 8px;
   text-align: left;
-  background-color: #000000; /* Black table background */
-  color: #ffffff;           /* White text */
 }
 
 /* Code Blocks */
 .md-typeset pre, .md-typeset code {
-  background-color: #1a1a1a; /* Dark gray for code blocks */
+  background-color: #1e1e1e; /* Match sidebar */
   color: #ffffff;           /* White text */
-  padding: 1em;
-  border-radius: 4px;
+  padding: 0.8em;
+  border-radius: 6px;
 }
 
 /* Footer */
 .md-footer {
-  background-color: #000000; /* Black footer */
-  color: #ffffff;           /* White text */
-  padding: 20px;
+  background-color: #121212; /* Match body background */
+  color: #a0a0a0;           /* Muted text */
   text-align: center;
+  padding: 20px;
+  border-top: 1px solid #333333;
 }
 
 /* Buttons */
 .md-button {
-  background-color: #000000; /* Black button */
-  color: #ffffff;           /* White text */
+  background-color: #333333; /* Darker gray */
+  color: #e0e0e0;           /* Off-white text */
   padding: 10px 20px;
   border-radius: 4px;
-  text-transform: uppercase;
-  font-size: 0.9em;
-  border: 1px solid #ffffff;
+  border: 1px solid #90caf9; /* Light blue border */
 }
 
 .md-button:hover {
-  background-color: #333333; /* Darker gray on hover */
+  background-color: #555555; /* Lighter gray on hover */
   color: #ffffff;           /* White text */
-}
-
-/* Links */
-a {
-  color: #ffffff; /* White links */
-  text-decoration: none;
-}
-
-a:hover {
-  color: #cccccc; /* Slightly lighter hover */
-  text-decoration: underline;
 }
 
 /* Adjust content layout */
@@ -113,6 +119,7 @@ a:hover {
 
 .md-content {
   max-width: 900px;
+  margin: 0 auto;
   padding: 20px;
 }
 
