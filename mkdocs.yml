@@ -5,13 +5,15 @@ site_url: https://therepos.github.io/excel/
 
 theme:
   name: material
-  custom_dir: custom
   palette:
     primary: black
     accent: white
   font:
     text: Moranga
     code: Fira Code
+  features:
+    - navigation.tabs
+    - navigation.sections
 
 nav:
   - Home: index.md
@@ -27,6 +29,3 @@ extra_css:
 
 markdown_extensions:
   - pymdownx.superfences
-  - toc:
-      permalink: true
-      baselevel: 2
