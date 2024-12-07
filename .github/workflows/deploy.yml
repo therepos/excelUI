@@ -25,19 +25,18 @@ jobs:
     - name: Install MkDocs and Material theme
       run: |
         pip install mkdocs-material
-        # pip install mkdocs-material-plugins
+
+    # Cache dependencies to speed up workflow
+    - name: Cache dependencies
+      uses: actions/cache@v3
+      with:
+        path: ~/.cache/pip
+        key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
+        restore-keys: |
+          ${{ runner.os }}-pip-
 
     # Deploy builds and pushes the static site to the gh-pages branch.
     - name: Build and Deploy
       run: |
         mkdocs gh-deploy --force
-
-    # Cache dependencies to speed up workflow
-    - name: Cache dependencies
-    uses: actions/cache@v3
-    with:
-      path: ~/.cache/pip
-      key: ${{ runner.os }}-pip-${{ hashFiles('**/requirements.txt') }}
-      restore-keys: |
-        ${{ runner.os }}-pip-
 
