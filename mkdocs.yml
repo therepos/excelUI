@@ -1,6 +1,35 @@
+site_name: Code Server Docs
+site_description: Run VS Code on any machine anywhere
+site_author: Coder
 site_url: https://therepos.github.io/excel/
-site_name: My Documentation  # Name of your site
-nav:
-  - Home: index.md           # Navigation menu
+
 theme:
-  name: mkdocs               # Default theme
+  name: material
+  palette:
+    primary: indigo
+    accent: pink
+  font:
+    text: "Roboto"
+    code: "Roboto Mono"
+  logo:
+    icon: material-code-tags
+  favicon: assets/favicon.ico
+
+nav:
+  - Home: index.md
+  - Installation:
+      - Overview: index.md
+      - Docker: index.md
+  - Configuration:
+      - Overview: index.md
+  - FAQ: index.md
+  - Community: index.md
+
+extra_css:
+  - assets/extra.css
+
+plugins:
+  - search
+
+
+# [![Install Now](https://img.shields.io/badge/Install-Now-brightgreen)](https://coder.com/docs)
