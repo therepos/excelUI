@@ -8,7 +8,7 @@ theme:
   custom_dir: theme
   palette:
     primary: black
-    accent: blue
+    accent: white
   font:
     text: Moranga
     code: Fira Code
@@ -29,3 +29,4 @@ extra_css:
 
 markdown_extensions:
   - toc
+  - pymdownx.superfences
