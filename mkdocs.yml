@@ -1,36 +1,31 @@
-site_name: Code Server Docs
-site_description: Run VS Code on any machine anywhere
-site_author: Coder
+site_name: Excel Addin
+site_description: Documentation for the Excel Addin
+site_author: Your Name
 site_url: https://therepos.github.io/excel/
 
 theme:
   name: material
+  custom_dir: theme
   palette:
     primary: black
-    accent: white
+    accent: blue
   font:
-    text: Roboto
-    code: Roboto Mono
-  logo:
-    icon: material-code-tags
-  favicon: assets/favicon.ico
+    text: Moranga
+    code: Fira Code
 
 nav:
   - Home: index.md
   - Installation:
-      - Overview: index.md
-      - Docker: index.md
-  - Configuration:
-      - Overview: index.md
+      - Guide: index.md
   - FAQ: index.md
-  - Community: index.md
+
+plugins:
+  - search
+  - toc:
+      toc_depth: 3
 
 extra_css:
   - assets/extra.css
 
-plugins:
-  - search
-
 markdown_extensions:
-  - pymdownx.superfences
-
+  - toc

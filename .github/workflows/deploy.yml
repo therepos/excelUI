@@ -3,14 +3,14 @@ name: Deploy MkDocs to GitHub Pages
 on:
   push:
     branches:
-      - main  # Replace 'main' with your default branch if different
+      - main
 
 jobs:
   deploy:
-    runs-on: ubuntu-22.04  # Explicitly set the version to avoid warnings
+    runs-on: ubuntu-22.04
 
     steps:
-      - name: Checkout the repository
+      - name: Checkout repository
         uses: actions/checkout@v3
 
       - name: Set up Python
@@ -18,27 +18,11 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Install MkDocs and dependencies
+      - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "mkdocs==1.6.1" "mkdocs-material==9.1.17" "pymdown-extensions==10.1"
+          pip install mkdocs-material pymdown-extensions
 
-      - name: Verify Plugin Installation
-        run: |
-          python -c "import pymdownx.superfences; print('Plugin is available')"
-
-      - name: Show Installed Versions
-        run: |
-          pip list
-
-      - name: Verify MkDocs Configuration
-        run: |
-          echo "Validating mkdocs.yml..."
-          mkdocs --version
-          cat mkdocs.yml  # Ensure the file exists and is accessible
-
-      - name: Build and Deploy the site
-        env:
-          CI: true  # Enable CI mode for better error messages
+      - name: Build and Deploy
         run: |
           mkdocs gh-deploy --force
