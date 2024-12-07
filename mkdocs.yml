@@ -28,5 +28,4 @@ extra_css:
   - assets/extra.css
 
 markdown_extensions:
-  - toc
   - pymdownx.superfences
