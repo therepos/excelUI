@@ -4,6 +4,7 @@ site_author: Coder
 site_url: https://therepos.github.io/excel/
 
 theme:
+  name: material
   palette:
     primary: black
     accent: white
