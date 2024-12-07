@@ -21,11 +21,12 @@ nav:
 
 plugins:
   - search
-  - toc:
-      toc_depth: 3
 
 extra_css:
   - assets/extra.css
 
 markdown_extensions:
   - pymdownx.superfences
+  - toc:
+    permalink: true
+    baselevel: 2
