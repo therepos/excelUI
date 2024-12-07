@@ -23,6 +23,9 @@ jobs:
           python -m pip install --upgrade pip
           pip install mkdocs mkdocs-material pymdown-extensions
 
+      - name: Debug MkDocs Material Path
+        run: python -c "import mkdocs_material; print(mkdocs_material.__path__[0])"
+
       - name: Build and Deploy
         run: |
           mkdocs gh-deploy --force
