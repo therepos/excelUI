@@ -5,7 +5,7 @@ site_url: https://therepos.github.io/excel/
 
 theme:
   name: material
-  custom_dir: theme
+  custom_dir: custom
   palette:
     primary: black
     accent: white
