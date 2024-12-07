@@ -1,23 +1,24 @@
 /* General Background and Text */
 body, .md-container, .md-content {
-  background-color: #121212; /* Dark gray background */
-  color: #e0e0e0;           /* Off-white text */
+  background-color: #090a11; /* Dark background */
+  color: #f5f6f7;           /* Off-white text */
+  font-family: 'Moranga', 'Arial', sans-serif; /* Use Moranga font */
 }
 
 a {
-  color: #90caf9; /* Light blue links */
+  color: #79c0ff; /* Soft blue links */
   text-decoration: none;
 }
 
 a:hover {
-  color: #ffffff; /* White on hover */
+  color: #ffffff; /* Bright white on hover */
   text-decoration: underline;
 }
 
 /* Header */
 .md-header {
   background-color: #121212; /* Dark gray */
-  color: #e0e0e0;           /* Off-white */
+  color: #f5f6f7;           /* Off-white */
   box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.5); /* Subtle shadow */
 }
 
@@ -27,17 +28,28 @@ a:hover {
   text-transform: uppercase;
 }
 
+/* Navigation Title */
+.md-sidebar .md-sidebar__title {
+  background-color: #121212; /* Match header background */
+  color: #bec3c9;           /* Muted text */
+  padding: 10px 15px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-bottom: 1px solid #333333; /* Subtle divider */
+}
+
 /* Navigation Bar */
 .md-nav {
-  background-color: #1e1e1e; /* Slightly lighter dark gray */
-  color: #e0e0e0;           /* Off-white */
+  background-color: #090a11; /* Dark navigation */
+  color: #f5f6f7;           /* Off-white */
 }
 
 .md-nav__list-item a {
-  color: #e0e0e0; /* Off-white text */
+  color: #f5f6f7; /* Off-white text */
   padding: 0.5em 1em;
   display: block;
   border-radius: 4px;
+  font-family: 'Moranga', 'Arial', sans-serif;
 }
 
 .md-nav__list-item a:hover {
@@ -47,30 +59,31 @@ a:hover {
 
 .md-nav__list-item--active a {
   font-weight: bold;
-  border-bottom: 2px solid #90caf9; /* Light blue underline */
+  color: #79c0ff; /* Soft blue for active link */
+  border-bottom: 2px solid #79c0ff;
 }
 
-/* Sidebar */
+/* Sidebar Links */
 .md-sidebar {
-  background-color: #1e1e1e; /* Lighter dark gray */
-  color: #e0e0e0;           /* Off-white */
+  background-color: #121212; /* Match header background */
+  color: #f5f6f7;           /* Off-white text */
 }
 
 .md-sidebar a {
-  color: #90caf9; /* Light blue links */
+  color: #79c0ff; /* Soft blue links */
 }
 
 .md-sidebar a:hover {
-  color: #ffffff; /* White text */
-  background-color: #333333; /* Darker gray hover background */
+  background-color: #333333; /* Darker gray hover */
+  color: #ffffff;            /* White text */
 }
 
 /* Table */
 .md-typeset table {
   border-collapse: collapse;
   width: 100%;
-  background-color: #1e1e1e; /* Match sidebar */
-  color: #e0e0e0;           /* Off-white text */
+  background-color: #090a11; /* Match body background */
+  color: #f5f6f7;           /* Off-white text */
 }
 
 .md-typeset th,
@@ -82,16 +95,16 @@ a:hover {
 
 /* Code Blocks */
 .md-typeset pre, .md-typeset code {
-  background-color: #1e1e1e; /* Match sidebar */
-  color: #ffffff;           /* White text */
+  background-color: #0d1117; /* GitHub Dark background */
+  color: #c9d1d9;           /* Off-white text */
   padding: 0.8em;
   border-radius: 6px;
 }
 
 /* Footer */
 .md-footer {
-  background-color: #121212; /* Match body background */
-  color: #a0a0a0;           /* Muted text */
+  background-color: #090a11; /* Match body background */
+  color: #bec3c9;           /* Muted text */
   text-align: center;
   padding: 20px;
   border-top: 1px solid #333333;
@@ -100,10 +113,10 @@ a:hover {
 /* Buttons */
 .md-button {
   background-color: #333333; /* Darker gray */
-  color: #e0e0e0;           /* Off-white text */
+  color: #f5f6f7;           /* Off-white text */
   padding: 10px 20px;
   border-radius: 4px;
-  border: 1px solid #90caf9; /* Light blue border */
+  border: 1px solid #79c0ff; /* Soft blue border */
 }
 
 .md-button:hover {
@@ -111,7 +124,7 @@ a:hover {
   color: #ffffff;           /* White text */
 }
 
-/* Adjust content layout */
+/* Layout Adjustments */
 .md-container {
   max-width: 1200px;
   margin: 0 auto;
