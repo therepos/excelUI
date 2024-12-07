@@ -1,21 +1,10 @@
-@media screen and (max-width: 768px) {
-  .md-sidebar {
-    display: none;
-  }
-
-  .md-content {
-    max-width: 100%;
-    padding: 1em;
-  }
-}
-
-/* Set the background and text color to black-and-white */
+/* Background */
 body {
-  background-color: #ffffff; /* White background */
-  color: #000000;           /* Black text */
+  background-color: #000000; /* Black background */
+  color: #ffffff;           /* White text */
 }
 
-/* Adjust header styles */
+/* Header */
 .md-header {
   background-color: #000000; /* Black header */
   color: #ffffff;           /* White text */
@@ -27,7 +16,7 @@ body {
   text-transform: uppercase;
 }
 
-/* Clean and modern navigation styles */
+/* Navigation Bar */
 .md-nav {
   background-color: #f8f8f8; /* Light gray navigation background */
 }
@@ -43,7 +32,20 @@ body {
   color: #000000;
 }
 
-/* Table styles for a clean, black-and-white look */
+/* Sidebar */
+.md-sidebar {
+  width: 280px;
+}
+
+.md-sidebar a {
+  color: #ffffff;           /* White links */
+}
+
+.md-sidebar a:hover {
+  color: #cccccc;           /* Slightly lighter on hover */
+}
+
+/* Table */
 .md-typeset table {
   border-collapse: collapse;
   width: 100%;
@@ -56,31 +58,30 @@ body {
   text-align: left;
 }
 
-/* Code block styles */
+/* Code Block */
 .md-typeset pre {
-  background-color: #f5f5f5; /* Light gray */
-  color: #000000;
+  background-color: #1a1a1a; /* Dark gray for code blocks */
+  color: #ffffff;           /* White text */
   padding: 1em;
   border-radius: 4px;
 }
 
 .md-typeset code {
-  background-color: #f0f0f0; /* Very light gray */
-  color: #000000;
+  background-color: #1a1a1a; /* Dark gray for code blocks */
+  color: #ffffff;           /* White text */
   padding: 0.2em 0.4em;
   border-radius: 3px;
 }
 
-
-/* Footer styles */
+/* Footer */
 .md-footer {
-  background-color: #f8f8f8; /* Light gray footer */
-  color: #000000;
+  background-color: #000000; /* Match body background */
+  color: #ffffff;           /* White text */
   padding: 20px;
   text-align: center;
 }
 
-/* Minimal button styles */
+/* Minimal Button */
 .md-button {
   background-color: #000000;
   color: #ffffff;
@@ -95,7 +96,7 @@ body {
   color: #ffffff;
 }
 
-/* Adjust link styles */
+/* Link */
 a {
   color: #000000;
   text-decoration: none;
@@ -105,16 +106,26 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Adjust the width of the content and sidebar */
+/* Layout */
 .md-container {
   max-width: 1200px;
   margin: 0 auto;
-}
-
-.md-sidebar {
-  width: 280px;
+  background-color: #000000; /* Match body background */
+  color: #ffffff;           /* White text */
 }
 
 .md-content {
   max-width: 900px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .md-sidebar {
+    display: none;
+  }
+
+  .md-content {
+    max-width: 100%;
+    padding: 1em;
+  }
 }
