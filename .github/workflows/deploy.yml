@@ -25,7 +25,7 @@ jobs:
     - name: Install MkDocs and Material theme
       run: |
         pip install mkdocs-material
-        pip install mkdocs-material-plugins
+        # pip install mkdocs-material-plugins
 
     # Deploy builds and pushes the static site to the gh-pages branch.
     - name: Build and Deploy
