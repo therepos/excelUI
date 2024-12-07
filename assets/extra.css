@@ -1,5 +1,5 @@
-/* Background */
-body {
+/* Background - Ensure the entire site is black */
+body, .md-container, .md-content {
   background-color: #000000; /* Black background */
   color: #ffffff;           /* White text */
 }
@@ -18,31 +18,33 @@ body {
 
 /* Navigation Bar */
 .md-nav {
-  background-color: #f8f8f8; /* Light gray navigation background */
+  background-color: #000000; /* Black navigation background */
+  color: #ffffff;           /* White text */
 }
 
 .md-nav__list-item {
-  color: #000000;
+  color: #ffffff; /* White links */
   padding: 0.5em 1em;
   font-size: 1em;
 }
 
 .md-nav__list-item--active {
   font-weight: bold;
-  color: #000000;
+  color: #cccccc; /* Lighter color for active item */
 }
 
 /* Sidebar */
 .md-sidebar {
-  width: 280px;
+  background-color: #000000; /* Black sidebar */
+  color: #ffffff;           /* White text */
 }
 
 .md-sidebar a {
-  color: #ffffff;           /* White links */
+  color: #ffffff; /* White links */
 }
 
 .md-sidebar a:hover {
-  color: #cccccc;           /* Slightly lighter on hover */
+  color: #cccccc; /* Slightly lighter hover */
 }
 
 /* Table */
@@ -56,72 +58,68 @@ body {
   border: 1px solid #ddd;
   padding: 8px;
   text-align: left;
+  background-color: #000000; /* Black table background */
+  color: #ffffff;           /* White text */
 }
 
-/* Code Block */
-.md-typeset pre {
+/* Code Blocks */
+.md-typeset pre, .md-typeset code {
   background-color: #1a1a1a; /* Dark gray for code blocks */
   color: #ffffff;           /* White text */
   padding: 1em;
   border-radius: 4px;
 }
 
-.md-typeset code {
-  background-color: #1a1a1a; /* Dark gray for code blocks */
-  color: #ffffff;           /* White text */
-  padding: 0.2em 0.4em;
-  border-radius: 3px;
-}
-
 /* Footer */
 .md-footer {
-  background-color: #000000; /* Match body background */
+  background-color: #000000; /* Black footer */
   color: #ffffff;           /* White text */
   padding: 20px;
   text-align: center;
 }
 
-/* Minimal Button */
+/* Buttons */
 .md-button {
-  background-color: #000000;
-  color: #ffffff;
+  background-color: #000000; /* Black button */
+  color: #ffffff;           /* White text */
   padding: 10px 20px;
   border-radius: 4px;
   text-transform: uppercase;
   font-size: 0.9em;
+  border: 1px solid #ffffff;
 }
 
 .md-button:hover {
-  background-color: #444444;
-  color: #ffffff;
+  background-color: #333333; /* Darker gray on hover */
+  color: #ffffff;           /* White text */
 }
 
-/* Link */
+/* Links */
 a {
-  color: #000000;
+  color: #ffffff; /* White links */
   text-decoration: none;
 }
 
 a:hover {
+  color: #cccccc; /* Slightly lighter hover */
   text-decoration: underline;
 }
 
-/* Layout */
+/* Adjust content layout */
 .md-container {
   max-width: 1200px;
   margin: 0 auto;
-  background-color: #000000; /* Match body background */
-  color: #ffffff;           /* White text */
 }
 
 .md-content {
   max-width: 900px;
+  padding: 20px;
 }
 
 /* Responsive Design */
 @media screen and (max-width: 768px) {
   .md-sidebar {
-    display: none;
+    display: none; /* Hide sidebar on smaller screens */
   }
 
   .md-content {
