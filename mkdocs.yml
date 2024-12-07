@@ -29,3 +29,5 @@ extra_css:
 
 markdown_extensions:
   - pymdownx.superfences
+  - toc:
+      title: On this page
