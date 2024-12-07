@@ -21,11 +21,11 @@ jobs:
       - name: Install MkDocs and dependencies
         run: |
           python -m pip install --upgrade pip
-          pip install "mkdocs-material==9.1.17" "pymdown-extensions==10.1"
+          pip install "mkdocs==1.6.1" "mkdocs-material==9.1.17" "pymdown-extensions==10.1"
 
       - name: Verify Plugin Installation
         run: |
-          python -c "import pymdownx.superfences"
+          python -c "import pymdownx.superfences; print('Plugin is available')"
 
       - name: Show Installed Versions
         run: |

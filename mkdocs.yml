@@ -30,7 +30,6 @@ extra_css:
 
 plugins:
   - search
-  - pymdownx.superfences
 
 markdown_extensions:
   - pymdownx.superfences
