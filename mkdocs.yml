@@ -33,6 +33,3 @@ plugins:
 markdown_extensions:
   - pymdownx.superfences
 
-
-
-# [![Install Now](https://img.shields.io/badge/Install-Now-brightgreen)](https://coder.com/docs)
