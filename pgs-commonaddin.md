@@ -36,8 +36,7 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 |[**XSUBSTITUTEMULTIPLE**](../excel/src/XSUBSTITUTEMULTIPLE.bas)|Substitutes multiple words.|
 
 ### Examples[<sup>·</sup>]
-<img src ="../src/img/img-commonaddin-r010.gif" width="60%" height="60%">
-
+<img src ="img/img-commonaddin-r010.gif" width="60%" height="60%">
 
 <br>
 
