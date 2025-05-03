@@ -9,7 +9,7 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 
 ## Features[<sup>·</sup>]
 
-<img src ="./img/img-commonaddin-tabmain.png" width="85%" height="85%">
+<img src="img/img-commonaddin-tabmain.png" width="85%" height="85%">
 
 ### Custom Functions[<sup>·</sup>]
 
