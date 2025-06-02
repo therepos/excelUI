@@ -1,0 +1,73 @@
+Sub FormatData()
+
+    Cells.Select
+    Selection.ClearFormats
+    With Selection.Font
+        .Name = "Arial"
+        .Size = 11
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontNone
+    End With
+    With Selection.Font
+        .Name = "Arial"
+        .Size = 11
+        .Strikethrough = False
+        .Superscript = False
+        .Subscript = False
+        .OutlineFont = False
+        .Shadow = False
+        .Underline = xlUnderlineStyleNone
+        .ThemeColor = xlThemeColorLight1
+        .TintAndShade = 0
+        .ThemeFont = xlThemeFontNone
+    End With
+    Selection.Replace What:="  ", Replacement:="", LookAt:=xlPart, _
+        SearchOrder:=xlByRows, MatchCase:=False, SearchFormat:=False, _
+        ReplaceFormat:=False, FormulaVersion:=xlReplaceFormula2
+    With Selection
+        .HorizontalAlignment = xlLeft
+        .VerticalAlignment = xlBottom
+        .WrapText = False
+        .Orientation = 0
+        .AddIndent = False
+        .IndentLevel = 0
+        .ShrinkToFit = False
+        .ReadingOrder = xlContext
+        .MergeCells = False
+    End With
+    Columns("E:E").Select
+    Selection.Style = "Comma"
+    Columns("E:E").EntireColumn.AutoFit
+    Columns("F:F").Select
+    Selection.Style = "Percent"
+    Columns("F:F").EntireColumn.AutoFit
+    Range("I3").Select
+    ActiveWindow.SmallScroll Down:=121
+    Cells.Select
+    Range("A122").Activate
+    Cells.EntireRow.AutoFit
+    Range("I129").Select
+    ActiveWindow.SmallScroll Down:=-121
+End Sub
+
+Sub ReplaceXLOOKUPWithValues()
+    Dim cell As Range
+    Dim ws As Worksheet
+    Set ws = ActiveSheet
+    
+    For Each cell In ws.UsedRange
+        If cell.HasFormula Then
+            If InStr(1, cell.Formula, "XLOOKUP", vbTextCompare) > 0 Then
+                cell.Value = cell.Value
+            End If
+        End If
+    Next cell
+End Sub
+
