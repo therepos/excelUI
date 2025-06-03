@@ -224,7 +224,7 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
 ### Examples
 <img src="../src/img/img-customuiribbon-t100.gif" width="60%" height="60%">
 
-<br>
+
 
 ---
 [Excel](https://github.com/ry4nyeo/lab-excel) > 

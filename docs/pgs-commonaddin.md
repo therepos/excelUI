@@ -37,7 +37,7 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 ### Examples
 <img src ="img/img-commonaddin-r010.gif" width="60%" height="60%">
 
-<br>
+
 
 ##
 [Excel](https://github.com/ry4nyeo/lab-excel) > 
