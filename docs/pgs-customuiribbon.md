@@ -1,5 +1,4 @@
 # CustomUI Ribbon Template
-<sup>[Overview](#Overview) · [Documentation](#Documentation)</sup>
 
 CustomUI Ribbon Template provides a simple starting point to implement customised Excel ribbon. 
 
@@ -7,9 +6,9 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
 - Read/Write embedded XML file with [Office RibbonX Editor](https://github.com/fernandreu/office-ribbonx-editor).
 - Microsoft Excel add-ins [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview).
 
-## Documentation[<sup>·</sup>]
+## Documentation
 
-### OnLoad[<sup>·</sup>]
+### OnLoad
 
 - Initialise state of controls on load.
 
@@ -38,7 +37,7 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
         
     End Sub
     ```
-### GetVisible[<sup>·</sup>]
+### GetVisible
 
 - Generate visible attribute of tab control, dynamically.
 
@@ -86,7 +85,7 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
     End Sub
     ```
 
-### OnAction[<sup>·</sup>]
+### OnAction
 
 - Execute change of tab.
 
@@ -164,7 +163,7 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
     End Sub
     ```
 
-### GetSelectedItemID[<sup>·</sup>]
+### GetSelectedItemID
 
 - Generate the default selected item of a dropdown control, dynamically.
 
@@ -186,7 +185,7 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
     End Sub
     ```
 
-### GetLabel[<sup>·</sup>]
+### GetLabel
 
 - Generate label attribute of control, dynamically.
 
@@ -222,14 +221,12 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
     End Sub
     ```  
     
-### Examples[<sup>·</sup>]
+### Examples
 <img src="../src/img/img-customuiribbon-t100.gif" width="60%" height="60%">
 
 <br>
 
 ---
-<sup>[Excel](https://github.com/ry4nyeo/lab-excel) > 
+[Excel](https://github.com/ry4nyeo/lab-excel) > 
 [CustomUI Ribbon Template](../docs/pgs-customuiribbon.md)
-</sup>
 
-[<sup>·</sup>]: #

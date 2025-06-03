@@ -1,17 +1,16 @@
 # Common Excel Addin
-<sup>[Overview](#) · [Quickstart](#Quickstart) · [Features](#Features)</sup>
 
 Common Excel Addin aims to provide commonly used formatting features in a single tab with customisable settings. 
 
-## Quickstart[<sup>·</sup>]
+## Quickstart
 - Download [Common Excel Addin v0.1.0](../dist/commonaddin-r010.xlam)  
 - Install the downloaded .xlam file. See [how to install add-ins]. 
 
-## Features[<sup>·</sup>]
+## Features
 
 <img src="img/img-commonaddin-tabmain.png" width="85%" height="85%">
 
-### Custom Functions[<sup>·</sup>]
+### Custom Functions
 
 |Functions|Description|
 |:--|:--|
@@ -35,15 +34,13 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 |[**XSHEETNAME**](../excel/src/XSHEETNAME.bas)|Returns worksheet name.|
 |[**XSUBSTITUTEMULTIPLE**](../excel/src/XSUBSTITUTEMULTIPLE.bas)|Substitutes multiple words.|
 
-### Examples[<sup>·</sup>]
+### Examples
 <img src ="img/img-commonaddin-r010.gif" width="60%" height="60%">
 
 <br>
 
 ##
-<sup>[Excel](https://github.com/ry4nyeo/lab-excel) > 
+[Excel](https://github.com/ry4nyeo/lab-excel) > 
 [Common Excel Addin](../docs/pgs-commonaddin.md)
-</sup>
 
-[<sup>·</sup>]: #
 [how to install add-ins]: https://support.microsoft.com/en-us/office/add-or-remove-add-ins-in-excel-0af570c4-5cf3-4fa9-9b88-403625a0b460#:~:text=COM%20add%2Din-,Click%20the%20File%20tab%2C%20click%20Options%2C%20and%20then%20click%20the,install%2C%20and%20then%20click%20OK.
