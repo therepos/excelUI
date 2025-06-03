@@ -14,7 +14,7 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 
 |Functions|Description|
 |:--|:--|
-|[**XCOMPARE**](https://github.com/therepos/msexcel/blob/main/temp/bas/XCOMPARE.bas)[See the source code]|Returns the word difference between two ranges.|
+|[**XCOMPARE**](https://github.com/therepos/msexcel/blob/main/temp/bas/XCOMPARE.bas)|Returns the word difference between two ranges.|
 |[**XEXTRACTAFTER**](https://github.com/therepos/msexcel/blob/main/temp/bas/XEXTRACTAFTER.bas)|Returns the part of a selected range after a specified word.|
 |[**XEXTRACTBEFORE**](https://github.com/therepos/msexcel/blob/main/temp/bas/XEXTRACTBEFORE.bas)|Returns the part of a selected range before a specified word.|
 |[**XFIND**](https://github.com/therepos/msexcel/blob/main/temp/bas/XFIND.bas)|Returns the word search results on a selected range based on a specified word list.|
@@ -37,9 +37,5 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 ### Examples
 ![ExampleA](/img/img-commonaddin-r010.gif)
 
-
-##
-[Excel](https://github.com/ry4nyeo/lab-excel) > 
-[Common Excel Addin](pgs-commonaddin)
 
 [how to install add-ins]: https://support.microsoft.com/en-us/office/add-or-remove-add-ins-in-excel-0af570c4-5cf3-4fa9-9b88-403625a0b460#:~:text=COM%20add%2Din-,Click%20the%20File%20tab%2C%20click%20Options%2C%20and%20then%20click%20the,install%2C%20and%20then%20click%20OK.

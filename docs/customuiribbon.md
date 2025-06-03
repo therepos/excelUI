@@ -221,11 +221,6 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
     End Sub
     ```  
     
-<!-- ### Examples
-<img src="../src/img/img-customuiribbon-t100.gif" width="60%" height="60%"> -->
-
-
----
-[Excel](https://github.com/ry4nyeo/lab-excel) > 
-[CustomUI Ribbon Template](pgs-customuiribbon)
+### Examples
+![ExampleB](img/img-customuiribbon-t100.gif)
 
