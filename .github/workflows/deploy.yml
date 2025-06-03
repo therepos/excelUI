@@ -30,26 +30,6 @@ jobs:
       - name: Install Python dependencies
         run: pip install -r requirements.txt
 
-      # - name: Generate and commit templates.md if needed
-      #   run: |
-      #     BASE_SHA=${{ github.event.before }}
-      #     if [ -z "$BASE_SHA" ] || ! git cat-file -e $BASE_SHA 2>/dev/null; then
-      #       echo "No valid base SHA — running docgen unconditionally"
-      #       python tools/docgen-templates.py
-      #     elif git diff --name-only $BASE_SHA ${{ github.sha }} | grep -E '^(docker/|apps/|tools/)'; then
-      #       echo "Changes detected — running docgen"
-      #       python tools/docgen-templates.py
-      #     else
-      #       echo "No relevant changes → skipping docgen"
-      #       exit 0
-      #     fi
-
-      #     git config user.name "github-actions"
-      #     git config user.email "github-actions@github.com"
-      #     git add docs/templates.md
-      #     git diff --cached --quiet || git commit -m "Update templates.md"
-      #     git push
-
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
