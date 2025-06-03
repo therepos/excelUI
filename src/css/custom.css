@@ -1,0 +1,14 @@
+/* ========================================
+   Custom
+======================================== */
+
+[data-doc-id="templates"] .theme-doc-markdown ul {
+  padding-left: 1.2rem; /* reduce default bullet indentation */
+  margin-left: 0;       /* optional: cancel additional margin */
+}
+
+[data-doc-id="templates"] .theme-doc-markdown li {
+  text-align: left !important;
+  margin-bottom: 0.25rem; /* tighter spacing between items */
+}
+

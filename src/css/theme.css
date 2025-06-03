@@ -1,0 +1,312 @@
+/* ========================================
+   Layout: Docs
+======================================== */
+
+.container {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  padding-left: var(--ifm-spacing-horizontal);
+  padding-right: var(--ifm-spacing-horizontal);
+}
+
+:root {
+  --ifm-link-color: #79b6f2;
+}
+
+html[data-theme='dark'] a:hover,
+html[data-theme='dark'] .menu__link:hover,
+html[data-theme='dark'] .menu__link--active,
+html[data-theme='dark'] .navbar__link:hover,
+html[data-theme='dark'] .navbar__link--active, 
+html[data-theme='dark'] .table-of-contents__link--active,
+html[data-theme='dark'] .breadcrumbs__link {
+  color: #79b6f2 !important;
+}
+
+/* ========================================
+   Layout: Footer
+======================================== */
+
+.pagination-nav {
+  display: none;
+}
+
+.footer {
+  padding: 10px 0;
+  font-size: 14px;
+  text-align: initial;
+}
+
+.footer-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 0 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.footer-left {
+  flex: 1;
+  text-align: left;
+  color: #ebedf0;
+  line-height: 1.3;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.footer-icons .icon {
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  opacity: 0.7;
+  transition: opacity 0.3s ease;
+}
+
+.footer-icons .icon:hover {
+  opacity: 1;
+}
+
+.icon-github {
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTgiIGhlaWdodD0iOTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00OC44NTQgMEMyMS44MzkgMCAwIDIyIDAgNDkuMjE3YzAgMjEuNzU2IDEzLjk5MyA0MC4xNzIgMzMuNDA1IDQ2LjY5IDIuNDI3LjQ5IDMuMzE2LTEuMDU5IDMuMzE2LTIuMzYyIDAtMS4xNDEtLjA4LTUuMDUyLS4wOC05LjEyNy0xMy41OSAyLjkzNC0xNi40Mi01Ljg2Ny0xNi40Mi01Ljg2Ny0yLjE4NC01LjcwNC01LjQyLTcuMTctNS40Mi03LjE3LTQuNDQ4LTMuMDE1LjMyNC0zLjAxNS4zMjQtMy4wMTUgNC45MzQuMzI2IDcuNTIzIDUuMDUyIDcuNTIzIDUuMDUyIDQuMzY3IDcuNDk2IDExLjQwNCA1LjM3OCAxNC4yMzUgNC4wNzQuNDA0LTMuMTc4IDEuNjk5LTUuMzc4IDMuMDc0LTYuNi0xMC44MzktMS4xNDEtMjIuMjQzLTUuMzc4LTIyLjI0My0yNC4yODMgMC01LjM3OCAxLjk0LTkuNzc4IDUuMDE0LTEzLjItLjQ4NS0xLjIyMi0yLjE4NC02LjI3NS40ODYtMTMuMDM4IDAgMCA0LjEyNS0xLjMwNCAxMy40MjYgNS4wNTJhNDYuOTcgNDYuOTcgMCAwIDEgMTIuMjE0LTEuNjNjNC4xMjUgMCA4LjMzLjU3MSAxMi4yMTMgMS42MyA5LjMwMi02LjM1NiAxMy40MjctNS4wNTIgMTMuNDI3LTUuMDUyIDIuNjcgNi43NjMuOTcgMTEuODE2LjQ4NSAxMy4wMzggMy4xNTUgMy40MjIgNS4wMTUgNy44MjIgNS4wMTUgMTMuMiAwIDE4LjkwNS0xMS40MDQgMjMuMDYtMjIuMzI0IDI0LjI4MyAxLjc4IDEuNTQ4IDMuMzE2IDQuNDgxIDMuMzE2IDkuMTI2IDAgNi42LS4wOCAxMS44OTctLjA4IDEzLjUyNiAwIDEuMzA0Ljg5IDIuODUzIDMuMzE2IDIuMzY0IDE5LjQxMi02LjUyIDMzLjQwNS0yNC45MzUgMzMuNDA1LTQ2LjY5MUM5Ny43MDcgMjIgNzUuNzg4IDAgNDguODU0IDB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+");
+}
+
+.icon-docker {
+  background-image: url("data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiPz4KPHN2ZyBpZD0iTGF5ZXJfMSIgZGF0YS1uYW1lPSJMYXllciAxIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NTYuMjYgNTk2LjkiPgogIDxkZWZzPgogICAgPHN0eWxlPgogICAgICAuY2xzLTEgewogICAgICAgIGZpbGw6ICNmZmY7CiAgICAgICAgc3Ryb2tlLXdpZHRoOiAwcHg7CiAgICAgIH0KICAgIDwvc3R5bGU+CiAgPC9kZWZzPgogIDxwYXRoIGNsYXNzPSJjbHMtMSIgZD0iTTc0My45NiwyNDUuMjVjLTE4LjU0LTEyLjQ4LTY3LjI2LTE3LjgxLTEwMi42OC04LjI3LTEuOTEtMzUuMjgtMjAuMS02NS4wMS01My4zOC05MC45NWwtMTIuMzItOC4yNy04LjIxLDEyLjRjLTE2LjE0LDI0LjUtMjIuOTQsNTcuMTQtMjAuNTMsODYuODEsMS45LDE4LjI4LDguMjYsMzguODMsMjAuNTMsNTMuNzQtNDYuMSwyNi43NC04OC41OSwyMC42Ny0yNzYuNzcsMjAuNjdILjA2Yy0uODUsNDIuNDksNS45OCwxMjQuMjMsNTcuOTYsMTkwLjc3LDUuNzQsNy4zNSwxMi4wNCwxNC40NiwxOC44NywyMS4zMSw0Mi4yNiw0Mi4zMiwxMDYuMTEsNzMuMzUsMjAxLjU5LDczLjQ0LDE0NS42Ni4xMywyNzAuNDYtNzguNiwzNDYuMzctMjY4Ljk3LDI0Ljk4LjQxLDkwLjkyLDQuNDgsMTIzLjE5LTU3Ljg4Ljc5LTEuMDUsOC4yMS0xNi41NCw4LjIxLTE2LjU0bC0xMi4zLTguMjdaTTE4OS42NywyMDYuMzloLTgxLjd2ODEuN2g4MS43di04MS43Wk0yOTUuMjIsMjA2LjM5aC04MS43djgxLjdoODEuN3YtODEuN1pNNDAwLjc3LDIwNi4zOWgtODEuN3Y4MS43aDgxLjd2LTgxLjdaTTUwNi4zMiwyMDYuMzloLTgxLjd2ODEuN2g4MS43di04MS43Wk04NC4xMiwyMDYuMzlIMi40MnY4MS43aDgxLjd2LTgxLjdaTTE4OS42NywxMDMuMmgtODEuN3Y4MS43aDgxLjd2LTgxLjdaTTI5NS4yMiwxMDMuMmgtODEuN3Y4MS43aDgxLjd2LTgxLjdaTTQwMC43NywxMDMuMmgtODEuN3Y4MS43aDgxLjd2LTgxLjdaTTQwMC43NywwaC04MS43djgxLjdoODEuN1YwWiIvPgo8L3N2Zz4=");
+}
+
+@media (max-width: 600px) {
+  .footer-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .footer-left {
+    width: 100%;
+  }
+}
+
+/* ========================================
+   Navbar
+======================================== */
+
+.header-github-link {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  text-indent: -9999px; /* visually hides text */
+  overflow: hidden;
+}
+
+.header-github-link::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  vertical-align: middle;
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTgiIGhlaWdodD0iOTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00OC44NTQgMEMyMS44MzkgMCAwIDIyIDAgNDkuMjE3YzAgMjEuNzU2IDEzLjk5MyA0MC4xNzIgMzMuNDA1IDQ2LjY5IDIuNDI3LjQ5IDMuMzE2LTEuMDU5IDMuMzE2LTIuMzYyIDAtMS4xNDEtLjA4LTUuMDUyLS4wOC05LjEyNy0xMy41OSAyLjkzNC0xNi40Mi01Ljg2Ny0xNi40Mi01Ljg2Ny0yLjE4NC01LjcwNC01LjQyLTcuMTctNS40Mi03LjE3LTQuNDQ4LTMuMDE1LjMyNC0zLjAxNS4zMjQtMy4wMTUgNC45MzQuMzI2IDcuNTIzIDUuMDUyIDcuNTIzIDUuMDUyIDQuMzY3IDcuNDk2IDExLjQwNCA1LjM3OCAxNC4yMzUgNC4wNzQuNDA0LTMuMTc4IDEuNjk5LTUuMzc4IDMuMDc0LTYuNi0xMC44MzktMS4xNDEtMjIuMjQzLTUuMzc4LTIyLjI0My0yNC4yODMgMC01LjM3OCAxLjk0LTkuNzc4IDUuMDE0LTEzLjItLjQ4NS0xLjIyMi0yLjE4NC02LjI3NS40ODYtMTMuMDM4IDAgMCA0LjEyNS0xLjMwNCAxMy40MjYgNS4wNTJhNDYuOTcgNDYuOTcgMCAwIDEgMTIuMjE0LTEuNjNjNC4xMjUgMCA4LjMzLjU3MSAxMi4yMTMgMS42MyA5LjMwMi02LjM1NiAxMy40MjctNS4wNTIgMTMuNDI3LTUuMDUyIDIuNjcgNi43NjMuOTcgMTEuODE2LjQ4NSAxMy4wMzggMy4xNTUgMy40MjIgNS4wMTUgNy44MjIgNS4wMTUgMTMuMiAwIDE4LjkwNS0xMS40MDQgMjMuMDYtMjIuMzI0IDI0LjI4MyAxLjc4IDEuNTQ4IDMuMzE2IDQuNDgxIDMuMzE2IDkuMTI2IDAgNi42LS4wOCAxMS44OTctLjA4IDEzLjUyNiAwIDEuMzA0Ljg5IDIuODUzIDMuMzE2IDIuMzY0IDE5LjQxMi02LjUyIDMzLjQwNS0yNC45MzUgMzMuNDA1LTQ2LjY5MUM5Ny43MDcgMjIgNzUuNzg4IDAgNDguODU0IDB6IiBmaWxsPSIjMjQyOTJmIi8+PC9zdmc+") no-repeat center;
+  background-size: contain;
+}
+
+html[data-theme='dark'] .header-github-link::before {
+  background: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iOTgiIGhlaWdodD0iOTYiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik00OC44NTQgMEMyMS44MzkgMCAwIDIyIDAgNDkuMjE3YzAgMjEuNzU2IDEzLjk5MyA0MC4xNzIgMzMuNDA1IDQ2LjY5IDIuNDI3LjQ5IDMuMzE2LTEuMDU5IDMuMzE2LTIuMzYyIDAtMS4xNDEtLjA4LTUuMDUyLS4wOC05LjEyNy0xMy41OSAyLjkzNC0xNi40Mi01Ljg2Ny0xNi40Mi01Ljg2Ny0yLjE4NC01LjcwNC01LjQyLTcuMTctNS40Mi03LjE3LTQuNDQ4LTMuMDE1LjMyNC0zLjAxNS4zMjQtMy4wMTUgNC45MzQuMzI2IDcuNTIzIDUuMDUyIDcuNTIzIDUuMDUyIDQuMzY3IDcuNDk2IDExLjQwNCA1LjM3OCAxNC4yMzUgNC4wNzQuNDA0LTMuMTc4IDEuNjk5LTUuMzc4IDMuMDc0LTYuNi0xMC44MzktMS4xNDEtMjIuMjQzLTUuMzc4LTIyLjI0My0yNC4yODMgMC01LjM3OCAxLjk0LTkuNzc4IDUuMDE0LTEzLjItLjQ4NS0xLjIyMi0yLjE4NC02LjI3NS40ODYtMTMuMDM4IDAgMCA0LjEyNS0xLjMwNCAxMy40MjYgNS4wNTJhNDYuOTcgNDYuOTcgMCAwIDEgMTIuMjE0LTEuNjNjNC4xMjUgMCA4LjMzLjU3MSAxMi4yMTMgMS42MyA5LjMwMi02LjM1NiAxMy40MjctNS4wNTIgMTMuNDI3LTUuMDUyIDIuNjcgNi43NjMuOTcgMTEuODE2LjQ4NSAxMy4wMzggMy4xNTUgMy40MjIgNS4wMTUgNy44MjIgNS4wMTUgMTMuMiAwIDE4LjkwNS0xMS40MDQgMjMuMDYtMjIuMzI0IDI0LjI4MyAxLjc4IDEuNTQ4IDMuMzE2IDQuNDgxIDMuMzE2IDkuMTI2IDAgNi42LS4wOCAxMS44OTctLjA4IDEzLjUyNiAwIDEuMzA0Ljg5IDIuODUzIDMuMzE2IDIuMzY0IDE5LjQxMi02LjUyIDMzLjQwNS0yNC45MzUgMzMuNDA1LTQ2LjY5MUM5Ny43MDcgMjIgNzUuNzg4IDAgNDguODU0IDB6IiBmaWxsPSIjZmZmIi8+PC9zdmc+") no-repeat center;
+  background-size: contain;
+}
+
+/* ========================================
+   Sidebar
+======================================== */
+
+.menu__link {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 500;
+  white-space: normal !important;
+  word-break: break-word;
+}
+
+/* ========================================
+   Table of Contents
+======================================== */
+
+.table-of-contents li,
+.table-of-contents a {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  line-height: 21px;
+  font-weight: 400;
+}
+
+/* ========================================
+   Theme
+======================================== */
+
+.theme-doc-markdown {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.theme-doc-markdown p {
+  text-align: justify;
+}
+
+.theme-edit-this-page {
+  font-style: normal;
+  font-size: 0.9rem;
+  color: var(--ifm-color-secondary); 
+  padding-left: var(--ifm-spacing-horizontal);
+}
+
+/* LastUpdated: Stacks vertically */
+.theme-doc-footer-edit-meta-row {
+  display: flex;
+  flex-direction: column;
+}
+
+/* LastUpdated: Align left */
+.theme-doc-footer-edit-meta-row > .col,
+.theme-doc-footer-edit-meta-row > .lastUpdated_JAkA {
+  width: 100% !important;
+  text-align: left !important;
+  margin-left: 0 !important;
+}
+
+/* LastUpdated: Unbold date */
+.theme-last-updated b {
+  font-weight: 400;
+}
+
+/* LastUpdated: Standardize fonts */
+.theme-last-updated {
+  font-style: normal;
+  font-size: 0.9rem;
+  padding-left: 1rem;
+  color: var(--ifm-color-secondary);
+}
+
+/* LastUpdated: Material icon */
+.theme-last-updated::before {
+  content: "schedule";
+  font-family: 'Material Symbols Outlined';
+  font-size: 1rem;
+  vertical-align: middle;
+  margin-right: 0.5em;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
+}
+
+/* ========================================
+   Markdown
+======================================== */
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/inter.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/interitalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+
+body,
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.markdown p,
+.markdown li,
+.table-of-contents li,
+.table-of-contents a,
+.menu__link {
+  font-family: 'Inter', sans-serif;
+}
+
+.markdown h1 {
+  font-size: 40px;
+  line-height: 35px;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.markdown h2 {
+  font-size: 28px;
+  line-height: 30px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.markdown h3 {
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+
+.markdown p {
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.markdown li {
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  line-height: 26px;
+  font-weight: 400;
+}
+
+.markdown ul, 
+.markdown ol {
+  margin-left: 0;
+  padding-left: 1rem;
+}
+
+.markdown li {
+  padding-left: 0.5em;
+}
+
+code, pre {
+  white-space: pre;
+  word-break: normal;
+}
+
+mark {
+  background-color: transparent; 
+  color: #79b6f2;
+  font-size: inherit;
+  font-weight: normal;
+  display: inline;
+  margin: 0;
+}
+
+/* ========================================
+   Code Block
+======================================== */
+
+.codeBlockLines {
+  overflow-x: auto;
+  scrollbar-width: none;         /* Firefox */
+  -webkit-overflow-scrolling: touch;  /* Smooth scroll on iOS */
+}
+
+.codeBlockLines::-webkit-scrollbar {
+  display: none;
+}
+
