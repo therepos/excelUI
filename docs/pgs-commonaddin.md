@@ -8,7 +8,7 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 
 ## Features
 
-<img src="img/img-commonaddin-tabmain.png" width="85%" height="85%">
+<!-- <img src="img/img-commonaddin-tabmain.png" width="85%" height="85%"> -->
 
 ### Custom Functions
 
@@ -35,7 +35,7 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 |[**XSUBSTITUTEMULTIPLE**](../excel/src/XSUBSTITUTEMULTIPLE.bas)|Substitutes multiple words.|
 
 ### Examples
-<img src ="img/img-commonaddin-r010.gif" width="60%" height="60%">
+<!-- <img src ="img/img-commonaddin-r010.gif" width="60%" height="60%"> -->
 
 
 

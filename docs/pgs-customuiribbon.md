@@ -221,8 +221,8 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
     End Sub
     ```  
     
-### Examples
-<img src="../src/img/img-customuiribbon-t100.gif" width="60%" height="60%">
+<!-- ### Examples
+<img src="../src/img/img-customuiribbon-t100.gif" width="60%" height="60%"> -->
 
 
 
