@@ -222,5 +222,5 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
     ```  
     
 ### Examples
-![ExampleB](img/img-customuiribbon-t100.gif)
+![ExampleB](/img/img-customuiribbon-t100.gif)
 
