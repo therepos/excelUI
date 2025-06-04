@@ -282,11 +282,6 @@ body,
   padding-left: 0.5em;
 }
 
-code, pre {
-  white-space: pre;
-  word-break: normal;
-}
-
 mark {
   background-color: transparent; 
   color: #79b6f2;
@@ -299,6 +294,11 @@ mark {
 /* ========================================
    Code Block
 ======================================== */
+
+code, pre {
+  white-space: pre;
+  word-break: normal;
+}
 
 .codeBlockLines {
   overflow-x: auto;
@@ -321,4 +321,6 @@ mark {
   display: none;
 }
 
-
+.codeBlockTitle_OeMC {
+  background-color: darkgrey;
+}
