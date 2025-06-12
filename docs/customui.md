@@ -1,9 +1,10 @@
 # CustomUI
+CustomUI implements embedded and advanced Excel ribbon customisation.
 
 ## Template
-CustomUI Ribbon Template provides a simple starting point to implement customised Excel ribbon. 
-
-- Download [CustomUI Ribbon Template v1.0.0](https://github.com/therepos/msexcel/blob/main/apps/customuiribbon-t100.xlam) or [Common Excel Addin v0.1.0](https://github.com/therepos/msexcel/blob/main/apps/commonaddin-r010.xlam).
+ 
+- Download [CustomUI Example](https://github.com/therepos/msexcel/blob/main/apps/customui-example.xlam).
+- Download [CustomUI Sample](https://github.com/therepos/msexcel/blob/main/apps/customui-sample.xlam).
 - Read/Write embedded XML file with [Office RibbonX Editor](https://github.com/fernandreu/office-ribbonx-editor).
 - Microsoft Excel add-ins [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview).
 - Install the downloaded .xlam file. See [how to install add-ins]. 
