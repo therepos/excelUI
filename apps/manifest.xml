@@ -8,7 +8,7 @@
   <DefaultLocale>en-US</DefaultLocale>
   <DisplayName>My Basic Add-in</DisplayName>
   <Description>Font styling for all sheets</Description>
-  <IconUrl>https://localhost:3000/icon.png</IconUrl>
+  <IconUrl>https://therepos.github.io/msexcel/static/img/icon-github.png</IconUrl>
   <Hosts>
     <Host Name="Workbook" />
   </Hosts>
