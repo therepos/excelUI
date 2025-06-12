@@ -1,13 +1,11 @@
 # CustomUI
-CustomUI implements embedded and advanced Excel ribbon customisation.
+CustomUI implements embedded Excel ribbon with advanced customisation.
 
 ## Template
  
-- Download [CustomUI Example](https://github.com/therepos/msexcel/blob/main/apps/customui-example.xlam).
-- Download [CustomUI Sample](https://github.com/therepos/msexcel/blob/main/apps/customui-sample.xlam).
+- [Install] Excel addins .xlam file [CustomUI Example](https://github.com/therepos/msexcel/blob/main/apps/xlam/customui-example.xlam). 
 - Read/Write embedded XML file with [Office RibbonX Editor](https://github.com/fernandreu/office-ribbonx-editor).
-- Microsoft Excel add-ins [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview).
-- Install the downloaded .xlam file. See [how to install add-ins]. 
+- Microsoft Excel addins [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview).
 
 ![ExampleB](/img/img-customuiribbon-t100.gif)
 
@@ -15,6 +13,9 @@ CustomUI implements embedded and advanced Excel ribbon customisation.
 
 
 ## Documentation
+
+The following documentation is based on a simple [CustomUI Sample](https://github.com/therepos/msexcel/blob/main/apps/xlam/customui-sample.xlam) addin for illustration of concept.
+
 ### OnLoad
 
 ```xml title="Initialise state of controls on load"
@@ -190,4 +191,4 @@ End Sub
 
 <!-- Links -->
 
-[how to install add-ins]: https://support.microsoft.com/en-us/office/add-or-remove-add-ins-in-excel-0af570c4-5cf3-4fa9-9b88-403625a0b460#:~:text=COM%20add%2Din-,Click%20the%20File%20tab%2C%20click%20Options%2C%20and%20then%20click%20the,install%2C%20and%20then%20click%20OK.
+[Install]: https://support.microsoft.com/en-us/office/add-or-remove-add-ins-in-excel-0af570c4-5cf3-4fa9-9b88-403625a0b460#:~:text=COM%20add%2Din-,Click%20the%20File%20tab%2C%20click%20Options%2C%20and%20then%20click%20the,install%2C%20and%20then%20click%20OK.
