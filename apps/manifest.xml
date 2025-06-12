@@ -13,7 +13,7 @@
     <Host Name="Workbook" />
   </Hosts>
   <DefaultSettings>
-    <SourceLocation DefaultValue="https://therepos.github.io/msexcel/taskpane.html" />
+    <SourceLocation DefaultValue="https://therepos.github.io/msexcel/apps/taskpane.html" />
   </DefaultSettings>
   <Permissions>ReadWriteDocument</Permissions>
 </OfficeApp>
