@@ -1,13 +1,19 @@
-# CustomUI Ribbon Template
+# CustomUI
 
+## Template
 CustomUI Ribbon Template provides a simple starting point to implement customised Excel ribbon. 
 
-- Download [CustomUI Ribbon Template v1.0.0](https://github.com/therepos/msexcel/blob/main/temp/bas/customuiribbon-t100.xlam). 
+- Download [CustomUI Ribbon Template v1.0.0](https://github.com/therepos/msexcel/blob/main/apps/customuiribbon-t100.xlam) or [Common Excel Addin v0.1.0](https://github.com/therepos/msexcel/blob/main/apps/commonaddin-r010.xlam).
 - Read/Write embedded XML file with [Office RibbonX Editor](https://github.com/fernandreu/office-ribbonx-editor).
 - Microsoft Excel add-ins [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview).
+- Install the downloaded .xlam file. See [how to install add-ins]. 
+
+![ExampleB](/img/img-customuiribbon-t100.gif)
+
+![Features](/img/img-commonaddin-tabmain.png)
+
 
 ## Documentation
-
 ### OnLoad
 
 ```xml title="Initialise state of controls on load"
@@ -180,7 +186,7 @@ Sub GetSelectedItemID(control As IRibbonControl, ID As String, index As Integer)
 
 End Sub
 ```  
-    
-### Examples
-![ExampleB](/img/img-customuiribbon-t100.gif)
 
+<!-- Links -->
+
+[how to install add-ins]: https://support.microsoft.com/en-us/office/add-or-remove-add-ins-in-excel-0af570c4-5cf3-4fa9-9b88-403625a0b460#:~:text=COM%20add%2Din-,Click%20the%20File%20tab%2C%20click%20Options%2C%20and%20then%20click%20the,install%2C%20and%20then%20click%20OK.

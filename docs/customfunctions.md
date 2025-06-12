@@ -1,14 +1,3 @@
-# Common Excel Addin
-
-Common Excel Addin aims to provide commonly used formatting features in a single tab with customisable settings. 
-
-## Quickstart
-- Download [Common Excel Addin v0.1.0](https://github.com/therepos/msexcel/blob/main/temp/bas/commonaddin-r010.xlam)  
-- Install the downloaded .xlam file. See [how to install add-ins]. 
-
-## Features
-
-![Features](/img/img-commonaddin-tabmain.png)
 
 ### Custom Functions
 
@@ -33,9 +22,3 @@ Common Excel Addin aims to provide commonly used formatting features in a single
 |[**XREMOVESYMBOLS**](https://github.com/therepos/msexcel/blob/main/temp/bas/XREMOVESYMBOLS.bas)|Removes leading and trailing symbols from text.|
 |[**XSHEETNAME**](https://github.com/therepos/msexcel/blob/main/temp/bas/XSHEETNAME.bas)|Returns worksheet name.|
 |[**XSUBSTITUTEMULTIPLE**](https://github.com/therepos/msexcel/blob/main/temp/bas/XSUBSTITUTEMULTIPLE.bas)|Substitutes multiple words.|
-
-### Examples
-![ExampleA](/img/img-commonaddin-r010.gif)
-
-
-[how to install add-ins]: https://support.microsoft.com/en-us/office/add-or-remove-add-ins-in-excel-0af570c4-5cf3-4fa9-9b88-403625a0b460#:~:text=COM%20add%2Din-,Click%20the%20File%20tab%2C%20click%20Options%2C%20and%20then%20click%20the,install%2C%20and%20then%20click%20OK.
