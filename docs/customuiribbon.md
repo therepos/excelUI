@@ -17,17 +17,13 @@ CustomUI Ribbon Template provides a simple starting point to implement customise
     <customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" 
               onLoad="RibbonOnLoad">
     ```
-    ```vb
-    ' VBA
-    ' Declare global variables and object
+    ```vb title="Declare global variables and object"
     Public Ribbon As IRibbonUI
     Public MySelectedTabTag As String
     Public MySelectedGroupTag As String
     Public MySelectedItemID As String
     ```
-    ```vb
-    ' VBA
-    ' Initialise the ribbon
+    ```vb title="Initialise the ribbon"
     Sub RibbonOnLoad(Rib As IRibbonUI)
 
         Set Ribbon = Rib
