@@ -8,7 +8,7 @@ CustomUI implements embedded Excel ribbon with advanced customisation. It also o
 
 ## Documentation
 
-The following documentation is based on a simple [CustomUI Sample](https://github.com/therepos/msexcel/blob/main/apps/xlam/customui-sample.xlam) addin for illustration of concept. See official Microsoft Excel addins [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview).
+The following documentation is based on [CustomUI Sample](https://github.com/therepos/msexcel/blob/main/apps/xlam/customui-sample.xlam) to illustrate the concept. See official Microsoft [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview) for more details
 
 ### OnLoad
 
