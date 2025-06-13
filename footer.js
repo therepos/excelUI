@@ -12,10 +12,10 @@ export default {
       </div>
       <div class="footer-icons">
         <a href="https://github.com/therepos?tab=repositories" class="icon icon-github" target="_blank" aria-label="GitHub"></a>
-        <a href="https://hub.docker.com" class="icon icon-docker" target="_blank" aria-label="Docker"></a>
         <a href="https://therepos.github.io/proxmox/" class="icon icon-proxmox" target="_blank" aria-label="Proxmox"></a>
         <a href="https://therepos.github.io/msexcel/" class="icon icon-excel" target="_blank" aria-label="Excel"></a>
-        <a href="https://therepos.github.io/docusaurus/" class="icon icon-docusaurus" target="_blank" aria-label="Docusaurus"></a>            
+        <a href="https://therepos.github.io/rpa/" class="icon icon-chrome" target="_blank" aria-label="RPA"></a>    
+        <a href="https://therepos.github.io/notes/" class="icon icon-notes" target="_blank" aria-label="Notes"></a>        
       </div>
     </div>
   `,
