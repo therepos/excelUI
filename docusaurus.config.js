@@ -25,7 +25,7 @@ export default {
           sidebarPath: './sidebars.js',
           showLastUpdateTime: true,
           sidebarCollapsible: true,
-          editUrl: 'https://github.com/${org}/${repo}/edit/main/',
+          editUrl: `https://github.com/${org}/${repo}/edit/main/`,
         },
         theme: {
           customCss: './src/css/styles.css',
@@ -43,7 +43,7 @@ export default {
           position: 'right',
         },
         {
-          href: 'https://github.com/${org}/${repo}',
+          href: `https://github.com/${org}/${repo}`,
           position: 'right',
           className: 'header-github-link',
           'aria-label': 'GitHub repository',
