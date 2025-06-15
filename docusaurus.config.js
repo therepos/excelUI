@@ -25,7 +25,7 @@ export default {
           sidebarPath: './sidebars.js',
           showLastUpdateTime: true,
           sidebarCollapsible: true,
-          editUrl: `https://github.com/${org}/${repo}/edit/main/`,
+          editUrl: `https://github.dev/${org}/${repo}/edit/main/`,
         },
         theme: {
           customCss: './src/css/styles.css',
