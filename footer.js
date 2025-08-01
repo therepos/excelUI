@@ -1,5 +1,5 @@
 const currentYear = new Date().getFullYear();
-const org = process.env.ORG_NAME;
+const org = 'therepos';
 
 export default {
   style: 'dark',
@@ -15,7 +15,7 @@ export default {
         <a href="https://therepos.github.io/proxmox/" class="icon icon-proxmox" target="_blank" aria-label="Proxmox"></a>
         <a href="https://therepos.github.io/msexcel/" class="icon icon-excel" target="_blank" aria-label="Excel"></a>
         <a href="https://therepos.github.io/rpa/" class="icon icon-chrome" target="_blank" aria-label="RPA"></a>    
-        <a href="https://therepos.github.io/notes/" class="icon icon-notes" target="_blank" aria-label="Notes"></a>        
+        <a href="https://archives-nine.vercel.app/" class="icon icon-notes" target="_blank" aria-label="Notes"></a>        
       </div>
     </div>
   `,
