@@ -294,15 +294,6 @@ body,
   padding-left: 0.5em;
 }
 
-mark {
-  background-color: transparent; 
-  color: #79b6f2;
-  font-size: inherit;
-  font-weight: normal;
-  display: inline;
-  margin: 0;
-}
-
 /* ========================================
    Code Block
 ======================================== */
