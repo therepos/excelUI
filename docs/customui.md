@@ -274,8 +274,8 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/AudioNoteDelete.png" alt="AudioNoteDelete" title="AudioNoteDelete" />
 <img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
 <img src="https://spreadsheet1.com/imagemso/ChangeToDeclineInvitation.png" alt="ChangeToDeclineInvitation" title="ChangeToDeclineInvitation" />
-<img src="https://spreadsheet1.com/imagemso/CharacterBorder.png" alt="CharacterBorder" title="CharacterBorder" />
-<img src="https://spreadsheet1.com/imagemso/CharacterShading.png" alt="CharacterShading" title="CharacterShading" />
+<img src="https://spreadsheet1.com/imagemso/AutoFormat.png" alt="AutoFormat" title="AutoFormat" />
+<img src="https://spreadsheet1.com/imagemso/CustomEquationsGallery.png" alt="CustomEquationsGallery" title="CharacterShading" />
 <img src="https://spreadsheet1.com/imagemso/AlignLeft.png" alt="AlignLeft" title="AlignLeft" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor0.png" alt="AppointmentColor3" title="AppointmentColor3" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor1.png" alt="AppointmentColor3" title="AppointmentColor3" />
@@ -288,16 +288,18 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor8.png" alt="AppointmentColor8" title="AppointmentColor8" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor9.png" alt="AppointmentColor9" title="AppointmentColor9" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor10.png" alt="AppointmentColor9" title="AppointmentColor10" />
+<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteBlackWithGrayscaleFill.png" alt="BlackAndWhiteBlackWithGrayscaleFill" title="BlackAndWhiteBlackWithGrayscaleFill" />
+<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
+<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
+<img src="https://spreadsheet1.com/imagemso/BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
+<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
+<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
 ---
-
 <img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
 <img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
 <img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
 <img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
 <img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
-<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
-<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
-
 
 
 ---
