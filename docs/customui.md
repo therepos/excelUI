@@ -11,6 +11,86 @@ CustomUI implements embedded Excel ribbon with advanced customisation. It also o
 The following examples are based on [CustomUI Sample](https://github.com/therepos/msexcel/blob/main/apps/xlam/customui-sample.xlam) to illustrate the concept.  
 See official Microsoft [documentation](https://docs.microsoft.com/en-us/office/dev/add-ins/excel/excel-add-ins-overview) for more details.
 
+### Structure
+
+```
+MsExcel
+├── VBA Modules
+│   ├── Controls    # function codes
+│   └── Ribbon      # 
+└── CustomUI
+```
+
+### Standard Implementation
+```vba title="VBA Controls Module"
+Sub WorkbookArial(control As IRibbonControl)
+  
+    On Error GoTo ErrorHandler
+    
+    Dim ws As Worksheet
+    Dim sourceSheet As Worksheet
+    Set sourceSheet = ActiveSheet
+    
+    Application.ScreenUpdating = False
+    For Each ws In Worksheets
+         With ws
+            If Not ws.ProtectContents Then
+                .Cells.Font.Name = "Arial"
+                .Cells.Font.Size = 8
+            End If
+         End With
+    Next ws
+    
+    For Each ws In Worksheets
+        If Not ws.ProtectContents Then
+            ws.Activate
+            ActiveWindow.Zoom = 100
+        End If
+    Next
+    Application.ScreenUpdating = True
+    
+    Call sourceSheet.Activate
+    
+ErrorHandler:
+    Exit Sub
+    
+End Sub
+```
+
+```vba title="VBA Ribbon Module"
+Public Ribbon As IRibbonUI
+Public MySelectedTabTag As String
+Public MySelectedGroupTag As String
+
+Sub RibbonOnLoad(Rib As IRibbonUI)
+    Set Ribbon = Rib
+    MySelectedTabTag = "t1"
+    MySelectedGroupTag = "t1g1"
+    
+End Sub
+```
+
+```xml title="CustomUI"
+<!-- XML -->
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="RibbonOnLoad">
+    <ribbon>
+        <tabs>
+            <!-- Tab --> 
+            <tab id="t1" tag="t1" label="TabLabel">
+                <!-- Group -->
+                <group id="t1g1" tag="t1g1" label="Workbook" autoScale="false">   
+                    <!-- Box is a layout container in a group --> 
+                    <box id="t1g1x1" boxStyle="horizontal">                                           
+                        <!-- Button --> 
+                        <button id="t1g1b1" label="Arial 8" size="large" onAction="WorkbookArial" imageMso="CharacterBorder" />   
+                    </box>                                                                
+                </group>                                                
+            </tab>                                   
+        </tabs>
+    </ribbon>
+</customUI>
+```
+
 ### OnLoad
 
 ```xml title="Initialise state of controls on load"
@@ -34,6 +114,7 @@ Sub RibbonOnLoad(Rib As IRibbonUI)
     
 End Sub
 ```
+
 ### GetVisible
 
 ```xml title="Generate visible attribute of tab control, dynamically"
