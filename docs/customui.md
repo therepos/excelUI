@@ -300,8 +300,8 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
 ---
 
-<img src="/img/img-mso-ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
-<img src="/img/img-mso-ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
+<img src="/msexcel/img/img-mso-ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
+<img src="/msexcel/img/img-mso-ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
 <img src="/img/img-mso-ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
 <img src="/img/img-mso-Chart3DConeChart.png" alt="Chart3DConeChart" title="Chart3DConeChart" />
 <img src="/img/img-mso-Chart3DBarChart.png" alt="Chart3DBarChart" title="Chart3DBarChart" />
