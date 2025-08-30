@@ -262,11 +262,32 @@ Sub GetSelectedItemID(control As IRibbonControl, ID As String, index As Integer)
 
 End Sub
 ```  
+static/img/img-mso-TextPictureFill.png
 
 ## Gallery
+<img src="/msexcel/img/img-mso-Info.png" alt="Info" title="Info" />
+<img src="/msexcel/img/img-mso-Info.png" alt="Info" title="Info" />
+<img src="/msexcel/img/img-mso-Info.png" alt="Info" title="Info" />
+<img src="/msexcel/img/img-mso-DiagramTargetInsertClassic.png" alt="DiagramTargetInsertClassic" title="DiagramTargetInsertClassic" />
+<img src="/msexcel/img/img-mso-TraceError.png" alt="TraceError" title="TraceError" />
+<img src="/msexcel/img/img-mso-HorizontalSpacingIncrease.png" alt="HorizontalSpacingIncrease" title="HorizontalSpacingIncrease" />
+<img src="/msexcel/img/img-mso-LassoSelect.png" alt="LassoSelect" title="LassoSelect" />
+<img src="/msexcel/img/img-mso-FormRegionSave.png" alt="FormRegionSave" title="FormRegionSave" />
+<img src="/msexcel/img/img-mso-MessageNext.png" alt="MessageNext" title="MessageNext" />
+<img src="/msexcel/img/img-mso-MsnLogo.png" alt="MsnLogo" title="MsnLogo" />
+<img src="/msexcel/img/img-mso-PictureBulletsInsert.png" alt="PictureBulletsInsert" title="PictureBulletsInsert" />
+<img src="/msexcel/img/img-mso-Piggy.png" alt="Piggy" title="Piggy" />
+<img src="/msexcel/img/img-mso-ReminderSound.png" alt="ReminderSound" title="ReminderSound" />
+<img src="/msexcel/img/img-mso-ShapesDuplicate.png" alt="ShapesDuplicate" title="ShapesDuplicate" />
+<img src="/msexcel/img/img-mso-TextPictureFill.png" alt="TextPictureFill" title="TextPictureFill" />
+<img src="/msexcel/img/img-mso-AutoFormat.png" alt="AutoFormat" title="AutoFormat" />
+<img src="/msexcel/img/img-mso-ShapeSmileyFace.png" alt="ShapeSmileyFace" title="ShapeSmileyFace" />
+<img src="/msexcel/img/img-mso-SpeechMicrophone.png" alt="SpeechMicrophone" title="SpeechMicrophone" />
+<img src="/msexcel/img/img-mso-TableTextStylesGallery.png" alt="TableTextStylesGallery" title="TableTextStylesGallery" />
+<img src="/msexcel/img/img-mso-ZoomPrintPreviewExcel.png" alt="ZoomPrintPreviewExcel" title="ZoomPrintPreviewExcel" />
+---
 <img src="/msexcel/img/img-mso-CharacterBorder.png" alt="CharacterBorder" title="CharacterBorder" />
 <img src="/msexcel/img/img-mso-CharacterShading.png" alt="CharacterShading" title="CharacterShading" />
-<img src="/msexcel/img/img-mso-CombineShapesGallery.png" alt="CombineShapesGallery" title="CombineShapesGallery" />
 <img src="/msexcel/img/img-mso-CreateMacro.png" alt="CreateMacro" title="CreateMacro" />
 <img src="/msexcel/img/img-mso-BlogManageAccounts.png" alt="BlogManageAccounts" title="BlogManageAccounts" />
 <img src="/msexcel/img/img-mso-Clear.png" alt="Clear" title="Clear" />
@@ -274,7 +295,6 @@ End Sub
 <img src="/msexcel/img/img-mso-AudioNoteDelete.png" alt="AudioNoteDelete" title="AudioNoteDelete" />
 <img src="/msexcel/img/img-mso-ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
 <img src="/msexcel/img/img-mso-ChangeToDeclineInvitation.png" alt="ChangeToDeclineInvitation" title="ChangeToDeclineInvitation" />
-<img src="/msexcel/img/img-mso-AutoFormat.png" alt="AutoFormat" title="AutoFormat" />
 <img src="/msexcel/img/img-mso-CustomEquationsGallery.png" alt="CustomEquationsGallery" title="CustomEquationsGallery" />
 <img src="/msexcel/img/img-mso-AlignLeft.png" alt="AlignLeft" title="AlignLeft" />
 <img src="/msexcel/img/img-mso-AppointmentColor0.png" alt="AppointmentColor0" title="AppointmentColor0" />
