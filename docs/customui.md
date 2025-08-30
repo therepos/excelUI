@@ -264,10 +264,22 @@ End Sub
 ```  
 
 ## Gallery
-<img src="https://spreadsheet1.com/imagemso/AppointmentColorDialog.png" alt="AppointmentColorDialog" title="AppointmentColorDialog" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor0.png" alt="AppointmentColor0" title="AppointmentColor0" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor1.png" alt="AppointmentColor1" title="AppointmentColor1" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor2.png" alt="AppointmentColor2" title="AppointmentColor2" />
+<img src="https://spreadsheet1.com/imagemso/CharacterBorder.png" alt="CharacterBorder" title="CharacterBorder" />
+<img src="https://spreadsheet1.com/imagemso/CharacterShading.png" alt="CharacterShading" title="CharacterShading" />
+<img src="https://spreadsheet1.com/imagemso/CombineShapesGallery.png" alt="CombineShapesGallery" title="CombineShapesGallery" />
+<img src="https://spreadsheet1.com/imagemso/CreateMacro.png" alt="CreateMacro" title="CreateMacro" />
+<img src="https://spreadsheet1.com/imagemso/BlogManageAccounts.png" alt="BlogManageAccounts" title="BlogManageAccounts" />
+<img src="https://spreadsheet1.com/imagemso/Clear.png" alt="Clear" title="Clear" />
+<img src="https://spreadsheet1.com/imagemso/AutoFilterClassic.png" alt="AutoFilterClassic" title="AutoFilterClassic" />
+<img src="https://spreadsheet1.com/imagemso/AudioNoteDelete.png" alt="AudioNoteDelete" title="AudioNoteDelete" />
+<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+<img src="https://spreadsheet1.com/imagemso/ChangeToDeclineInvitation.png" alt="ChangeToDeclineInvitation" title="ChangeToDeclineInvitation" />
+<img src="https://spreadsheet1.com/imagemso/CharacterBorder.png" alt="CharacterBorder" title="CharacterBorder" />
+<img src="https://spreadsheet1.com/imagemso/CharacterShading.png" alt="CharacterShading" title="CharacterShading" />
+<img src="https://spreadsheet1.com/imagemso/AlignLeft.png" alt="AlignLeft" title="AlignLeft" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor0.png" alt="AppointmentColor3" title="AppointmentColor3" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor1.png" alt="AppointmentColor3" title="AppointmentColor3" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor2.png" alt="AppointmentColor3" title="AppointmentColor3" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor3.png" alt="AppointmentColor3" title="AppointmentColor3" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor4.png" alt="AppointmentColor4" title="AppointmentColor4" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor5.png" alt="AppointmentColor5" title="AppointmentColor5" />
@@ -275,6 +287,19 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor7.png" alt="AppointmentColor7" title="AppointmentColor7" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor8.png" alt="AppointmentColor8" title="AppointmentColor8" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor9.png" alt="AppointmentColor9" title="AppointmentColor9" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor10.png" alt="AppointmentColor9" title="AppointmentColor10" />
+---
+
+<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+
+
+
 ---
 <img src="https://spreadsheet1.com/imagemso/_0.png" alt="_0" title="_0" />
 <img src="https://spreadsheet1.com/imagemso/_0PercentComplete.png" alt="_0PercentComplete" title="_0PercentComplete" />
