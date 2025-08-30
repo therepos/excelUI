@@ -185,7 +185,7 @@ End Sub
 ```  
 
 ## Resources
-- [ImageMSO Gallery](https://www.spreadsheet1.com/microsoft-office-excel-ribbon-imagemso-icons-gallery.html)
+- [ImageMSO Gallery](https://bert-toolkit.com/imagemso-list.html)
 
 <!-- Links -->
 
