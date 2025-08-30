@@ -290,14 +290,14 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor10.png" alt="AppointmentColor9" title="AppointmentColor10" />
 <img src="https://spreadsheet1.com/imagemso/BlackAndWhiteBlackWithGrayscaleFill.png" alt="BlackAndWhiteBlackWithGrayscaleFill" title="BlackAndWhiteBlackWithGrayscaleFill" />
 <img src="https://spreadsheet1.com/imagemso/BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
-<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
+<img src="static/img/img-mso-BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
 <img src="https://spreadsheet1.com/imagemso/BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
-<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
-<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
-<img src="https://spreadsheet1.com/imagemso/ArrangeByLogContact.png" alt="ArrangeByLogContact" title="ArrangeByLogContact" />
-<img src="https://spreadsheet1.com/imagemso/AnimationStartDropdown.png" alt="AnimationStartDropdown" title="AnimationStartDropdown" />
-<img src="https://spreadsheet1.com/imagemso/BlogHomePage.png" alt="BlogHomePage" title="BlogHomePage" />
-<img src="https://spreadsheet1.com/imagemso/BlogCategoriesRefresh.png" alt="BlogCategoriesRefresh" title="BlogCategoriesRefresh" />
+<img src="static/img/img-mso-BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
+<img src="static/img/img-mso-BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
+<img src="static/img/img-mso-ArrangeByLogContact.png" alt="ArrangeByLogContact" title="ArrangeByLogContact" />
+<img src="static/img/img-mso-AnimationStartDropdown.png" alt="AnimationStartDropdown" title="AnimationStartDropdown" />
+<img src="static/img/img-mso-BlogHomePage.png" alt="BlogHomePage" title="BlogHomePage" />
+<img src="static/img/img-mso-BlogCategoriesRefresh.png" alt="BlogCategoriesRefresh" title="BlogCategoriesRefresh" />
 <img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
 ---
 
