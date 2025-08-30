@@ -388,6 +388,20 @@ End Sub
 <img src="/msexcel/img/img-mso-BlogCategoriesRefresh.png" alt="BlogCategoriesRefresh" title="BlogCategoriesRefresh" />
 <img src="/msexcel/img/img-mso-MsnLogo.png" alt="MsnLogo" title="MsnLogo" />
 <img src="/msexcel/img/img-mso-LinkBarCustom.png" alt="LinkBarCustom" title="LinkBarCustom" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteDontShow.png" alt="BlackAndWhiteDontShow" title="BlackAndWhiteDontShow" />
+<img src="/msexcel/img/img-mso-CellFillColorPicker.png" alt="CellFillColorPicker" title="CellFillColorPicker" />
+<img src="/msexcel/img/img-mso-ControlTabControl.png" alt="ControlTabControl" title="ControlTabControl" />
+<img src="/msexcel/img/img-mso-FileNewDefault.png" alt="FileNewDefault" title="FileNewDefault" />
+<img src="/msexcel/img/img-mso-FileOpenUsingBackstage.png" alt="FileOpenUsingBackstage" title="FileOpenUsingBackstage" />
+<img src="/msexcel/img/img-mso-FilePrintQuick.png" alt="FilePrintQuick" title="FilePrintQuick" />
+<img src="/msexcel/img/img-mso-FileSendAsAttachment.png" alt="FileSendAsAttachment" title="FileSendAsAttachment" />
+<img src="/msexcel/img/img-mso-FontPaneShowHide.png" alt="FontPaneShowHide" title="FontPaneShowHide" />
+<img src="/msexcel/img/img-mso-HeaderCell.png" alt="HeaderCell" title="HeaderCell" />
+<img src="/msexcel/img/img-mso-OutlineSubtotals.png" alt="OutlineSubtotals" title="OutlineSubtotals" />
+<img src="/msexcel/img/img-mso-PointerModeOptions.png" alt="PointerModeOptions" title="PointerModeOptions" />
+<img src="/msexcel/img/img-mso-PrintPreviewAndPrint.png" alt="PrintPreviewAndPrint" title="PrintPreviewAndPrint" />
+<img src="/msexcel/img/img-mso-Risks.png" alt="Risks" title="Risks" />
+<img src="/msexcel/img/img-mso-StartAfterPrevious.png" alt="StartAfterPrevious" title="StartAfterPrevious" />
 
 ---
 
