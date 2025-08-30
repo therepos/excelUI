@@ -264,7 +264,7 @@ End Sub
 ```  
 
 ## Gallery
-<img src="https://spreadsheet1.com/imagemso/AppointmentOutOfOffice.png" alt="AppointmentColorDialog" title="AppointmentColorDialog" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColorDialog.png" alt="AppointmentColorDialog" title="AppointmentColorDialog" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor0.png" alt="AppointmentColor0" title="AppointmentColor0" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor1.png" alt="AppointmentColor1" title="AppointmentColor1" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor2.png" alt="AppointmentColor2" title="AppointmentColor2" />
