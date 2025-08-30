@@ -184,6 +184,9 @@ Sub GetSelectedItemID(control As IRibbonControl, ID As String, index As Integer)
 End Sub
 ```  
 
+## Resources
+- [ImageMSO Gallery](https://www.spreadsheet1.com/microsoft-office-excel-ribbon-imagemso-icons-gallery.html)
+
 <!-- Links -->
 
 [Install]: https://support.microsoft.com/en-us/office/add-or-remove-add-ins-in-excel-0af570c4-5cf3-4fa9-9b88-403625a0b460#:~:text=COM%20add%2Din-,Click%20the%20File%20tab%2C%20click%20Options%2C%20and%20then%20click%20the,install%2C%20and%20then%20click%20OK.
