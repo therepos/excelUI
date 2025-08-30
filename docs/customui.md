@@ -339,6 +339,22 @@ static/img/img-mso-TextPictureFill.png
 <img src="/msexcel/img/img-mso-TextPictureFill.png" alt="TextPictureFill" title="TextPictureFill" />
 <img src="/msexcel/img/img-mso-TraceError.png" alt="TraceError" title="TraceError" />
 <img src="/msexcel/img/img-mso-ZoomPrintPreviewExcel.png" alt="ZoomPrintPreviewExcel" title="ZoomPrintPreviewExcel" />
+<img src="/msexcel/img/img-mso-AnimationOnClick.png" alt="AnimationOnClick" title="AnimationOnClick" />
+<img src="/msexcel/img/img-mso-CondolatoryEvent.png" alt="CondolatoryEvent" title="CondolatoryEvent" />
+<img src="/msexcel/img/img-mso-EditBusinessCard.png" alt="EditBusinessCard" title="EditBusinessCard" />
+<img src="/msexcel/img/img-mso-HighImportance.png" alt="HighImportance" title="HighImportance" />
+<img src="/msexcel/img/img-mso-NewNote.png" alt="NewNote" title="NewNote" />
+<img src="/msexcel/img/img-mso-OutlinePromoteToHeading.png" alt="OutlinePromoteToHeading" title="OutlinePromoteToHeading" />
+<img src="/msexcel/img/img-mso-PanningHand.png" alt="PanningHand" title="PanningHand" />
+<img src="/msexcel/img/img-mso-Recurrence.png" alt="Recurrence" title="Recurrence" />
+<img src="/msexcel/img/img-mso-Redo.png" alt="Redo" title="Redo" />
+<img src="/msexcel/img/img-mso-ShapeSeal8.png" alt="ShapeSeal8" title="ShapeSeal8" />
+<img src="/msexcel/img/img-mso-ShowContactPage.png" alt="ShowContactPage" title="ShowContactPage" />
+<img src="/msexcel/img/img-mso-SignaturesLoading.png" alt="SignaturesLoading" title="SignaturesLoading" />
+<img src="/msexcel/img/img-mso-TrustCenter.png" alt="TrustCenter" title="TrustCenter" />
+<img src="/msexcel/img/img-mso-Undo.png" alt="Undo" title="Undo" />
+<img src="/msexcel/img/img-mso-WorkflowComplete.png" alt="WorkflowComplete" title="WorkflowComplete" />
+
 ---
 
 ## Resources
