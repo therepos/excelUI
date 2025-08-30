@@ -301,15 +301,11 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
 ---
 
-<img src="https://spreadsheet1.com/imagemso/ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
-<img src="https://spreadsheet1.com/imagemso/CreateStageView.png" alt="CreateStageView" title="CreateStageView" />
-<img src="https://spreadsheet1.com/imagemso/ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
-<img src="https://spreadsheet1.com/imagemso/ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
-<img src="https://spreadsheet1.com/imagemso/Chart3DConeChart.png" alt="Chart3DConeChart" title="Chart3DConeChart" />
-<img src="https://spreadsheet1.com/imagemso/Chart3DBarChart.png" alt="Chart3DBarChart" title="Chart3DBarChart" />
-<img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
-<img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
-<img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
+<img src="static/img/img-mso-ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
+<img src="static/img/img-mso-ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
+<img src="static/img/img-mso-ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
+<img src="static/img/img-mso-Chart3DConeChart.png" alt="Chart3DConeChart" title="Chart3DConeChart" />
+<img src="static/img/img-mso-Chart3DBarChart.png" alt="Chart3DBarChart" title="Chart3DBarChart" />
 ---
 
 ## Resources
