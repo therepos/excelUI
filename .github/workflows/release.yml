@@ -1,10 +1,12 @@
 name: Release
+
 on:
   push:
-    branches: [main]
+    branches:
+      - main
     paths:
-      - 'apps/xlam/**'
-    workflow_dispatch:
+      - apps/xlam/**
+  workflow_dispatch:
 
 jobs:
   release:
@@ -12,9 +14,11 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - id: tag
+      - name: Create Tag
+        id: tag
         uses: mathieudutour/github-tag-action@v6
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
