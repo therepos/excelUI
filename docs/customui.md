@@ -314,6 +314,11 @@ End Sub
 <img src="/msexcel/img/img-mso-AppointmentColorDialog.png" alt="AppointmentColorDialog" title="AppointmentColorDialog" />
 <img src="/msexcel/img/img-mso-AppointmentBusy.png" alt="AppointmentBusy" title="AppointmentBusy" />
 <img src="/msexcel/img/img-mso-AppointmentOutOfOffice.png" alt="AppointmentOutOfOffice" title="AppointmentOutOfOffice" />
+<img src="/msexcel/img/img-mso-BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
 <img src="/msexcel/img/img-mso-DataGraphicIconSet.png" alt="DataGraphicIconSet" title="DataGraphicIconSet" />
 <img src="/msexcel/img/img-mso-ShapesDuplicate.png" alt="ShapesDuplicate" title="ShapesDuplicate" />
 <img src="/msexcel/img/img-mso-CreateMacro.png" alt="CreateMacro" title="CreateMacro" />
@@ -377,11 +382,6 @@ End Sub
 <img src="/msexcel/img/img-mso-ShapesDuplicate.png" alt="ShapesDuplicate" title="ShapesDuplicate" />
 <img src="/msexcel/img/img-mso-ShapeCloud.png" alt="ShapeCloud" title="ShapeCloud" />
 <img src="/msexcel/img/img-mso-ShapeSeal8.png" alt="ShapeSeal8" title="ShapeSeal8" />
-<img src="/msexcel/img/img-mso-BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
-<img src="/msexcel/img/img-mso-BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
-<img src="/msexcel/img/img-mso-BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
-<img src="/msexcel/img/img-mso-BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
-<img src="/msexcel/img/img-mso-BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
 <img src="/msexcel/img/img-mso-VisibilityHidden.png" alt="VisibilityHidden" title="VisibilityHidden" />
 <img src="/msexcel/img/img-mso-ShowClipboard.png" alt="ShowClipboard" title="ShowClipboard" />
 <img src="/msexcel/img/img-mso-PanAndZoomWindow.png" alt="PanAndZoomWindow" title="PanAndZoomWindow" />
