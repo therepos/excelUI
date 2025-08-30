@@ -354,6 +354,12 @@ static/img/img-mso-TextPictureFill.png
 <img src="/msexcel/img/img-mso-TrustCenter.png" alt="TrustCenter" title="TrustCenter" />
 <img src="/msexcel/img/img-mso-Undo.png" alt="Undo" title="Undo" />
 <img src="/msexcel/img/img-mso-WorkflowComplete.png" alt="WorkflowComplete" title="WorkflowComplete" />
+<img src="/msexcel/img/img-mso-GoToMail.png" alt="GoToMail" title="GoToMail" />
+<img src="/msexcel/img/img-mso-InkEraseMode.png" alt="InkEraseMode" title="InkEraseMode" />
+<img src="/msexcel/img/img-mso-ListMacros.png" alt="ListMacros" title="ListMacros" />
+<img src="/msexcel/img/img-mso-RmsInvokeBrowser.png" alt="RmsInvokeBrowser" title="RmsInvokeBrowser" />
+<img src="/msexcel/img/img-mso-SmartArtInsert.png" alt="SmartArtInsert" title="SmartArtInsert" />
+<img src="/msexcel/img/img-mso-ToolboxVideo.png" alt="ToolboxVideo" title="ToolboxVideo" />
 
 ---
 
