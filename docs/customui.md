@@ -288,23 +288,23 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor8.png" alt="AppointmentColor8" title="AppointmentColor8" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor9.png" alt="AppointmentColor9" title="AppointmentColor9" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor10.png" alt="AppointmentColor9" title="AppointmentColor10" />
-<img src="/img/img-mso-BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
-<img src="/img/img-mso-BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
 <img src="https://spreadsheet1.com/imagemso/BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
-<img src="/img/img-mso-BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
-<img src="/img/img-mso-BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
-<img src="/img/img-mso-ArrangeByLogContact.png" alt="ArrangeByLogContact" title="ArrangeByLogContact" />
-<img src="/img/img-mso-AnimationStartDropdown.png" alt="AnimationStartDropdown" title="AnimationStartDropdown" />
-<img src="/img/img-mso-BlogHomePage.png" alt="BlogHomePage" title="BlogHomePage" />
-<img src="/img/img-mso-BlogCategoriesRefresh.png" alt="BlogCategoriesRefresh" title="BlogCategoriesRefresh" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
+<img src="/msexcel/img/img-mso-BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
+<img src="/msexcel/img/img-mso-ArrangeByLogContact.png" alt="ArrangeByLogContact" title="ArrangeByLogContact" />
+<img src="/msexcel/img/img-mso-AnimationStartDropdown.png" alt="AnimationStartDropdown" title="AnimationStartDropdown" />
+<img src="/msexcel/img/img-mso-BlogHomePage.png" alt="BlogHomePage" title="BlogHomePage" />
+<img src="/msexcel/img/img-mso-BlogCategoriesRefresh.png" alt="BlogCategoriesRefresh" title="BlogCategoriesRefresh" />
 <img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
 ---
 
 <img src="/msexcel/img/img-mso-ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
 <img src="/msexcel/img/img-mso-ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
-<img src="/img/img-mso-ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
-<img src="/img/img-mso-Chart3DConeChart.png" alt="Chart3DConeChart" title="Chart3DConeChart" />
-<img src="/img/img-mso-Chart3DBarChart.png" alt="Chart3DBarChart" title="Chart3DBarChart" />
+<img src="/msexcel/img/img-mso-ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
+<img src="/msexcel/img/img-mso-Chart3DConeChart.png" alt="Chart3DConeChart" title="Chart3DConeChart" />
+<img src="/msexcel/img/img-mso-Chart3DBarChart.png" alt="Chart3DBarChart" title="Chart3DBarChart" />
 ---
 
 ## Resources
