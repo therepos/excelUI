@@ -384,6 +384,17 @@ static/img/img-mso-TextPictureFill.png
 <img src="/msexcel/img/img-mso-VisibilityHidden.png" alt="VisibilityHidden" title="VisibilityHidden" />
 <img src="/msexcel/img/img-mso-WordArtFormatDialog.png" alt="WordArtFormatDialog" title="WordArtFormatDialog" />
 <img src="/msexcel/img/img-mso-XmlSource.png" alt="XmlSource" title="XmlSource" />
+<img src="/msexcel/img/img-mso-AddressBook.png" alt="AddressBook" title="AddressBook" />
+<img src="/msexcel/img/img-mso-FontColorMoreColorsDialog.png" alt="FontColorMoreColorsDialog" title="FontColorMoreColorsDialog" />
+<img src="/msexcel/img/img-mso-MessagePrevious.png" alt="MessagePrevious" title="MessagePrevious" />
+<img src="/msexcel/img/img-mso-ObjectEditPoints.png" alt="ObjectEditPoints" title="ObjectEditPoints" />
+<img src="/msexcel/img/img-mso-QueryUnionQuery.png" alt="QueryUnionQuery" title="QueryUnionQuery" />
+<img src="/msexcel/img/img-mso-ShowClipboard.png" alt="ShowClipboard" title="ShowClipboard" />
+<img src="/msexcel/img/img-mso-SlideShowUseRehearsedTimings.png" alt="SlideShowUseRehearsedTimings" title="SlideShowUseRehearsedTimings" />
+<img src="/msexcel/img/img-mso-SnapToGrid.png" alt="SnapToGrid" title="SnapToGrid" />
+<img src="/msexcel/img/img-mso-ViewSheetGridlines.png" alt="ViewSheetGridlines" title="ViewSheetGridlines" />
+<img src="/msexcel/img/img-mso-WebGoForward.png" alt="WebGoForward" title="WebGoForward" />
+<img src="/msexcel/img/img-mso-WindowsCascade.png" alt="WindowsCascade" title="WindowsCascade" />
 
 ---
 
