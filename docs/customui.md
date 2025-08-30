@@ -264,6 +264,8 @@ End Sub
 ```  
 
 ## Gallery
+<img src="/msexcel/img/img-mso-All.png" />
+---
 <img src="/msexcel/img/img-mso-AnimationStartDropdown.png" alt="AnimationStartDropdown" title="AnimationStartDropdown" />
 <img src="/msexcel/img/img-mso-AppointmentColor0.png" alt="AppointmentColor0" title="AppointmentColor0" />
 <img src="/msexcel/img/img-mso-AppointmentColor1.png" alt="AppointmentColor1" title="AppointmentColor1" />
