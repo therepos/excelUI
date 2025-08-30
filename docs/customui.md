@@ -360,6 +360,30 @@ static/img/img-mso-TextPictureFill.png
 <img src="/msexcel/img/img-mso-RmsInvokeBrowser.png" alt="RmsInvokeBrowser" title="RmsInvokeBrowser" />
 <img src="/msexcel/img/img-mso-SmartArtInsert.png" alt="SmartArtInsert" title="SmartArtInsert" />
 <img src="/msexcel/img/img-mso-ToolboxVideo.png" alt="ToolboxVideo" title="ToolboxVideo" />
+<img src="/msexcel/img/img-mso-AdpStoredProcedureQueryMakeTable.png" alt="AdpStoredProcedureQueryMakeTable" title="AdpStoredProcedureQueryMakeTable" />
+<img src="/msexcel/img/img-mso-AppointmentBusy.png" alt="AppointmentBusy" title="AppointmentBusy" />
+<img src="/msexcel/img/img-mso-AppointmentOutOfOffice.png" alt="AppointmentOutOfOffice" title="AppointmentOutOfOffice" />
+<img src="/msexcel/img/img-mso-BuildingBlocksOrganizer.png" alt="BuildingBlocksOrganizer" title="BuildingBlocksOrganizer" />
+<img src="/msexcel/img/img-mso-CancelRequest.png" alt="CancelRequest" title="CancelRequest" />
+<img src="/msexcel/img/img-mso-ChangesDiscardAndRefresh.png" alt="ChangesDiscardAndRefresh" title="ChangesDiscardAndRefresh" />
+<img src="/msexcel/img/img-mso-ContactPictureMenu.png" alt="ContactPictureMenu" title="ContactPictureMenu" />
+<img src="/msexcel/img/img-mso-ControlPaddingGallery.png" alt="ControlPaddingGallery" title="ControlPaddingGallery" />
+<img src="/msexcel/img/img-mso-CreateFormBlankForm.png" alt="CreateFormBlankForm" title="CreateFormBlankForm" />
+<img src="/msexcel/img/img-mso-DataGraphicIconSet.png" alt="DataGraphicIconSet" title="DataGraphicIconSet" />
+<img src="/msexcel/img/img-mso-HyperlinksVerify.png" alt="HyperlinksVerify" title="HyperlinksVerify" />
+<img src="/msexcel/img/img-mso-LinkBarCustom.png" alt="LinkBarCustom" title="LinkBarCustom" />
+<img src="/msexcel/img/img-mso-MoreTextureOptions.png" alt="MoreTextureOptions" title="MoreTextureOptions" />
+<img src="/msexcel/img/img-mso-NewMailMessageNumbered.png" alt="NewMailMessageNumbered" title="NewMailMessageNumbered" />
+<img src="/msexcel/img/img-mso-PanAndZoomWindow.png" alt="PanAndZoomWindow" title="PanAndZoomWindow" />
+<img src="/msexcel/img/img-mso-PositionAbsoluteMarks.png" alt="PositionAbsoluteMarks" title="PositionAbsoluteMarks" />
+<img src="/msexcel/img/img-mso-PrintDialogAccess.png" alt="PrintDialogAccess" title="PrintDialogAccess" />
+<img src="/msexcel/img/img-mso-SelectRecord.png" alt="SelectRecord" title="SelectRecord" />
+<img src="/msexcel/img/img-mso-ShapeCloud.png" alt="ShapeCloud" title="ShapeCloud" />
+<img src="/msexcel/img/img-mso-SignatureShow.png" alt="SignatureShow" title="SignatureShow" />
+<img src="/msexcel/img/img-mso-SlideShowCustomMenu.png" alt="SlideShowCustomMenu" title="SlideShowCustomMenu" />
+<img src="/msexcel/img/img-mso-VisibilityHidden.png" alt="VisibilityHidden" title="VisibilityHidden" />
+<img src="/msexcel/img/img-mso-WordArtFormatDialog.png" alt="WordArtFormatDialog" title="WordArtFormatDialog" />
+<img src="/msexcel/img/img-mso-XmlSource.png" alt="XmlSource" title="XmlSource" />
 
 ---
 
