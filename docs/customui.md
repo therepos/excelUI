@@ -363,7 +363,6 @@ End Sub
 <img src="/msexcel/img/img-mso-PanningHand.png" alt="PanningHand" title="PanningHand" />
 <img src="/msexcel/img/img-mso-PositionAbsoluteMarks.png" alt="PositionAbsoluteMarks" title="PositionAbsoluteMarks" />
 <img src="/msexcel/img/img-mso-GridShowHide.png" alt="GridShowHide" title="GridShowHide" />
-<img src="/msexcel/img/img-mso-SnapToGrid.png" alt="SnapToGrid" title="SnapToGrid" />
 <img src="/msexcel/img/img-mso-ViewSheetGridlines.png" alt="ViewSheetGridlines" title="ViewSheetGridlines" />
 <img src="/msexcel/img/img-mso-HorizontalSpacingDecrease.png" alt="HorizontalSpacingDecrease" title="HorizontalSpacingDecrease" />
 <img src="/msexcel/img/img-mso-HorizontalSpacingIncrease.png" alt="HorizontalSpacingIncrease" title="HorizontalSpacingIncrease" />
@@ -379,7 +378,6 @@ End Sub
 ---
 <img src="/msexcel/img/img-mso-Undo.png" alt="Undo" title="Undo" />
 <img src="/msexcel/img/img-mso-Redo.png" alt="Redo" title="Redo" />
-<img src="/msexcel/img/img-mso-ShapesDuplicate.png" alt="ShapesDuplicate" title="ShapesDuplicate" />
 <img src="/msexcel/img/img-mso-ShapeCloud.png" alt="ShapeCloud" title="ShapeCloud" />
 <img src="/msexcel/img/img-mso-ShapeSeal8.png" alt="ShapeSeal8" title="ShapeSeal8" />
 <img src="/msexcel/img/img-mso-VisibilityHidden.png" alt="VisibilityHidden" title="VisibilityHidden" />
