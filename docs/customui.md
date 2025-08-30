@@ -275,14 +275,14 @@ End Sub
 <img src="/msexcel/img/img-mso-TrustCenter.png" alt="TrustCenter" title="TrustCenter" />
 <img src="/msexcel/img/img-mso-AdpStoredProcedureQueryMakeTable.png" alt="AdpStoredProcedureQueryMakeTable" title="AdpStoredProcedureQueryMakeTable" />
 <img src="/msexcel/img/img-mso-FormRegionSave.png" alt="FormRegionSave" title="FormRegionSave" />
-<img src="/msexcel/img/img-mso-BuildingBlocksOrganizer.png" alt="BuildingBlocksOrganizer" title="BuildingBlocksOrganizer" />
-<img src="/msexcel/img/img-mso-WindowsCascade.png" alt="WindowsCascade" title="WindowsCascade" />
-<img src="/msexcel/img/img-mso-WebGoForward.png" alt="WebGoForward" title="WebGoForward" />
 ---
-<img src="/msexcel/img/img-mso-AddressBook.png" alt="AddressBook" title="AddressBook" />
-<img src="/msexcel/img/img-mso-FontColorMoreColorsDialog.png" alt="FontColorMoreColorsDialog" title="FontColorMoreColorsDialog" />
+<img src="/msexcel/img/img-mso-OutlinePromoteToHeading.png" alt="OutlinePromoteToHeading" title="OutlinePromoteToHeading" />
+<img src="/msexcel/img/img-mso-OutlineDemoteToBodyText.png" alt="OutlineDemoteToBodyText" title="OutlineDemoteToBodyText" />
 <img src="/msexcel/img/img-mso-MessagePrevious.png" alt="MessagePrevious" title="MessagePrevious" />
 <img src="/msexcel/img/img-mso-MessageNext.png" alt="MessageNext" title="MessageNext" />
+<img src="/msexcel/img/img-mso-WebGoForward.png" alt="WebGoForward" title="WebGoForward" />
+<img src="/msexcel/img/img-mso-AddressBook.png" alt="AddressBook" title="AddressBook" />
+<img src="/msexcel/img/img-mso-FontColorMoreColorsDialog.png" alt="FontColorMoreColorsDialog" title="FontColorMoreColorsDialog" />
 <img src="/msexcel/img/img-mso-ObjectEditPoints.png" alt="ObjectEditPoints" title="ObjectEditPoints" />
 <img src="/msexcel/img/img-mso-Recurrence.png" alt="Recurrence" title="Recurrence" />
 <img src="/msexcel/img/img-mso-SetPertWeights.png" alt="SetPertWeights" title="SetPertWeights" />
@@ -333,6 +333,8 @@ End Sub
 <img src="/msexcel/img/img-mso-ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
 <img src="/msexcel/img/img-mso-ChartRadarChart.png" alt="ChartRadarChart" title="ChartRadarChart" />
 <img src="/msexcel/img/img-mso-WordArtFormatDialog.png" alt="WordArtFormatDialog" title="WordArtFormatDialog" />
+<img src="/msexcel/img/img-mso-BuildingBlocksOrganizer.png" alt="BuildingBlocksOrganizer" title="BuildingBlocksOrganizer" />
+<img src="/msexcel/img/img-mso-WindowsCascade.png" alt="WindowsCascade" title="WindowsCascade" />
 ---
 <img src="/msexcel/img/img-mso-ContactPictureMenu.png" alt="ContactPictureMenu" title="ContactPictureMenu" />
 <img src="/msexcel/img/img-mso-ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
@@ -375,8 +377,6 @@ End Sub
 <img src="/msexcel/img/img-mso-TextPictureFill.png" alt="TextPictureFill" title="TextPictureFill" />
 <img src="/msexcel/img/img-mso-PictureBulletsInsert.png" alt="PictureBulletsInsert" title="PictureBulletsInsert" />
 ---
-<img src="/msexcel/img/img-mso-OutlinePromoteToHeading.png" alt="OutlinePromoteToHeading" title="OutlinePromoteToHeading" />
-<img src="/msexcel/img/img-mso-OutlineDemoteToBodyText.png" alt="OutlineDemoteToBodyText" title="OutlineDemoteToBodyText" />
 <img src="/msexcel/img/img-mso-Undo.png" alt="Undo" title="Undo" />
 <img src="/msexcel/img/img-mso-Redo.png" alt="Redo" title="Redo" />
 <img src="/msexcel/img/img-mso-ShapesDuplicate.png" alt="ShapesDuplicate" title="ShapesDuplicate" />
