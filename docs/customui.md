@@ -324,6 +324,20 @@ static/img/img-mso-TextPictureFill.png
 <img src="/msexcel/img/img-mso-ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
 <img src="/msexcel/img/img-mso-Chart3DConeChart.png" alt="Chart3DConeChart" title="Chart3DConeChart" />
 <img src="/msexcel/img/img-mso-Chart3DBarChart.png" alt="Chart3DBarChart" title="Chart3DBarChart" />
+<img src="/msexcel/img/img-mso-Chart3DPieChart.png" alt="Chart3DPieChart" title="Chart3DPieChart" />
+<img src="/msexcel/img/img-mso-ChartRadarChart.png" alt="ChartRadarChart" title="ChartRadarChart" />
+<img src="/msexcel/img/img-mso-FrameCreateAbove.png" alt="FrameCreateAbove" title="FrameCreateAbove" />
+<img src="/msexcel/img/img-mso-FrameCreateBelow.png" alt="FrameCreateBelow" title="FrameCreateBelow" />
+<img src="/msexcel/img/img-mso-FrameCreateLeft.png" alt="FrameCreateLeft" title="FrameCreateLeft" />
+<img src="/msexcel/img/img-mso-FrameCreateRight.png" alt="FrameCreateRight" title="FrameCreateRight" />
+<img src="/msexcel/img/img-mso-ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
+<img src="/msexcel/img/img-mso-MailMergeResultsPreview.png" alt="MailMergeResultsPreview" title="MailMergeResultsPreview" />
+<img src="/msexcel/img/img-mso-ObjectsGroup.png" alt="ObjectsGroup" title="ObjectsGroup" />
+<img src="/msexcel/img/img-mso-ObjectsUngroup.png" alt="ObjectsUngroup" title="ObjectsUngroup" />
+<img src="/msexcel/img/img-mso-OutlineDemoteToBodyText.png" alt="OutlineDemoteToBodyText" title="OutlineDemoteToBodyText" />
+<img src="/msexcel/img/img-mso-Pushpin.png" alt="Pushpin" title="Pushpin" />
+<img src="/msexcel/img/img-mso-SetPertWeights.png" alt="SetPertWeights" title="SetPertWeights" />
+
 ---
 
 ## Resources
