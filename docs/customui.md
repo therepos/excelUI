@@ -288,8 +288,7 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor8.png" alt="AppointmentColor8" title="AppointmentColor8" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor9.png" alt="AppointmentColor9" title="AppointmentColor9" />
 <img src="https://spreadsheet1.com/imagemso/AppointmentColor10.png" alt="AppointmentColor9" title="AppointmentColor10" />
-<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteBlackWithGrayscaleFill.png" alt="BlackAndWhiteBlackWithGrayscaleFill" title="BlackAndWhiteBlackWithGrayscaleFill" />
-<img src="https://spreadsheet1.com/imagemso/BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
+<img src="/img/img-mso-BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
 <img src="/img/img-mso-BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
 <img src="https://spreadsheet1.com/imagemso/BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
 <img src="/img/img-mso-BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
