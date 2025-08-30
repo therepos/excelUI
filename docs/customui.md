@@ -294,14 +294,22 @@ End Sub
 <img src="https://spreadsheet1.com/imagemso/BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
 <img src="https://spreadsheet1.com/imagemso/BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
 <img src="https://spreadsheet1.com/imagemso/BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
+<img src="https://spreadsheet1.com/imagemso/ArrangeByLogContact.png" alt="ArrangeByLogContact" title="ArrangeByLogContact" />
+<img src="https://spreadsheet1.com/imagemso/AnimationStartDropdown.png" alt="AnimationStartDropdown" title="AnimationStartDropdown" />
+<img src="https://spreadsheet1.com/imagemso/BlogHomePage.png" alt="BlogHomePage" title="BlogHomePage" />
+<img src="https://spreadsheet1.com/imagemso/BlogCategoriesRefresh.png" alt="BlogCategoriesRefresh" title="BlogCategoriesRefresh" />
+<img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
 ---
-<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
-<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
-<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
-<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
-<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
 
-
+<img src="https://spreadsheet1.com/imagemso/ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
+<img src="https://spreadsheet1.com/imagemso/CreateStageView.png" alt="CreateStageView" title="CreateStageView" />
+<img src="https://spreadsheet1.com/imagemso/ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
+<img src="https://spreadsheet1.com/imagemso/ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
+<img src="https://spreadsheet1.com/imagemso/Chart3DConeChart.png" alt="Chart3DConeChart" title="Chart3DConeChart" />
+<img src="https://spreadsheet1.com/imagemso/Chart3DBarChart.png" alt="Chart3DBarChart" title="Chart3DBarChart" />
+<img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
+<img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
+<img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
 ---
 <img src="https://spreadsheet1.com/imagemso/_0.png" alt="_0" title="_0" />
 <img src="https://spreadsheet1.com/imagemso/_0PercentComplete.png" alt="_0PercentComplete" title="_0PercentComplete" />
