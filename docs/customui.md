@@ -264,40 +264,40 @@ End Sub
 ```  
 
 ## Gallery
-<img src="https://spreadsheet1.com/imagemso/CharacterBorder.png" alt="CharacterBorder" title="CharacterBorder" />
-<img src="https://spreadsheet1.com/imagemso/CharacterShading.png" alt="CharacterShading" title="CharacterShading" />
-<img src="https://spreadsheet1.com/imagemso/CombineShapesGallery.png" alt="CombineShapesGallery" title="CombineShapesGallery" />
-<img src="https://spreadsheet1.com/imagemso/CreateMacro.png" alt="CreateMacro" title="CreateMacro" />
-<img src="https://spreadsheet1.com/imagemso/BlogManageAccounts.png" alt="BlogManageAccounts" title="BlogManageAccounts" />
-<img src="https://spreadsheet1.com/imagemso/Clear.png" alt="Clear" title="Clear" />
-<img src="https://spreadsheet1.com/imagemso/AutoFilterClassic.png" alt="AutoFilterClassic" title="AutoFilterClassic" />
-<img src="https://spreadsheet1.com/imagemso/AudioNoteDelete.png" alt="AudioNoteDelete" title="AudioNoteDelete" />
-<img src="https://spreadsheet1.com/imagemso/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
-<img src="https://spreadsheet1.com/imagemso/ChangeToDeclineInvitation.png" alt="ChangeToDeclineInvitation" title="ChangeToDeclineInvitation" />
-<img src="https://spreadsheet1.com/imagemso/AutoFormat.png" alt="AutoFormat" title="AutoFormat" />
-<img src="https://spreadsheet1.com/imagemso/CustomEquationsGallery.png" alt="CustomEquationsGallery" title="CharacterShading" />
-<img src="https://spreadsheet1.com/imagemso/AlignLeft.png" alt="AlignLeft" title="AlignLeft" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor0.png" alt="AppointmentColor3" title="AppointmentColor3" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor1.png" alt="AppointmentColor3" title="AppointmentColor3" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor2.png" alt="AppointmentColor3" title="AppointmentColor3" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor3.png" alt="AppointmentColor3" title="AppointmentColor3" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor4.png" alt="AppointmentColor4" title="AppointmentColor4" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor5.png" alt="AppointmentColor5" title="AppointmentColor5" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor6.png" alt="AppointmentColor6" title="AppointmentColor6" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor7.png" alt="AppointmentColor7" title="AppointmentColor7" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor8.png" alt="AppointmentColor8" title="AppointmentColor8" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor9.png" alt="AppointmentColor9" title="AppointmentColor9" />
-<img src="https://spreadsheet1.com/imagemso/AppointmentColor10.png" alt="AppointmentColor9" title="AppointmentColor10" />
+<img src="/msexcel/img/CharacterBorder.png" alt="CharacterBorder" title="CharacterBorder" />
+<img src="/msexcel/img/CharacterShading.png" alt="CharacterShading" title="CharacterShading" />
+<img src="/msexcel/img/CombineShapesGallery.png" alt="CombineShapesGallery" title="CombineShapesGallery" />
+<img src="/msexcel/img/CreateMacro.png" alt="CreateMacro" title="CreateMacro" />
+<img src="/msexcel/img/BlogManageAccounts.png" alt="BlogManageAccounts" title="BlogManageAccounts" />
+<img src="/msexcel/img/Clear.png" alt="Clear" title="Clear" />
+<img src="/msexcel/img/AutoFilterClassic.png" alt="AutoFilterClassic" title="AutoFilterClassic" />
+<img src="/msexcel/img/AudioNoteDelete.png" alt="AudioNoteDelete" title="AudioNoteDelete" />
+<img src="/msexcel/img/ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
+<img src="/msexcel/img/ChangeToDeclineInvitation.png" alt="ChangeToDeclineInvitation" title="ChangeToDeclineInvitation" />
+<img src="/msexcel/img/AutoFormat.png" alt="AutoFormat" title="AutoFormat" />
+<img src="/msexcel/img/CustomEquationsGallery.png" alt="CustomEquationsGallery" title="CharacterShading" />
+<img src="/msexcel/img/AlignLeft.png" alt="AlignLeft" title="AlignLeft" />
+<img src="/msexcel/img/AppointmentColor0.png" alt="AppointmentColor3" title="AppointmentColor3" />
+<img src="/msexcel/img/AppointmentColor1.png" alt="AppointmentColor3" title="AppointmentColor3" />
+<img src="/msexcel/img/AppointmentColor2.png" alt="AppointmentColor3" title="AppointmentColor3" />
+<img src="/msexcel/img/AppointmentColor3.png" alt="AppointmentColor3" title="AppointmentColor3" />
+<img src="/msexcel/img/AppointmentColor4.png" alt="AppointmentColor4" title="AppointmentColor4" />
+<img src="/msexcel/img/AppointmentColor5.png" alt="AppointmentColor5" title="AppointmentColor5" />
+<img src="/msexcel/img/AppointmentColor6.png" alt="AppointmentColor6" title="AppointmentColor6" />
+<img src="/msexcel/img/AppointmentColor7.png" alt="AppointmentColor7" title="AppointmentColor7" />
+<img src="/msexcel/img/AppointmentColor8.png" alt="AppointmentColor8" title="AppointmentColor8" />
+<img src="/msexcel/img/AppointmentColor9.png" alt="AppointmentColor9" title="AppointmentColor9" />
+<img src="/msexcel/img/AppointmentColor10.png" alt="AppointmentColor9" title="AppointmentColor10" />
 <img src="/msexcel/img/img-mso-BlackAndWhiteBlack.png" alt="BlackAndWhiteBlack" title="BlackAndWhiteBlack" />
 <img src="/msexcel/img/img-mso-BlackAndWhiteAutomatic.png" alt="BlackAndWhiteAutomatic" title="BlackAndWhiteAutomatic" />
-<img src="https://spreadsheet1.com/imagemso/BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
+<img src="/msexcel/img/BlackAndWhite.png" alt="BlackAndWhite" title="BlackAndWhite" />
 <img src="/msexcel/img/img-mso-BlackAndWhiteGrayWithWhiteFill.png" alt="BlackAndWhiteGrayWithWhiteFill" title="BlackAndWhiteGrayWithWhiteFill" />
 <img src="/msexcel/img/img-mso-BlackAndWhiteInverseGrayscale.png" alt="BlackAndWhiteInverseGrayscale" title="BlackAndWhiteInverseGrayscale" />
 <img src="/msexcel/img/img-mso-ArrangeByLogContact.png" alt="ArrangeByLogContact" title="ArrangeByLogContact" />
 <img src="/msexcel/img/img-mso-AnimationStartDropdown.png" alt="AnimationStartDropdown" title="AnimationStartDropdown" />
 <img src="/msexcel/img/img-mso-BlogHomePage.png" alt="BlogHomePage" title="BlogHomePage" />
 <img src="/msexcel/img/img-mso-BlogCategoriesRefresh.png" alt="BlogCategoriesRefresh" title="BlogCategoriesRefresh" />
-<img src="https://spreadsheet1.com/imagemso/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
+<img src="/msexcel/img/Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
 ---
 
 <img src="/msexcel/img/img-mso-ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
