@@ -263,6 +263,9 @@ Sub GetSelectedItemID(control As IRibbonControl, ID As String, index As Integer)
 End Sub
 ```  
 
+## Gallery
+<img src="https://spreadsheet1.com/imagemso/AppointmentOutOfOffice.png" alt="AppointmentColorDialog" title="AppointmentColorDialog">
+
 ## Resources
 - [ImageMSO Gallery](https://bert-toolkit.com/imagemso-list.html)
 
