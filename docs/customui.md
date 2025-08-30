@@ -264,7 +264,18 @@ End Sub
 ```  
 
 ## Gallery
-<img src="https://spreadsheet1.com/imagemso/AppointmentOutOfOffice.png" alt="AppointmentColorDialog" title="AppointmentColorDialog"></img>
+<img src="https://spreadsheet1.com/imagemso/AppointmentOutOfOffice.png" alt="AppointmentColorDialog" title="AppointmentColorDialog" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor0.png" alt="AppointmentColor0" title="AppointmentColor0" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor1.png" alt="AppointmentColor1" title="AppointmentColor1" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor2.png" alt="AppointmentColor2" title="AppointmentColor2" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor3.png" alt="AppointmentColor3" title="AppointmentColor3" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor4.png" alt="AppointmentColor4" title="AppointmentColor4" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor5.png" alt="AppointmentColor5" title="AppointmentColor5" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor6.png" alt="AppointmentColor6" title="AppointmentColor6" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor7.png" alt="AppointmentColor7" title="AppointmentColor7" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor8.png" alt="AppointmentColor8" title="AppointmentColor8" />
+<img src="https://spreadsheet1.com/imagemso/AppointmentColor9.png" alt="AppointmentColor9" title="AppointmentColor9" />
+
 
 ## Resources
 - [ImageMSO Gallery](https://bert-toolkit.com/imagemso-list.html)
