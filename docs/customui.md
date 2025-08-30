@@ -264,7 +264,7 @@ End Sub
 ```  
 
 ## Gallery
-<img src="https://spreadsheet1.com/imagemso/AppointmentOutOfOffice.png" alt="AppointmentColorDialog" title="AppointmentColorDialog">
+<img src="https://spreadsheet1.com/imagemso/AppointmentOutOfOffice.png" alt="AppointmentColorDialog" title="AppointmentColorDialog"></img>
 
 ## Resources
 - [ImageMSO Gallery](https://bert-toolkit.com/imagemso-list.html)
