@@ -266,16 +266,15 @@ End Sub
 ## Gallery
 <img src="/msexcel/img/img-mso-All.png" />
 ---
+<img src="/msexcel/img/img-mso-ListMacros.png" alt="ListMacros" title="ListMacros" />
 <img src="/msexcel/img/img-mso-CancelRequest.png" alt="CancelRequest" title="CancelRequest" />
 <img src="/msexcel/img/img-mso-WorkflowComplete.png" alt="WorkflowComplete" title="WorkflowComplete" />
 <img src="/msexcel/img/img-mso-Info.png" alt="Info" title="Info" />
+<img src="/msexcel/img/img-mso-DiagramTargetInsertClassic.png" alt="DiagramTargetInsertClassic" title="DiagramTargetInsertClassic" />
 <img src="/msexcel/img/img-mso-HighImportance.png" alt="HighImportance" title="HighImportance" />
-<img src="/msexcel/img/img-mso-CondolatoryEvent.png" alt="CondolatoryEvent" title="CondolatoryEvent" />
 <img src="/msexcel/img/img-mso-TrustCenter.png" alt="TrustCenter" title="TrustCenter" />
 <img src="/msexcel/img/img-mso-AdpStoredProcedureQueryMakeTable.png" alt="AdpStoredProcedureQueryMakeTable" title="AdpStoredProcedureQueryMakeTable" />
 <img src="/msexcel/img/img-mso-FormRegionSave.png" alt="FormRegionSave" title="FormRegionSave" />
-<img src="/msexcel/img/img-mso-AppointmentBusy.png" alt="AppointmentBusy" title="AppointmentBusy" />
-<img src="/msexcel/img/img-mso-AppointmentOutOfOffice.png" alt="AppointmentOutOfOffice" title="AppointmentOutOfOffice" />
 <img src="/msexcel/img/img-mso-BuildingBlocksOrganizer.png" alt="BuildingBlocksOrganizer" title="BuildingBlocksOrganizer" />
 <img src="/msexcel/img/img-mso-WindowsCascade.png" alt="WindowsCascade" title="WindowsCascade" />
 <img src="/msexcel/img/img-mso-WebGoForward.png" alt="WebGoForward" title="WebGoForward" />
@@ -313,14 +312,14 @@ End Sub
 <img src="/msexcel/img/img-mso-AppointmentColor9.png" alt="AppointmentColor9" title="AppointmentColor9" />
 <img src="/msexcel/img/img-mso-AppointmentColor10.png" alt="AppointmentColor10" title="AppointmentColor10" />
 <img src="/msexcel/img/img-mso-AppointmentColorDialog.png" alt="AppointmentColorDialog" title="AppointmentColorDialog" />
+<img src="/msexcel/img/img-mso-AppointmentBusy.png" alt="AppointmentBusy" title="AppointmentBusy" />
+<img src="/msexcel/img/img-mso-AppointmentOutOfOffice.png" alt="AppointmentOutOfOffice" title="AppointmentOutOfOffice" />
 <img src="/msexcel/img/img-mso-DataGraphicIconSet.png" alt="DataGraphicIconSet" title="DataGraphicIconSet" />
 <img src="/msexcel/img/img-mso-ShapesDuplicate.png" alt="ShapesDuplicate" title="ShapesDuplicate" />
 <img src="/msexcel/img/img-mso-CreateMacro.png" alt="CreateMacro" title="CreateMacro" />
-<img src="/msexcel/img/img-mso-ListMacros.png" alt="ListMacros" title="ListMacros" />
 <img src="/msexcel/img/img-mso-CustomEquationsGallery.png" alt="CustomEquationsGallery" title="CustomEquationsGallery" />
 <img src="/msexcel/img/img-mso-EquationMatrixGallery.png" alt="EquationMatrixGallery" title="EquationMatrixGallery" />
 <img src="/msexcel/img/img-mso-DiagramRadialInsertClassic.png" alt="DiagramRadialInsertClassic" title="DiagramRadialInsertClassic" />
-<img src="/msexcel/img/img-mso-DiagramTargetInsertClassic.png" alt="DiagramTargetInsertClassic" title="DiagramTargetInsertClassic" />
 <img src="/msexcel/img/img-mso-SmartArtInsert.png" alt="SmartArtInsert" title="SmartArtInsert" />
 <img src="/msexcel/img/img-mso-ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
 <img src="/msexcel/img/img-mso-Chart3DBarChart.png" alt="Chart3DBarChart" title="Chart3DBarChart" />
@@ -342,6 +341,7 @@ End Sub
 <img src="/msexcel/img/img-mso-SignatureShow.png" alt="SignatureShow" title="SignatureShow" />
 <img src="/msexcel/img/img-mso-ZoomPrintPreviewExcel.png" alt="ZoomPrintPreviewExcel" title="ZoomPrintPreviewExcel" />
 <img src="/msexcel/img/img-mso-AudioNoteDelete.png" alt="AudioNoteDelete" title="AudioNoteDelete" />
+<img src="/msexcel/img/img-mso-CondolatoryEvent.png" alt="CondolatoryEvent" title="CondolatoryEvent" />
 <img src="/msexcel/img/img-mso-ShapeSeal8.png" alt="ShapeSeal8" title="ShapeSeal8" />
 <img src="/msexcel/img/img-mso-ToolboxVideo.png" alt="ToolboxVideo" title="ToolboxVideo" />
 <img src="/msexcel/img/img-mso-NewNote.png" alt="NewNote" title="NewNote" />
