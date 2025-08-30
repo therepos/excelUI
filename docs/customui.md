@@ -262,7 +262,6 @@ Sub GetSelectedItemID(control As IRibbonControl, ID As String, index As Integer)
 
 End Sub
 ```  
-static/img/img-mso-TextPictureFill.png
 
 ## Gallery
 <img src="/msexcel/img/img-mso-AnimationStartDropdown.png" alt="AnimationStartDropdown" title="AnimationStartDropdown" />
@@ -335,7 +334,6 @@ static/img/img-mso-TextPictureFill.png
 <img src="/msexcel/img/img-mso-ShapesDuplicate.png" alt="ShapesDuplicate" title="ShapesDuplicate" />
 <img src="/msexcel/img/img-mso-ShapeSmileyFace.png" alt="ShapeSmileyFace" title="ShapeSmileyFace" />
 <img src="/msexcel/img/img-mso-SpeechMicrophone.png" alt="SpeechMicrophone" title="SpeechMicrophone" />
-<img src="/msexcel/img/img-mso-TableTextStylesGallery.png" alt="TableTextStylesGallery" title="TableTextStylesGallery" />
 <img src="/msexcel/img/img-mso-TextPictureFill.png" alt="TextPictureFill" title="TextPictureFill" />
 <img src="/msexcel/img/img-mso-TraceError.png" alt="TraceError" title="TraceError" />
 <img src="/msexcel/img/img-mso-ZoomPrintPreviewExcel.png" alt="ZoomPrintPreviewExcel" title="ZoomPrintPreviewExcel" />
@@ -367,7 +365,6 @@ static/img/img-mso-TextPictureFill.png
 <img src="/msexcel/img/img-mso-CancelRequest.png" alt="CancelRequest" title="CancelRequest" />
 <img src="/msexcel/img/img-mso-ChangesDiscardAndRefresh.png" alt="ChangesDiscardAndRefresh" title="ChangesDiscardAndRefresh" />
 <img src="/msexcel/img/img-mso-ContactPictureMenu.png" alt="ContactPictureMenu" title="ContactPictureMenu" />
-<img src="/msexcel/img/img-mso-ControlPaddingGallery.png" alt="ControlPaddingGallery" title="ControlPaddingGallery" />
 <img src="/msexcel/img/img-mso-CreateFormBlankForm.png" alt="CreateFormBlankForm" title="CreateFormBlankForm" />
 <img src="/msexcel/img/img-mso-DataGraphicIconSet.png" alt="DataGraphicIconSet" title="DataGraphicIconSet" />
 <img src="/msexcel/img/img-mso-HyperlinksVerify.png" alt="HyperlinksVerify" title="HyperlinksVerify" />
