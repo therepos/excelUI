@@ -275,11 +275,11 @@ End Sub
 <img src="/msexcel/img/img-mso-ApproveApprovalRequest.png" alt="ApproveApprovalRequest" title="ApproveApprovalRequest" />
 <img src="/msexcel/img/img-mso-ChangeToDeclineInvitation.png" alt="ChangeToDeclineInvitation" title="ChangeToDeclineInvitation" />
 <img src="/msexcel/img/img-mso-AutoFormat.png" alt="AutoFormat" title="AutoFormat" />
-<img src="/msexcel/img/img-mso-CustomEquationsGallery.png" alt="CustomEquationsGallery" title="CharacterShading" />
+<img src="/msexcel/img/img-mso-CustomEquationsGallery.png" alt="CustomEquationsGallery" title="CustomEquationsGallery" />
 <img src="/msexcel/img/img-mso-AlignLeft.png" alt="AlignLeft" title="AlignLeft" />
-<img src="/msexcel/img/img-mso-AppointmentColor0.png" alt="AppointmentColor3" title="AppointmentColor3" />
-<img src="/msexcel/img/img-mso-AppointmentColor1.png" alt="AppointmentColor3" title="AppointmentColor3" />
-<img src="/msexcel/img/img-mso-AppointmentColor2.png" alt="AppointmentColor3" title="AppointmentColor3" />
+<img src="/msexcel/img/img-mso-AppointmentColor0.png" alt="AppointmentColor0" title="AppointmentColor0" />
+<img src="/msexcel/img/img-mso-AppointmentColor1.png" alt="AppointmentColor1" title="AppointmentColor1" />
+<img src="/msexcel/img/img-mso-AppointmentColor2.png" alt="AppointmentColor2" title="AppointmentColor2" />
 <img src="/msexcel/img/img-mso-AppointmentColor3.png" alt="AppointmentColor3" title="AppointmentColor3" />
 <img src="/msexcel/img/img-mso-AppointmentColor4.png" alt="AppointmentColor4" title="AppointmentColor4" />
 <img src="/msexcel/img/img-mso-AppointmentColor5.png" alt="AppointmentColor5" title="AppointmentColor5" />
@@ -299,7 +299,6 @@ End Sub
 <img src="/msexcel/img/img-mso-BlogCategoriesRefresh.png" alt="BlogCategoriesRefresh" title="BlogCategoriesRefresh" />
 <img src="/msexcel/img/img-mso-Chart3DColumnChart.png" alt="Chart3DColumnChart" title="Chart3DColumnChart" />
 ---
-
 <img src="/msexcel/img/img-mso-ContactCardCallOther.png" alt="ContactCardCallOther" title="ContactCardCallOther" />
 <img src="/msexcel/img/img-mso-ChartInsert.png" alt="ChartInsert" title="ChartInsert" />
 <img src="/msexcel/img/img-mso-ChartAreaChart.png" alt="ChartAreaChart" title="ChartAreaChart" />
