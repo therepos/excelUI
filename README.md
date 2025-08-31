@@ -29,5 +29,3 @@ msexcel
 ## Resources
 - [Office RibbonX Editor](https://github.com/fernandreu/office-ribbonx-editor)
 - [ImageMSO Gallery](https://bert-toolkit.com/imagemso-list.html)
-
->>>>>>> 2be62aa7a5429117a31654cd809b3fb8058a3985
