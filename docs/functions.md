@@ -1,4 +1,4 @@
-# Custom Functions
+# Functions
 
 |Functions|Description|
 |:--|:--|
