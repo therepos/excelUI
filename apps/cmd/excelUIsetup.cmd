@@ -11,7 +11,7 @@ if not exist "%~dp0excelUI.xlam" (
 :: Extract embedded PowerShell payload
 set "PAYTAG=::PAYLOAD"
 for /f "delims=:" %%A in ('findstr /n /c:"%PAYTAG%" "%~f0"') do set /a LN=%%A+1
-set "TMPPS=%TEMP%\exceladdin_setup_%RANDOM%.ps1"
+set "TMPPS=%TEMP%\setup_%RANDOM%.ps1"
 more +%LN% "%~f0" > "%TMPPS%"
 
 :: Pass our folder via ENV and PS param; run STA for Excel COM
