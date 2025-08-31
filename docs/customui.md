@@ -264,8 +264,6 @@ End Sub
 ```  
 
 ## Gallery
-<img src="/msexcel/img/img-mso-All.png" />
----
 <img src="/msexcel/img/img-mso-ListMacros.png" alt="ListMacros" title="ListMacros" />
 <img src="/msexcel/img/img-mso-CancelRequest.png" alt="CancelRequest" title="CancelRequest" />
 <img src="/msexcel/img/img-mso-Info.png" alt="Info" title="Info" />
@@ -438,6 +436,7 @@ End Sub
 <img src="/msexcel/img/img-mso-LinkBarCustom.png" alt="LinkBarCustom" title="LinkBarCustom" />
 <img src="/msexcel/img/img-mso-ShapeCloud.png" alt="ShapeCloud" title="ShapeCloud" />
 <img src="/msexcel/img/img-mso-RecordsRefreshMenu.png" alt="RecordsRefreshMenu" title="RecordsRefreshMenu" />
+
 ---
 
 ## Resources
