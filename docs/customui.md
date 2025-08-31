@@ -410,7 +410,6 @@ End Sub
 <img src="/msexcel/img/img-mso-SignaturesLoading.png" alt="SignaturesLoading" title="SignaturesLoading" />
 <img src="/msexcel/img/img-mso-TableBorderPenColorPicker.png" alt="TableBorderPenColorPicker" title="TableBorderPenColorPicker" />
 <img src="/msexcel/img/img-mso-SlidesPerPageSlideOutline.png" alt="SlidesPerPageSlideOutline" title="SlidesPerPageSlideOutline" />
-<img src="/msexcel/img/img-mso-Clear.png" alt="Clear" title="Clear" />
 <img src="/msexcel/img/img-mso-AnimationOnClick.png" alt="AnimationOnClick" title="AnimationOnClick" />
 <img src="/msexcel/img/img-mso-ShapeFillTextureGallery.png" alt="ShapeFillTextureGallery" title="ShapeFillTextureGallery" />
 <img src="/msexcel/img/img-mso-DesignXml.png" alt="DesignXml" title="DesignXml" />
