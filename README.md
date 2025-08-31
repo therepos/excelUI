@@ -9,7 +9,6 @@
 msexcel
 ├── .github
 │   └── workflows
-│       ├── ci.yml
 │       ├── release-exceladdin.yml
 │       └── release-excelUI.yml
 ├── apps
