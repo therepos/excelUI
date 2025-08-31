@@ -1,12 +1,7 @@
 # .github/workflows/release-exceladdin.yml
 name: Release-exceladdin
 on:
-  push:
-    branches: [ main ]
-    paths:
-      - apps/xlam/exceladdin.xlam
-      - apps/xlam/exceladdin.exportedUI
-      - apps/cmd/exceladdinsetup.cmd
+  workflow_dispatch:
 jobs:
   release:
     runs-on: windows-latest

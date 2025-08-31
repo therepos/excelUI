@@ -5,7 +5,7 @@ sidebar_position: 1
 
 This site documents the VBA scripts used in excelUI.xlam.  
 
-Download the latest [release](https://github.com/therepos/msexcel/releases/latest/download/excelUI.zip). 
+Download the latest [release](https://github.com/therepos/msexcel/releases/excelUI/latest/download/excelUI.zip). 
 
 ## License
 
