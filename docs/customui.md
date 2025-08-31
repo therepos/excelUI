@@ -1,7 +1,7 @@
 # CustomUI
 CustomUI implements embedded Excel ribbon with advanced customisation. It also overrides any existing ribbon entirely.
 
-- [Install] Excel addins .xlam file [CustomUI Example](https://github.com/therepos/msexcel/blob/main/apps/xlam/excelUI.zip). 
+- [Install] Excel addins .xlam file [CustomUI Example](https://github.com/therepos/msexcel/releases/latest/download/excelUI.zip). 
 - Read/Write embedded XML file with [Office RibbonX Editor](https://github.com/fernandreu/office-ribbonx-editor).
 
 ![Features](/img/img-commonaddin-tabmain.png)
