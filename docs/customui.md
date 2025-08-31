@@ -437,7 +437,7 @@ End Sub
 <img src="/msexcel/img/img-mso-_3DPerspectiveIncrease.png" alt="_3DPerspectiveIncrease" title="_3DPerspectiveIncrease" />
 <img src="/msexcel/img/img-mso-LinkBarCustom.png" alt="LinkBarCustom" title="LinkBarCustom" />
 <img src="/msexcel/img/img-mso-ShapeCloud.png" alt="ShapeCloud" title="ShapeCloud" />
-<img src="/msexcel/img/img-mso-LinkBarCustom.png" alt="LinkBarCustom" title="LinkBarCustom" />
+<img src="/msexcel/img/img-mso-RecordsRefreshMenu.png" alt="RecordsRefreshMenu" title="RecordsRefreshMenu" />
 ---
 
 ## Resources
