@@ -1,12 +1,12 @@
 # ExcelUI Add-in
 ---
 ## How to Use
-1. Download the latest [release](https://github.com/therepos/msexcel/releases/excelUI/latest/download/excelUI.zip). 
+1. Download the latest [release](https://github.com/therepos/excelUI/releases/excelUI/latest/download/excelUI.zip). 
 2. Install with excelUIsetup.cmd
 
 ## Structure
 ```
-msexcel
+excelUI
 ├── .github
 │   └── workflows
 │       ├── release-exceladdin.yml
