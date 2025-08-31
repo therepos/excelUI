@@ -3,7 +3,9 @@ sidebar_position: 1
 ---
 # About
 
-This site documents the VBA scripts used in exceladdin.xlam.
+This site documents the VBA scripts used in excelUI.xlam.  
+
+Download the latest [release](https://github.com/therepos/msexcel/releases/latest/download/excelUI.zip). 
 
 ## License
 
