@@ -373,6 +373,52 @@ End Sub
 <img src="/msexcel/img/img-mso-Bullets.png" alt="Bullets" title="Bullets" />
 <img src="/msexcel/img/img-mso-ResultsPaneStartFindAndReplace.png" alt="ResultsPaneStartFindAndReplace" title="ResultsPaneStartFindAndReplace" />
 <img src="/msexcel/img/img-mso-PositionAbsoluteMarks.png" alt="PositionAbsoluteMarks" title="PositionAbsoluteMarks" />
+<img src="/msexcel/img/img-mso-ControlsGallery.png" alt="ControlsGallery" title="ControlsGallery" />
+<img src="/msexcel/img/img-mso-LassoSelect.png" alt="LassoSelect" title="LassoSelect" />
+<img src="/msexcel/img/img-mso-ShapesDuplicate.png" alt="ShapesDuplicate" title="ShapesDuplicate" />
+<img src="/msexcel/img/img-mso-RunDialog.png" alt="RunDialog" title="RunDialog" />
+<img src="/msexcel/img/img-mso-ControlTabControl.png" alt="ControlTabControl" title="ControlTabControl" />
+<img src="/msexcel/img/img-mso-InkEraseMode.png" alt="InkEraseMode" title="InkEraseMode" />
+<img src="/msexcel/img/img-mso-WordArtFormatDialog.png" alt="WordArtFormatDialog" title="WordArtFormatDialog" />
+<img src="/msexcel/img/img-mso-MsnLogo.png" alt="MsnLogo" title="MsnLogo" />
+<img src="/msexcel/img/img-mso-NewAlert.png" alt="NewAlert" title="NewAlert" />
+<img src="/msexcel/img/img-mso-GoToMail.png" alt="GoToMail" title="GoToMail" />
+<img src="/msexcel/img/img-mso-EnvelopesAndLabelsDialog.png" alt="EnvelopesAndLabelsDialog" title="EnvelopesAndLabelsDialog" />
+<img src="/msexcel/img/img-mso-RmsSendBizcard.png" alt="RmsSendBizcard" title="RmsSendBizcard" />
+<img src="/msexcel/img/img-mso-RmsSendBizcardDesign.png" alt="RmsSendBizcardDesign" title="RmsSendBizcardDesign" />
+<img src="/msexcel/img/img-mso-PersonaStatusAway.png" alt="PersonaStatusAway" title="PersonaStatusAway" />
+<img src="/msexcel/img/img-mso-PersonaStatusBusy.png" alt="PersonaStatusBusy" title="PersonaStatusBusy" />
+<img src="/msexcel/img/img-mso-PersonaStatusOnline.png" alt="PersonaStatusOnline" title="PersonaStatusOnline" />
+<img src="/msexcel/img/img-mso-RmsInvokeBrowser.png" alt="RmsInvokeBrowser" title="RmsInvokeBrowser" />
+<img src="/msexcel/img/img-mso-RmsNavigationBarHome.png" alt="RmsNavigationBarHome" title="RmsNavigationBarHome" />
+<img src="/msexcel/img/img-mso-RmsNavigationBar.png" alt="RmsNavigationBar" title="RmsNavigationBar" />
+<img src="/msexcel/img/img-mso-SelectionPaneHidden.png" alt="SelectionPaneHidden" title="SelectionPaneHidden" />
+<img src="/msexcel/img/img-mso-WebServerDiscussions.png" alt="WebServerDiscussions" title="WebServerDiscussions" />
+<img src="/msexcel/img/img-mso-ChangeBinding.png" alt="ChangeBinding" title="ChangeBinding" />
+<img src="/msexcel/img/img-mso-ShowClipboard.png" alt="ShowClipboard" title="ShowClipboard" />
+<img src="/msexcel/img/img-mso-_3DStyle.png" alt="_3DStyle" title="_3DStyle" />
+<img src="/msexcel/img/img-mso-HyperlinksVerify.png" alt="HyperlinksVerify" title="HyperlinksVerify" />
+<img src="/msexcel/img/img-mso-ToolboxVideo.png" alt="ToolboxVideo" title="ToolboxVideo" />
+<img src="/msexcel/img/img-mso-TableSelect.png" alt="TableSelect" title="TableSelect" />
+<img src="/msexcel/img/img-mso-WindowUnhide.png" alt="WindowUnhide" title="WindowUnhide" />
+<img src="/msexcel/img/img-mso-WindowsCascade.png" alt="WindowsCascade" title="WindowsCascade" />
+<img src="/msexcel/img/img-mso-SignatureShow.png" alt="SignatureShow" title="SignatureShow" />
+<img src="/msexcel/img/img-mso-OutlineSubtotals.png" alt="OutlineSubtotals" title="OutlineSubtotals" />
+<img src="/msexcel/img/img-mso-SelectRecord.png" alt="SelectRecord" title="SelectRecord" />
+<img src="/msexcel/img/img-mso-SlideShowUseRehearsedTimings.png" alt="SlideShowUseRehearsedTimings" title="SlideShowUseRehearsedTimings" />
+<img src="/msexcel/img/img-mso-MailMergeResultsPreview.png" alt="MailMergeResultsPreview" title="MailMergeResultsPreview" />
+<img src="/msexcel/img/img-mso-PanAndZoomWindow.png" alt="PanAndZoomWindow" title="PanAndZoomWindow" />
+<img src="/msexcel/img/img-mso-ControlUnboundObjectFrame.png" alt="ControlUnboundObjectFrame" title="ControlUnboundObjectFrame" />
+<img src="/msexcel/img/img-mso-SignaturesLoading.png" alt="SignaturesLoading" title="SignaturesLoading" />
+<img src="/msexcel/img/img-mso-TableBorderPenColorPicker.png" alt="TableBorderPenColorPicker" title="TableBorderPenColorPicker" />
+<img src="/msexcel/img/img-mso-SlidesPerPageSlideOutline.png" alt="SlidesPerPageSlideOutline" title="SlidesPerPageSlideOutline" />
+<img src="/msexcel/img/img-mso-Clear.png" alt="Clear" title="Clear" />
+<img src="/msexcel/img/img-mso-AnimationOnClick.png" alt="AnimationOnClick" title="AnimationOnClick" />
+<img src="/msexcel/img/img-mso-SmartArtChangeColorsGallery.png" alt="SmartArtChangeColorsGallery" title="SmartArtChangeColorsGallery" />
+<img src="/msexcel/img/img-mso-ShapeFillTextureGallery.png" alt="ShapeFillTextureGallery" title="ShapeFillTextureGallery" />
+<img src="/msexcel/img/img-mso-DesignXml.png" alt="DesignXml" title="DesignXml" />
+<img src="/msexcel/img/img-mso-FontSchemes.png" alt="FontSchemes" title="FontSchemes" />
+
 ---
 
 ## Resources
