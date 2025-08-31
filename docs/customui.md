@@ -390,7 +390,6 @@ End Sub
 <img src="/msexcel/img/img-mso-PersonaStatusBusy.png" alt="PersonaStatusBusy" title="PersonaStatusBusy" />
 <img src="/msexcel/img/img-mso-PersonaStatusOnline.png" alt="PersonaStatusOnline" title="PersonaStatusOnline" />
 <img src="/msexcel/img/img-mso-RmsInvokeBrowser.png" alt="RmsInvokeBrowser" title="RmsInvokeBrowser" />
-<img src="/msexcel/img/img-mso-RmsNavigationBarHome.png" alt="RmsNavigationBarHome" title="RmsNavigationBarHome" />
 <img src="/msexcel/img/img-mso-RmsNavigationBar.png" alt="RmsNavigationBar" title="RmsNavigationBar" />
 <img src="/msexcel/img/img-mso-SelectionPaneHidden.png" alt="SelectionPaneHidden" title="SelectionPaneHidden" />
 <img src="/msexcel/img/img-mso-WebServerDiscussions.png" alt="WebServerDiscussions" title="WebServerDiscussions" />
@@ -408,7 +407,6 @@ End Sub
 <img src="/msexcel/img/img-mso-SlideShowUseRehearsedTimings.png" alt="SlideShowUseRehearsedTimings" title="SlideShowUseRehearsedTimings" />
 <img src="/msexcel/img/img-mso-MailMergeResultsPreview.png" alt="MailMergeResultsPreview" title="MailMergeResultsPreview" />
 <img src="/msexcel/img/img-mso-PanAndZoomWindow.png" alt="PanAndZoomWindow" title="PanAndZoomWindow" />
-<img src="/msexcel/img/img-mso-ControlUnboundObjectFrame.png" alt="ControlUnboundObjectFrame" title="ControlUnboundObjectFrame" />
 <img src="/msexcel/img/img-mso-SignaturesLoading.png" alt="SignaturesLoading" title="SignaturesLoading" />
 <img src="/msexcel/img/img-mso-TableBorderPenColorPicker.png" alt="TableBorderPenColorPicker" title="TableBorderPenColorPicker" />
 <img src="/msexcel/img/img-mso-SlidesPerPageSlideOutline.png" alt="SlidesPerPageSlideOutline" title="SlidesPerPageSlideOutline" />
