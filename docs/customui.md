@@ -284,7 +284,7 @@ End Sub
 <img src="/msexcel/img/img-mso-InsertDrawingCanvas.png" alt="InsertDrawingCanvas" title="InsertDrawingCanvas" />
 <img src="/msexcel/img/img-mso-AutoFormat.png" alt="AutoFormat" title="AutoFormat" />
 <img src="/msexcel/img/img-mso-OpenStartPage.png" alt="OpenStartPage" title="OpenStartPage" />
-<img src="/msexcel/img/img-mso-FontColorMoreColorsDialog.png" alt="FontColorMoreColorsDialog" title="FontColorMoreColorsDialog" />
+<img src="/msexcel/img/img-mso-SmartArtChangeColorsGallery.png" alt="SmartArtChangeColorsGallery" title="SmartArtChangeColorsGallery" />
 <img src="/msexcel/img/img-mso-OutlinePromoteToHeading.png" alt="OutlinePromoteToHeading" title="OutlinePromoteToHeading" />
 <img src="/msexcel/img/img-mso-OutlineDemoteToBodyText.png" alt="OutlineDemoteToBodyText" title="OutlineDemoteToBodyText" />
 <img src="/msexcel/img/img-mso-LeftArrow2.png" alt="LeftArrow2" title="LeftArrow2" />
@@ -412,11 +412,32 @@ End Sub
 <img src="/msexcel/img/img-mso-SlidesPerPageSlideOutline.png" alt="SlidesPerPageSlideOutline" title="SlidesPerPageSlideOutline" />
 <img src="/msexcel/img/img-mso-Clear.png" alt="Clear" title="Clear" />
 <img src="/msexcel/img/img-mso-AnimationOnClick.png" alt="AnimationOnClick" title="AnimationOnClick" />
-<img src="/msexcel/img/img-mso-SmartArtChangeColorsGallery.png" alt="SmartArtChangeColorsGallery" title="SmartArtChangeColorsGallery" />
 <img src="/msexcel/img/img-mso-ShapeFillTextureGallery.png" alt="ShapeFillTextureGallery" title="ShapeFillTextureGallery" />
 <img src="/msexcel/img/img-mso-DesignXml.png" alt="DesignXml" title="DesignXml" />
 <img src="/msexcel/img/img-mso-FontSchemes.png" alt="FontSchemes" title="FontSchemes" />
-
+<img src="/msexcel/img/img-mso-SmartArtLayoutGallery.png" alt="SmartArtLayoutGallery" title="SmartArtLayoutGallery" />
+<img src="/msexcel/img/img-mso-HorizontalSpacingDecrease.png" alt="HorizontalSpacingDecrease" title="HorizontalSpacingDecrease" />
+<img src="/msexcel/img/img-mso-HorizontalSpacingIncrease.png" alt="HorizontalSpacingIncrease" title="HorizontalSpacingIncrease" />
+<img src="/msexcel/img/img-mso-ObjectEditPoints.png" alt="ObjectEditPoints" title="ObjectEditPoints" />
+<img src="/msexcel/img/img-mso-ObjectsGroup.png" alt="ObjectsGroup" title="ObjectsGroup" />
+<img src="/msexcel/img/img-mso-ObjectsUngroup.png" alt="ObjectsUngroup" title="ObjectsUngroup" />
+<img src="/msexcel/img/img-mso-ChangesDiscardAndRefresh.png" alt="ChangesDiscardAndRefresh" title="ChangesDiscardAndRefresh" />
+<img src="/msexcel/img/img-mso-FrameCreateAbove.png" alt="FrameCreateAbove" title="FrameCreateAbove" />
+<img src="/msexcel/img/img-mso-FrameCreateBelow.png" alt="FrameCreateBelow" title="FrameCreateBelow" />
+<img src="/msexcel/img/img-mso-FrameCreateLeft.png" alt="FrameCreateLeft" title="FrameCreateLeft" />
+<img src="/msexcel/img/img-mso-FrameCreateRight.png" alt="FrameCreateRight" title="FrameCreateRight" />
+<img src="/msexcel/img/img-mso-ViewSlideSorterView.png" alt="ViewSlideSorterView" title="ViewSlideSorterView" />
+<img src="/msexcel/img/img-mso-SlidesPerPage9Slides.png" alt="SlidesPerPage9Slides" title="SlidesPerPage9Slides" />
+<img src="/msexcel/img/img-mso-ViewSheetGridlines.png" alt="ViewSheetGridlines" title="ViewSheetGridlines" />
+<img src="/msexcel/img/img-mso-GridSettings.png" alt="GridSettings" title="GridSettings" />
+<img src="/msexcel/img/img-mso-ViewGridlinesFrontPage.png" alt="ViewGridlinesFrontPage" title="ViewGridlinesFrontPage" />
+<img src="/msexcel/img/img-mso-Redo.png" alt="Redo" title="Redo" />
+<img src="/msexcel/img/img-mso-Undo.png" alt="Undo" title="Undo" />
+<img src="/msexcel/img/img-mso-ModuleInsert.png" alt="ModuleInsert" title="ModuleInsert" />
+<img src="/msexcel/img/img-mso-ChartRadarChart.png" alt="ChartRadarChart" title="ChartRadarChart" />
+<img src="/msexcel/img/img-mso-_3DPerspectiveDecrease.png" alt="_3DPerspectiveDecrease" title="_3DPerspectiveDecrease" />
+<img src="/msexcel/img/img-mso-_3DPerspectiveIncrease.png" alt="_3DPerspectiveIncrease" title="_3DPerspectiveIncrease" />
+<img src="/msexcel/img/img-mso-LinkBarCustom.png" alt="LinkBarCustom" title="LinkBarCustom" />
 ---
 
 ## Resources
