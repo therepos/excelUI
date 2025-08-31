@@ -433,9 +433,10 @@ End Sub
 <img src="/msexcel/img/img-mso-Redo.png" alt="Redo" title="Redo" />
 <img src="/msexcel/img/img-mso-Undo.png" alt="Undo" title="Undo" />
 <img src="/msexcel/img/img-mso-ModuleInsert.png" alt="ModuleInsert" title="ModuleInsert" />
-<img src="/msexcel/img/img-mso-ChartRadarChart.png" alt="ChartRadarChart" title="ChartRadarChart" />
 <img src="/msexcel/img/img-mso-_3DPerspectiveDecrease.png" alt="_3DPerspectiveDecrease" title="_3DPerspectiveDecrease" />
 <img src="/msexcel/img/img-mso-_3DPerspectiveIncrease.png" alt="_3DPerspectiveIncrease" title="_3DPerspectiveIncrease" />
+<img src="/msexcel/img/img-mso-LinkBarCustom.png" alt="LinkBarCustom" title="LinkBarCustom" />
+<img src="/msexcel/img/img-mso-ShapeCloud.png" alt="ShapeCloud" title="ShapeCloud" />
 <img src="/msexcel/img/img-mso-LinkBarCustom.png" alt="LinkBarCustom" title="LinkBarCustom" />
 ---
 
