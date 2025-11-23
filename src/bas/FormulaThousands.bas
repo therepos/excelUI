@@ -1,5 +1,5 @@
 Attribute VB_Name = "Module1"
-Sub FormulaReverseSign()
+Sub FormulaThousands()
 
     On Error GoTo ErrorHandler
     
@@ -11,13 +11,9 @@ Sub FormulaReverseSign()
     For Each c In XRELEVANTAREA(Rng)
         If c.HasFormula = True Then
             myFormula = Right(c.Formula, Len(c.Formula) - 1)
-            If Left(myFormula, 1) = "-" Then
-                c.Formula = "=" & Right(myFormula, Len(myFormula) - 1)
-            Else
-                c.Formula = "=-" & myFormula
-            End If
+            c.Formula = "=ROUND(" & myFormula & "/1000,0)"
         Else
-                c.Formula = "=-" & c.Value
+            c.Formula = "=ROUND(" & c.Value & "/1000,0)"
         End If
         c.WrapText = False
         c.HorizontalAlignment = xlRight

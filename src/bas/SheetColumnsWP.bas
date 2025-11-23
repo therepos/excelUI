@@ -1,21 +1,19 @@
-Sub SheetColumnsWP(control As IRibbonControl)
-'   Purpose: Standardise workbook columns width
-'   Updated: 2022FEB25
+Attribute VB_Name = "Module1"
+Sub SheetColumnsWP()
 
-'   Saves workbook before macro changes
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
-
+    
     Dim ws As Worksheet
-    For Each ws In Worksheets
-        Columns.ColumnWidth = 14
-        Columns("A").ColumnWidth = 1
-        Columns("B").ColumnWidth = 3
-        Columns("C").ColumnWidth = 5
-    Next ws
+    Set ws = ActiveSheet
+    
+    Application.ScreenUpdating = False
+    Columns.ColumnWidth = 12
+    Columns("A").ColumnWidth = 3
+    Columns("B").ColumnWidth = 5
+    Columns("C").ColumnWidth = 12
+    Application.ScreenUpdating = True
     
 ErrorHandler:
     Exit Sub
-
+    
 End Sub
-

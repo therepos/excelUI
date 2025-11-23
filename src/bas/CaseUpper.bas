@@ -1,19 +1,17 @@
-Sub CaseUpper(control As IRibbonControl)
-'   Purpose: Set upper case on selection
-'   Updated: 2022FEB25
+Sub CaseUpper()
 
-'   Saves workbook before macro changes
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
-
-    Dim rng As Range
-    Set rng = Selection
-    For Each cell In rng
+    
+    Dim Rng As Range
+    Set Rng = Selection
+    
+    Application.ScreenUpdating = False
+    For Each cell In XRELEVANTAREA(Rng)
         cell.Value = UCase(cell)
     Next cell
+    Application.ScreenUpdating = True
     
 ErrorHandler:
     Exit Sub
-
+    
 End Sub
-

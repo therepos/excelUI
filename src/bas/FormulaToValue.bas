@@ -1,20 +1,19 @@
-Sub FormulaToValue(control As IRibbonControl)
-'   Purpose: Convert selected formulas to values
-'   Updated: 2022FEB25
+Attribute VB_Name = "Module1"
+Sub FormulaToValue()
 
-'   Saves workbook before macro changes
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
-
-    Dim rng As Range
-    Set rng = Selection
-    rng.Copy
-    rng.PasteSpecial Paste:=xlPasteValues
+    
+    Dim Rng As Range
+    Set Rng = Selection
+    
+    Application.ScreenUpdating = False
+    Rng.Copy
+    Rng.PasteSpecial Paste:=xlPasteValues
     ActiveSheet.Select
     Application.CutCopyMode = False
+    Application.ScreenUpdating = True
     
 ErrorHandler:
     Exit Sub
-
+    
 End Sub
-

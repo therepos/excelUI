@@ -1,12 +1,12 @@
 Attribute VB_Name = "Module1"
-Sub SheetPageBreakOff()
+Sub SheetFontSize8()
 
     On Error GoTo ErrorHandler
     
-    ActiveSheet.DisplayPageBreaks = False
+    ActiveSheet.Cells.Font.Size = 8
     ActiveSheet.Activate
-    ActiveWindow.DisplayGridlines = False
-    
+    ActiveWindow.Zoom = 100
+
 ErrorHandler:
     Exit Sub
     

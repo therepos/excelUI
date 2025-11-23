@@ -1,4 +1,5 @@
-Sub CellTrim()
+
+Sub FormatCellRed()
 
     On Error GoTo ErrorHandler
     
@@ -6,11 +7,9 @@ Sub CellTrim()
     Set Rng = Selection
     
     Application.ScreenUpdating = False
-    For Each cell In XRELEVANTAREA(Rng)
-        cell.Value = Trim(cell)
-    Next cell
+    Rng.Interior.Color = RGB(255, 204, 204)
     Application.ScreenUpdating = True
-
+    
 ErrorHandler:
     Exit Sub
     

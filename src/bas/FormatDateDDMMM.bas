@@ -1,5 +1,8 @@
+
 Sub FormatDateDDMMM()
 
+    On Error GoTo ErrorHandler
+    
     Dim rngSelection As Range
     Set rngSelection = Selection
 
@@ -8,5 +11,8 @@ Sub FormatDateDDMMM()
         c.HorizontalAlignment = xlCenter
         c.NumberFormat = "dd-mmm-yy"
     Next c
-
+    
+ErrorHandler:
+    Exit Sub
+    
 End Sub

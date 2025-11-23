@@ -1,14 +1,15 @@
 Attribute VB_Name = "Module1"
-Sub SheetFormulaToValue()
+Sub InsertTimestamp()
 
     On Error GoTo ErrorHandler
     
+    Dim Rng As Range
+    Set Rng = Selection
+    
     Application.ScreenUpdating = False
-    ActiveSheet.Cells.Select
-    Selection.Copy
-    Selection.PasteSpecial Paste:=xlPasteValues
-    ActiveSheet.Select
-    Application.CutCopyMode = False
+    Rng.Value = Now
+    Rng.NumberFormat = "dd-mmm-yy"
+    Rng.HorizontalAlignment = xlCenter
     Application.ScreenUpdating = True
     
 ErrorHandler:

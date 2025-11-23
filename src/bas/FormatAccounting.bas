@@ -1,6 +1,7 @@
-Sub FormatAccounting(control As IRibbonControl)
-'   Purpose: Set accounting number format on selected range
-'   Updated: 2022FEB25
+Sub FormatAccounting()
+
+    On Error GoTo ErrorHandler
+    
     Dim rngSelection As Range, rngB As Range
     Set rngSelection = Selection
 
@@ -12,4 +13,7 @@ Sub FormatAccounting(control As IRibbonControl)
     Next c
     Application.ScreenUpdating = True
     
+ErrorHandler:
+    Exit Sub
+        
 End Sub

@@ -1,17 +1,14 @@
-Sub InsertColumnWidth(control As IRibbonControl)
-'   Purpose: Insert column width counter
-'   Updated: 2022FEB25
+Attribute VB_Name = "Module1"
+Sub InsertColumnWidth()
 
-'   Saves workbook before macro changes
-    Application.ScreenUpdating = False
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
     
-    Dim rng As Range
+    Dim Rng As Range
     Dim myFormula As String
-    Set rng = Selection
+    Set Rng = Selection
 
-    For Each c In rng
+    Application.ScreenUpdating = False
+    For Each c In Rng
         c.Formula = "=" & "XCOLUMNWIDTH(" & c.Address & ")"
         c.WrapText = False
         c.HorizontalAlignment = xlRight
@@ -21,6 +18,5 @@ Sub InsertColumnWidth(control As IRibbonControl)
     
 ErrorHandler:
     Exit Sub
-
+    
 End Sub
-

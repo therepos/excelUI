@@ -1,25 +1,21 @@
-Sub FormatTextToValue(control As IRibbonControl)
-'   Purpose: Convert text format to number format on selected range
-'   Updated: 2022FEB25
+Attribute VB_Name = "Module1"
+Sub FormatTextToValue()
 
-'   Saves workbook before macro changes
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
-
+    
     Dim rngSelection As Range
     Set rngSelection = Selection
 
-    For Each c In rngSelection
-'       If Not c.Value = vbNullString Then
-            c.WrapText = False
-            c.HorizontalAlignment = xlRight
-            c.NumberFormat = "General"
-            c.Value = c.Value
-'       End If
+    Application.ScreenUpdating = False
+    For Each c In XRELEVANTAREA(rngSelection)
+        c.WrapText = False
+        c.HorizontalAlignment = xlLeft
+        c.NumberFormat = "General"
+        c.Value = c.Value
     Next c
-
+    Application.ScreenUpdating = True
+    
 ErrorHandler:
     Exit Sub
-
+    
 End Sub
-

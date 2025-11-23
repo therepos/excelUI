@@ -1,14 +1,21 @@
 Sub ETLSAM()
+'   Purpose: Format Identified Misstatements
 
-    Dim rngA, rngB As Range
+    Dim rngA, rngB, rngTitle As Range
     Dim lastRow, lastCol As Long
-
+    Dim strEGA As String
+    
     lastRow = ActiveSheet.UsedRange.Rows.Count
     lastCol = ActiveSheet.UsedRange.Columns.Count
     
+    Set rngTitle = ActiveSheet.Range("A2")
     Set rngA = ActiveSheet.UsedRange
     Set rngB = ActiveSheet.Range(Cells(8, 1), Cells(lastRow, lastCol))
     Set rngAmount = ActiveSheet.Range(Cells(9, lastCol), Cells(lastRow, lastCol))
+    
+    If Not rngTitle = "Summary of Corrected and Uncorrected Misstatements" Then
+        Exit Sub
+    End If
     
     'Remove blanks from range
     With rngB

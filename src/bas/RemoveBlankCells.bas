@@ -1,11 +1,9 @@
-Sub RemoveBlankCells(control As IRibbonControl)
+Attribute VB_Name = "Module1"
+Sub RemoveBlankCells()
 '   Purpose: Remove blank cells in selection
-'   Updated: 2022FEB25
 
-'   Saves workbook before macro changes
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
-
+    
     Application.ScreenUpdating = False
         
     If Selection.Cells.Count > 1 Then
@@ -25,4 +23,3 @@ ErrorHandler:
     Exit Sub
 
 End Sub
-

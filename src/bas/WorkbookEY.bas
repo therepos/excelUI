@@ -1,6 +1,6 @@
 Attribute VB_Name = "Module1"
-Sub WorkbookArial()
-  
+Sub WorkbookEY()
+    
     On Error GoTo ErrorHandler
     
     Dim ws As Worksheet
@@ -11,12 +11,11 @@ Sub WorkbookArial()
     For Each ws In Worksheets
          With ws
             If Not ws.ProtectContents Then
-                .Cells.Font.Name = "Arial"
+                .Cells.Font.Name = "EYInterstate Light"
                 .Cells.Font.Size = 8
             End If
          End With
     Next ws
-    
     For Each ws In Worksheets
         If Not ws.ProtectContents Then
             ws.Activate
@@ -26,7 +25,7 @@ Sub WorkbookArial()
     Application.ScreenUpdating = True
     
     Call sourceSheet.Activate
-    
+
 ErrorHandler:
     Exit Sub
     

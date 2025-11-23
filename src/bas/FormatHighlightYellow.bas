@@ -1,14 +1,13 @@
 Attribute VB_Name = "Module1"
-Sub SheetFormulaToValue()
+Sub FormatHighlightYellow()
 
     On Error GoTo ErrorHandler
     
+    Dim Rng As Range
+    Set Rng = Selection
+    
     Application.ScreenUpdating = False
-    ActiveSheet.Cells.Select
-    Selection.Copy
-    Selection.PasteSpecial Paste:=xlPasteValues
-    ActiveSheet.Select
-    Application.CutCopyMode = False
+    Rng.Interior.Color = RGB(255, 255, 0)
     Application.ScreenUpdating = True
     
 ErrorHandler:

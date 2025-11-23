@@ -1,18 +1,14 @@
-Sub CaseSentence(control As IRibbonControl)
-'   Purpose: Set sentence case on selection
-'   Reference: KuTools
-'   Updated: 2022FEB25
+Sub CaseSentence()
 
-'   Saves workbook before macro changes
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
-
-    Dim rng As Range
+    
+    Dim Rng As Range
     Dim WorkRng As Range
-    On Error Resume Next
     Set WorkRng = Application.Selection
-    For Each rng In WorkRng
-        xValue = rng.Value
+    
+    Application.ScreenUpdating = False
+    For Each Rng In XRELEVANTAREA(WorkRng)
+        xValue = Rng.Value
         xStart = True
         For i = 1 To VBA.Len(xValue)
             ch = Mid(xValue, i, 1)
@@ -35,11 +31,11 @@ Sub CaseSentence(control As IRibbonControl)
             End Select
             Mid(xValue, i, 1) = ch
         Next
-        rng.Value = xValue
+        Rng.Value = xValue
     Next
+    Application.ScreenUpdating = True
     
 ErrorHandler:
     Exit Sub
-
+    
 End Sub
-

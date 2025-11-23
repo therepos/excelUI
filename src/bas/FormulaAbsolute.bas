@@ -1,16 +1,13 @@
-Sub FormulaAbsolute(control As IRibbonControl)
+Attribute VB_Name = "Module1"
+Sub FormulaAbsolute()
 '   Purpose: Convert selected values to absolute
-'   Add Reference: Microsoft VBScript Regular
-'   Updated: 2022FEB25
 
-'   Saves workbook before macro changes
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
 
-    Dim rng As Range
+    Dim Rng As Range
     Dim myFormula As String
     Dim cellValue As Double
-    Set rng = Selection
+    Set Rng = Selection
 
     Dim regexTargetText As Object
     Set regexTargetText = New RegExp
@@ -20,7 +17,7 @@ Sub FormulaAbsolute(control As IRibbonControl)
     End With
 
     Dim c As Range
-    For Each c In rng
+    For Each c In Rng
         If c.HasFormula = True Then
             myFormula = Right(c.Formula, Len(c.Formula) - 1)
             If regexTargetText.Test(myFormula) Then
@@ -44,4 +41,3 @@ ErrorHandler:
     Exit Sub
 
 End Sub
-

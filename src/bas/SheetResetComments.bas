@@ -1,10 +1,7 @@
-Sub SheetResetComments(control As IRibbonControl)
-'   Purpose: Reset position of comments
-'   Updated: 2022FEB25
-
-'   Saves workbook before macro changes
+Attribute VB_Name = "Module1"
+Sub SheetResetComments()
+    
     On Error GoTo ErrorHandler
-    ActiveWorkbook.Save
     
     Dim pComment As Comment
     For Each pComment In Application.ActiveSheet.Comments
@@ -14,6 +11,5 @@ Sub SheetResetComments(control As IRibbonControl)
     
 ErrorHandler:
     Exit Sub
-
+    
 End Sub
-
