@@ -1,8 +1,8 @@
-# wordUI Add-in
+# excelUI Add-in
 ---
 ## How to Use
-1. Download the latest [release](https://github.com/therepos/wordUI/releases/wordUI/latest/download/wordUI.zip). 
-2. Install with wordUIsetup.cmd
+1. Download the latest [release](https://github.com/therepos/excelUI/releases/excelUI/latest/download/excelUI.zip). 
+2. Install with excelUIsetup.cmd
 
 ## Structure
 ```
