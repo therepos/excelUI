@@ -1,0 +1,39 @@
+name: Generate VBA docs
+
+on:
+  push:
+    branches: [ main ]
+    paths:
+      - 'src/bas/**/*.bas'
+      - 'scripts/generate-docs.py'
+  workflow_dispatch:
+
+jobs:
+  build-docs:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+
+    if: github.actor != 'github-actions[bot]'
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.x'
+
+      - name: Generate .bas documentation
+        run: python scripts/generate-docs.py
+
+      - name: Commit on change
+        run: |
+          if git status --porcelain docs/bas.md | grep .; then
+            git config user.name "therepos"
+            git config user.email "therepos@users.noreply.github.com"
+            git add docs/bas.md
+            git commit -m "chore: Auto-generate VBA docs"
+            git push
+          fi
