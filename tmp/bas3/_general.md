@@ -1,1 +1,0 @@
-- Error handling [detailed guide](https://trumpexcel.com/vba-error-handling/).
