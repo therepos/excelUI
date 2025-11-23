@@ -1,5 +1,4 @@
-# .github/workflows/release-excelUI.yml
-name: Release-excelUI
+name: Release
 on:
   push:
     branches: [ main ]
