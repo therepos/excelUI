@@ -34,6 +34,6 @@ jobs:
             git config user.name "therepos"
             git config user.email "therepos@users.noreply.github.com"
             git add docs/bas.md
-            git commit -m "chore: Auto-generate VBA docs"
+            git commit -m "Auto-generate VBA docs"
             git push
           fi
