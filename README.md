@@ -6,7 +6,7 @@
 
 ## Structure
 ```
-wordUI
+excelUI
 ├── .github
 │   └── workflows
 ├── bin
@@ -14,7 +14,7 @@ wordUI
 ├── src
 │   └── bas
 │   └── cmd
-│   └── dotm
+│   └── xlam
 ├── temp
 ├── .gitignore
 ├── LICENSE
