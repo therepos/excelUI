@@ -1,4 +1,4 @@
-name: Generate VBA docs
+name: Publish Documentation
 
 on:
   push:
@@ -25,8 +25,8 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: Generate .bas documentation
-        run: python scripts/generate-docs.py
+      - name: Generate docs/bas.md
+        run: python scripts/docgen-bas.py
 
       - name: Commit on change
         run: |
