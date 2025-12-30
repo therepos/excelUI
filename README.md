@@ -11,16 +11,14 @@
 excelUI
 ├── .github
 │   └── workflows
-├── bin
-├── docs
+├── docs            # Documentation
+├── scraps
+├── scripts         # Internal helpers
 ├── src
 │   └── bas
 │   └── cmd
 │   └── xlam
-├── temp
-├── .gitignore
-├── LICENSE
-└── README.md
+├── tmp             # Temporary files
 
 ```
 
