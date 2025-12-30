@@ -5,7 +5,7 @@ on:
     branches: [ main ]
     paths:
       - 'src/bas/**/*.bas'
-      - 'bin/generate-docs.py'
+      - 'scripts/generate-docs.py'
   workflow_dispatch:
 
 jobs:
@@ -26,7 +26,7 @@ jobs:
           python-version: '3.x'
 
       - name: Generate .bas documentation
-        run: python bin/generate-docs.py
+        run: python scripts/generate-docs.py
 
       - name: Commit on change
         run: |
