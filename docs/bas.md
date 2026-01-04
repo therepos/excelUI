@@ -494,7 +494,8 @@ Sub FormatCellRed()
     Set Rng = Selection
     
     Application.ScreenUpdating = False
-    Rng.Interior.Color = RGB(255, 204, 204)
+    Rng.Interior.Color = RGB(122, 24, 24)
+    Rng.Font.Color = RGB(255, 255, 255)
     Application.ScreenUpdating = True
     
 ErrorHandler:
@@ -638,8 +639,7 @@ Sub FormatHighlightRed()
     Set Rng = Selection
     
     Application.ScreenUpdating = False
-    Rng.Interior.Color = RGB(122, 24, 24)
-    Rng.Font.Color = RGB(255, 255, 255)
+    Rng.Interior.Color = RGB(255, 204, 204)
     Application.ScreenUpdating = True
     
 ErrorHandler:
