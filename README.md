@@ -12,13 +12,13 @@ excelUI
 ├── .github
 │   └── workflows
 ├── .scraps
-├── docs            # Documentation
-├── scripts         # Internal helpers
+├── app                 # Executables
+├── docs                # Documentation
+├── scripts             
+│   └── docgen-bas.py   # Autogenerate doc/bas.md
 ├── src
-│   └── bas
-│   └── cmd
-│   └── xlam
-├── tmp             # Temporary files
+│   └── bas             # Documentation
+├── tmp                 # Temporary files
 ```
 
 ## Notes
