@@ -3,8 +3,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - src/xlam/excelUI.xlam
-      - src/cmd/excelUIsetup.cmd
+      - app/excelUI.xlam
+      - app/excelUIsetup.cmd
 jobs:
   release:
     runs-on: windows-latest
@@ -22,7 +22,7 @@ jobs:
       - run: >
           New-Item -ItemType Directory -Force -Path src\rel | Out-Null;
           Compress-Archive -Path
-          src\xlam\excelUI.xlam,src\cmd\excelUIsetup.cmd
+          app\excelUI.xlam,app\excelUIsetup.cmd
           -DestinationPath src\rel\excelUI.zip -Force
       - uses: softprops/action-gh-release@v2
         with:
