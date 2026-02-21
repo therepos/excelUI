@@ -11,8 +11,8 @@
 excelUI
 ├── .github
 │   └── workflows
+├── .scraps
 ├── docs            # Documentation
-├── scraps
 ├── scripts         # Internal helpers
 ├── src
 │   └── bas
