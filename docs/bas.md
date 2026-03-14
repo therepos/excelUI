@@ -208,7 +208,7 @@ End Function
 
 ```vbnet
 Public Sub RibbonOnLoad(r As IRibbonUI)
-    Set Ribbon = r
+    Set RibbonUI = r
 End Sub
 ```
 
@@ -224,6 +224,62 @@ Public Sub RunByName(control As IRibbonControl)
     Exit Sub
 errh:
     MsgBox "Macro not found: " & macro, vbExclamation
+End Sub
+```
+
+### `GetHighlightLabel`
+
+```vbnet
+Public Sub GetHighlightLabel(control As IRibbonControl, ByRef label)
+    label = GetSetting("ExcelUI", "Preferences", "LastHighlight", "Green")
+End Sub
+```
+
+### `GetWorkbookFontLabel`
+
+```vbnet
+Public Sub GetWorkbookFontLabel(control As IRibbonControl, ByRef label)
+    label = GetSetting("ExcelUI", "Preferences", "LastWbFont", "Arial")
+End Sub
+```
+
+### `GetWorkbookFontSizeLabel`
+
+```vbnet
+Public Sub GetWorkbookFontSizeLabel(control As IRibbonControl, ByRef label)
+    label = GetSetting("ExcelUI", "Preferences", "LastWbFontSize", "10")
+End Sub
+```
+
+### `GetSheetFontLabel`
+
+```vbnet
+Public Sub GetSheetFontLabel(control As IRibbonControl, ByRef label)
+    label = GetSetting("ExcelUI", "Preferences", "LastShFont", "Arial")
+End Sub
+```
+
+### `GetSheetTabLabel`
+
+```vbnet
+Public Sub GetSheetTabLabel(control As IRibbonControl, ByRef label)
+    label = GetSetting("ExcelUI", "Preferences", "LastShTab", "Green")
+End Sub
+```
+
+### `GetSelNumberLabel`
+
+```vbnet
+Public Sub GetSelNumberLabel(control As IRibbonControl, ByRef label)
+    label = GetSetting("ExcelUI", "Preferences", "LastSelNumber", "Accounting")
+End Sub
+```
+
+### `GetSelCaseLabel`
+
+```vbnet
+Public Sub GetSelCaseLabel(control As IRibbonControl, ByRef label)
+    label = GetSetting("ExcelUI", "Preferences", "LastSelCase", "Proper")
 End Sub
 ```
 
@@ -244,6 +300,9 @@ Sub CaseProper()
         cell.Value = StrConv(cell, vbProperCase)
     Next cell
     Application.ScreenUpdating = True
+    
+    SaveSetting "ExcelUI", "Preferences", "LastSelCase", "Proper"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
@@ -291,6 +350,9 @@ Sub CaseSentence()
     Next
     Application.ScreenUpdating = True
     
+    SaveSetting "ExcelUI", "Preferences", "LastSelCase", "Sentence"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
     
@@ -312,6 +374,9 @@ Sub CaseUpper()
         cell.Value = UCase(cell)
     Next cell
     Application.ScreenUpdating = True
+    
+    SaveSetting "ExcelUI", "Preferences", "LastSelCase", "Upper"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
@@ -477,6 +542,9 @@ Sub FormatAccounting()
     Next c
     Application.ScreenUpdating = True
     
+    SaveSetting "ExcelUI", "Preferences", "LastSelNumber", "Accounting"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
         
@@ -614,17 +682,18 @@ End Sub
 Sub FormatHighlightGreen()
 
     On Error GoTo ErrorHandler
-    
     Dim Rng As Range
     Set Rng = Selection
     
     Application.ScreenUpdating = False
-    Rng.Interior.Color = RGB(204, 285, 204)
+    Rng.Interior.Color = RGB(204, 255, 204)
     Application.ScreenUpdating = True
     
+    SaveSetting "ExcelUI", "Preferences", "LastHighlight", "Green"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+
 ErrorHandler:
     Exit Sub
-    
 End Sub
 ```
 
@@ -634,7 +703,6 @@ End Sub
 Sub FormatHighlightRed()
 
     On Error GoTo ErrorHandler
-    
     Dim Rng As Range
     Set Rng = Selection
     
@@ -642,30 +710,11 @@ Sub FormatHighlightRed()
     Rng.Interior.Color = RGB(255, 204, 204)
     Application.ScreenUpdating = True
     
+    SaveSetting "ExcelUI", "Preferences", "LastHighlight", "Red"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+
 ErrorHandler:
     Exit Sub
-    
-End Sub
-```
-
-### `FormatHighlightReset`
-
-```vbnet
-Sub FormatHighlightReset()
-
-    On Error GoTo ErrorHandler
-    
-    Dim Rng As Range
-    Set Rng = Selection
-    
-    Application.ScreenUpdating = False
-    Rng.Interior.Color = xlNone
-    Rng.Font.Color = RGB(0, 0, 0)
-    Application.ScreenUpdating = True
-    
-ErrorHandler:
-    Exit Sub
-    
 End Sub
 ```
 
@@ -675,7 +724,6 @@ End Sub
 Sub FormatHighlightYellow()
 
     On Error GoTo ErrorHandler
-    
     Dim Rng As Range
     Set Rng = Selection
     
@@ -683,9 +731,33 @@ Sub FormatHighlightYellow()
     Rng.Interior.Color = RGB(255, 255, 0)
     Application.ScreenUpdating = True
     
+    SaveSetting "ExcelUI", "Preferences", "LastHighlight", "Yellow"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
+End Sub
+```
+
+### `FormatHighlightReset`
+
+```vbnet
+Sub FormatHighlightReset()
+
+    On Error GoTo ErrorHandler
+    Dim Rng As Range
+    Set Rng = Selection
     
+    Application.ScreenUpdating = False
+    Rng.Interior.Color = xlNone
+    Rng.Font.Color = RGB(0, 0, 0)
+    Application.ScreenUpdating = True
+    
+    SaveSetting "ExcelUI", "Preferences", "LastHighlight", "Clear"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
+ErrorHandler:
+    Exit Sub
 End Sub
 ```
 
@@ -845,6 +917,9 @@ Sub FormulaAbsolute()
         c.NumberFormat = "_(#,##0_);_((#,##0);_(""-""??_);_(@_)"
     Next c
     
+    SaveSetting "ExcelUI", "Preferences", "LastSelNumber", "Absolute"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
 
@@ -879,6 +954,9 @@ Sub FormulaReverseSign()
         c.NumberFormat = "_(#,##0_);_((#,##0);_(""-""??_);_(@_)"
     Next c
     Application.ScreenUpdating = True
+    
+    SaveSetting "ExcelUI", "Preferences", "LastSelNumber", "Reverse Sign"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
@@ -926,6 +1004,9 @@ Sub FormulaRound()
         c.NumberFormat = "_(#,##0_);_((#,##0);_(""-""??_);_(@_)"
     Next c
     
+    SaveSetting "ExcelUI", "Preferences", "LastSelNumber", "Round"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
 
@@ -956,6 +1037,9 @@ Sub FormulaThousands()
         c.NumberFormat = "_(#,##0_);_((#,##0);_(""-""??_);_(@_)"
     Next c
     Application.ScreenUpdating = True
+    
+    SaveSetting "ExcelUI", "Preferences", "LastSelNumber", "Thousands"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
@@ -1331,6 +1415,9 @@ Sub SheetFontArial()
     Else: Exit Sub
     End If
     
+    SaveSetting "ExcelUI", "Preferences", "LastShFont", "Arial"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
     
@@ -1345,13 +1432,16 @@ Sub SheetFontEY()
     On Error GoTo ErrorHandler
     
     If Not ActiveSheet.ProtectContents Then
-        ActiveSheet.Cells.Font.Name = "Georgia"
+        ActiveSheet.Cells.Font.Name = "EYInterstate Light"
         ActiveSheet.Cells.Font.Size = 8
         ActiveSheet.Activate
         ActiveWindow.Zoom = 100
     Else: Exit Sub
     End If
         
+    SaveSetting "ExcelUI", "Preferences", "LastShFont", "EY"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
     
@@ -1481,7 +1571,7 @@ End Sub
 
 ```vbnet
 Sub SheetTabBlack()
-' Reference for ColorIndex: http://dmcritchie.mvps.org/excel/colors.htm
+
     On Error GoTo ErrorHandler
     
     Dim ws As Worksheet
@@ -1489,6 +1579,9 @@ Sub SheetTabBlack()
     For Each ws In ActiveWindow.SelectedSheets
          ws.Tab.ColorIndex = 1
     Next ws
+    
+    SaveSetting "ExcelUI", "Preferences", "LastShTab", "Black"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
@@ -1500,7 +1593,6 @@ End Sub
 
 ```vbnet
 Sub SheetTabGreen()
-' Reference for ColorIndex: http://dmcritchie.mvps.org/excel/colors.htm
 
     On Error GoTo ErrorHandler
     
@@ -1509,6 +1601,9 @@ Sub SheetTabGreen()
     For Each ws In ActiveWindow.SelectedSheets
          ws.Tab.ColorIndex = 35
     Next ws
+    
+    SaveSetting "ExcelUI", "Preferences", "LastShTab", "Green"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
@@ -1520,7 +1615,7 @@ End Sub
 
 ```vbnet
 Sub SheetTabRed()
-' Reference for ColorIndex: http://dmcritchie.mvps.org/excel/colors.htm
+
     On Error GoTo ErrorHandler
     
     Dim ws As Worksheet
@@ -1528,6 +1623,9 @@ Sub SheetTabRed()
     For Each ws In ActiveWindow.SelectedSheets
          ws.Tab.ColorIndex = 38
     Next ws
+    
+    SaveSetting "ExcelUI", "Preferences", "LastShTab", "Red"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
@@ -1539,7 +1637,7 @@ End Sub
 
 ```vbnet
 Sub SheetTabReset()
-' Reference for ColorIndex: http://dmcritchie.mvps.org/excel/colors.htm
+
     On Error GoTo ErrorHandler
     
     Dim ws As Worksheet
@@ -1547,6 +1645,9 @@ Sub SheetTabReset()
     For Each ws In ActiveWindow.SelectedSheets
          ws.Tab.ColorIndex = xlColorIndexNone
     Next ws
+    
+    SaveSetting "ExcelUI", "Preferences", "LastShTab", "Reset"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
@@ -1558,7 +1659,7 @@ End Sub
 
 ```vbnet
 Sub SheetTabYellow()
-' Reference for ColorIndex: http://dmcritchie.mvps.org/excel/colors.htm
+
     On Error GoTo ErrorHandler
     
     Dim ws As Worksheet
@@ -1567,6 +1668,9 @@ Sub SheetTabYellow()
          ws.Tab.ColorIndex = 6
     Next ws
     
+    SaveSetting "ExcelUI", "Preferences", "LastShTab", "Yellow"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+        
 ErrorHandler:
     Exit Sub
 
@@ -1619,6 +1723,9 @@ Sub WorkbookArial()
     
     Call sourceSheet.Activate
     
+    SaveSetting "ExcelUI", "Preferences", "LastWbFont", "Arial"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
     
@@ -1655,6 +1762,9 @@ Sub WorkbookEY()
     
     Call sourceSheet.Activate
 
+    SaveSetting "ExcelUI", "Preferences", "LastWbFont", "EY"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
     
@@ -1692,6 +1802,50 @@ ErrorHandler:
 End Sub
 ```
 
+### `WorkbookFontSize8`
+
+```vbnet
+Sub WorkbookFontSize8()
+
+    Dim ws As Worksheet
+
+    On Error GoTo ErrorHandler
+    
+    For Each ws In ThisWorkbook.Worksheets
+        ws.Cells.Font.Size = 8
+    Next ws
+
+    SaveSetting "ExcelUI", "Preferences", "LastWbFontSize", "8"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
+ErrorHandler:
+    Exit Sub
+
+End Sub
+```
+
+### `WorkbookFontSize9`
+
+```vbnet
+Sub WorkbookFontSize9()
+
+    Dim ws As Worksheet
+
+    On Error GoTo ErrorHandler
+    
+    For Each ws In ThisWorkbook.Worksheets
+        ws.Cells.Font.Size = 9
+    Next ws
+
+    SaveSetting "ExcelUI", "Preferences", "LastWbFontSize", "9"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
+ErrorHandler:
+    Exit Sub
+
+End Sub
+```
+
 ### `WorkbookFontSize10`
 
 ```vbnet
@@ -1705,8 +1859,133 @@ Sub WorkbookFontSize10()
         ws.Cells.Font.Size = 10
     Next ws
 
+    SaveSetting "ExcelUI", "Preferences", "LastWbFontSize", "10"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
 
+End Sub
+```
+
+### `WorkbookFontSize11`
+
+```vbnet
+Sub WorkbookFontSize11()
+
+    Dim ws As Worksheet
+
+    On Error GoTo ErrorHandler
+    
+    For Each ws In ThisWorkbook.Worksheets
+        ws.Cells.Font.Size = 11
+    Next ws
+
+    SaveSetting "ExcelUI", "Preferences", "LastWbFontSize", "11"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
+ErrorHandler:
+    Exit Sub
+
+End Sub
+```
+
+### `RunFormatHighlightRepeat`
+
+```vbnet
+Sub RunFormatHighlightRepeat()
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastHighlight", "Green")
+    Select Case last
+        Case "Green":  FormatHighlightGreen
+        Case "Red":    FormatHighlightRed
+        Case "Yellow": FormatHighlightYellow
+        Case Else:     FormatHighlightReset
+    End Select
+End Sub
+```
+
+### `RunWorkbookFontRepeat`
+
+```vbnet
+Sub RunWorkbookFontRepeat()
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastWbFont", "Arial")
+    Select Case last
+        Case "Arial": WorkbookArial
+        Case "EY":    WorkbookEY
+    End Select
+End Sub
+```
+
+### `RunWorkbookFontSizeRepeat`
+
+```vbnet
+Sub RunWorkbookFontSizeRepeat()
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastWbFontSize", "10")
+    Select Case last
+        Case "8":  WorkbookFontSize8
+        Case "9":  WorkbookFontSize9
+        Case "10": WorkbookFontSize10
+        Case "11": WorkbookFontSize11
+    End Select
+End Sub
+```
+
+### `RunSheetFontRepeat`
+
+```vbnet
+Sub RunSheetFontRepeat()
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastShFont", "Arial")
+    Select Case last
+        Case "Arial": SheetFontArial
+        Case "EY":    SheetFontEY
+    End Select
+End Sub
+```
+
+### `RunSheetTabRepeat`
+
+```vbnet
+Sub RunSheetTabRepeat()
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastShTab", "Green")
+    Select Case last
+        Case "Green":  SheetTabGreen
+        Case "Red":    SheetTabRed
+        Case "Yellow": SheetTabYellow
+        Case Else:     SheetTabReset
+    End Select
+End Sub
+```
+
+### `RunSelNumberRepeat`
+
+```vbnet
+Sub RunSelNumberRepeat()
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastSelNumber", "Accounting")
+    Select Case last
+        Case "Accounting":   FormatAccounting
+        Case "Round":        FormulaRound
+        Case "Absolute":     FormulaAbsolute
+        Case "Reverse Sign": FormulaReverseSign
+    End Select
+End Sub
+```
+
+### `RunSelCaseRepeat`
+
+```vbnet
+Sub RunSelCaseRepeat()
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastSelCase", "Proper")
+    Select Case last
+        Case "Proper":   CaseProper
+        Case "Upper":    CaseUpper
+        Case "Sentence": CaseSentence
+    End Select
 End Sub
 ```
