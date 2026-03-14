@@ -3,8 +3,8 @@ on:
   push:
     branches: [ main ]
     paths:
-      - app/excelUI.xlam
-      - app/excelUIsetup.cmd
+      - src/xlam/excelUI.xlam
+      - src/cmd/excelUIsetup.cmd
 jobs:
   release:
     runs-on: windows-latest
