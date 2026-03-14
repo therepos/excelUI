@@ -2,7 +2,7 @@
 
 _This file is generated automatically from `.bas` files in `src/bas`._
 
-## Module `Functions`
+## Module `functions`
 
 ### `XFIRSTUSEDCOL`
 
@@ -202,7 +202,7 @@ Public Function XHYPERACTIVE(ByRef Rng As Range)
 End Function
 ```
 
-## Module `Ribbon`
+## Module `ribbon`
 
 ### `RibbonOnLoad`
 
@@ -227,7 +227,7 @@ errh:
 End Sub
 ```
 
-## Module `Subs`
+## Module `subs`
 
 ### `CaseProper`
 
