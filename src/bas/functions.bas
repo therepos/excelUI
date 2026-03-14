@@ -1,4 +1,3 @@
-Attribute VB_Name = "Functions"
 Option Private Module
 
 '===== Column/Row utilities =====

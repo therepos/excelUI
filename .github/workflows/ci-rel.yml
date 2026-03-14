@@ -22,7 +22,7 @@ jobs:
       - run: >
           New-Item -ItemType Directory -Force -Path src\rel | Out-Null;
           Compress-Archive -Path
-          app\excelUI.xlam,app\excelUIsetup.cmd
+          src\cmd\excelUIsetup.cmd
           -DestinationPath rel\excelUI.zip -Force
       - uses: softprops/action-gh-release@v2
         with:
