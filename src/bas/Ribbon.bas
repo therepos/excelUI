@@ -1,4 +1,4 @@
-Public Ribbon As IRibbonUI
+Public RibbonUI As IRibbonUI
 
 Public Sub RibbonOnLoad(r As IRibbonUI)
     Set RibbonUI = r
