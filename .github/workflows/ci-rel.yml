@@ -5,6 +5,8 @@ on:
     paths:
       - src/xlam/excelUI.xlam
       - src/cmd/excelUIsetup.cmd
+  workflow_dispatch:
+
 jobs:
   release:
     runs-on: windows-latest
