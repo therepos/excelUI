@@ -2,7 +2,7 @@
 
 _This file is generated automatically from `.bas` files in `src/bas`._
 
-## Module `functions`
+## Module `Functions`
 
 ### `XFIRSTUSEDCOL`
 
@@ -202,7 +202,7 @@ Public Function XHYPERACTIVE(ByRef Rng As Range)
 End Function
 ```
 
-## Module `ribbon`
+## Module `Ribbon`
 
 ### `RibbonOnLoad`
 
@@ -283,7 +283,7 @@ Public Sub GetSelCaseLabel(control As IRibbonControl, ByRef label)
 End Sub
 ```
 
-## Module `subs`
+## Module `Subs`
 
 ### `CaseProper`
 
