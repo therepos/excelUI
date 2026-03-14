@@ -207,8 +207,8 @@ End Function
 ### `RibbonOnLoad`
 
 ```vbnet
-Public Sub RibbonOnLoad(r As IRibbonUI)
-    Set RibbonUI = r
+Public Sub RibbonOnLoad(R As IRibbonUI)
+    Set RibbonUI = R
 End Sub
 ```
 
@@ -227,11 +227,43 @@ errh:
 End Sub
 ```
 
-### `GetHighlightLabel`
+### `GetSheetTabColor`
 
 ```vbnet
-Public Sub GetHighlightLabel(control As IRibbonControl, ByRef label)
-    label = GetSetting("ExcelUI", "Preferences", "LastHighlight", "Green")
+Public Sub GetSheetTabColor(control As IRibbonControl, ByRef returnedVal)
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastShTab", "Green")
+    
+    Dim clr As Long
+    Select Case last
+        Case "Green":  clr = RGB(204, 255, 204)
+        Case "Red":    clr = RGB(255, 204, 204)
+        Case "Yellow": clr = RGB(255, 255, 0)
+        Case Else:     clr = RGB(255, 255, 255)
+    End Select
+    
+    Set returnedVal = CreateColorIcon(clr)
+    
+End Sub
+```
+
+### `GetHighlightColor`
+
+```vbnet
+Public Sub GetHighlightColor(control As IRibbonControl, ByRef returnedVal)
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastHighlight", "Green")
+    
+    Dim clr As Long
+    Select Case last
+        Case "Green":  clr = RGB(204, 255, 204)
+        Case "Red":    clr = RGB(255, 204, 204)
+        Case "Yellow": clr = RGB(255, 255, 0)
+        Case Else:     clr = RGB(255, 255, 255)
+    End Select
+    
+    Set returnedVal = CreateColorIcon(clr)
+    
 End Sub
 ```
 
@@ -259,14 +291,6 @@ Public Sub GetSheetFontLabel(control As IRibbonControl, ByRef label)
 End Sub
 ```
 
-### `GetSheetTabLabel`
-
-```vbnet
-Public Sub GetSheetTabLabel(control As IRibbonControl, ByRef label)
-    label = GetSetting("ExcelUI", "Preferences", "LastShTab", "Green")
-End Sub
-```
-
 ### `GetSelNumberLabel`
 
 ```vbnet
@@ -281,6 +305,59 @@ End Sub
 Public Sub GetSelCaseLabel(control As IRibbonControl, ByRef label)
     label = GetSetting("ExcelUI", "Preferences", "LastSelCase", "Proper")
 End Sub
+```
+
+### `CreateColorIcon`
+
+```vbnet
+Private Function CreateColorIcon(clr As Long) As IPictureDisp
+    Dim tmp As String
+    tmp = Environ("TEMP") & "\excelui_icon.bmp"
+    
+    ' Create a 16x16 BMP file
+    Dim f As Integer
+    f = FreeFile
+    Open tmp For Binary As #f
+    
+    ' BMP header (54 bytes) + 16x16x3 pixel data (768 bytes) = 822 bytes
+    Dim bmp(0 To 821) As Byte
+    
+    ' BM signature
+    bmp(0) = 66: bmp(1) = 77
+    ' File size = 822
+    bmp(2) = 54: bmp(3) = 3: bmp(4) = 0: bmp(5) = 0
+    ' Data offset = 54
+    bmp(10) = 54
+    ' DIB header size = 40
+    bmp(14) = 40
+    ' Width = 16
+    bmp(18) = 16
+    ' Height = 16
+    bmp(22) = 16
+    ' Planes = 1
+    bmp(26) = 1
+    ' Bits per pixel = 24
+    bmp(28) = 24
+    
+    ' Fill pixels with color (BGR order)
+    Dim R As Byte, G As Byte, B As Byte
+    R = clr And &HFF
+    G = (clr \ &H100) And &HFF
+    B = (clr \ &H10000) And &HFF
+    
+    Dim i As Long
+    For i = 54 To 821 Step 3
+        bmp(i) = B
+        bmp(i + 1) = G
+        bmp(i + 2) = R
+    Next i
+    
+    Put #f, , bmp
+    Close #f
+    
+    Set CreateColorIcon = LoadPicture(tmp)
+    Kill tmp
+End Function
 ```
 
 ## Module `Subs`
