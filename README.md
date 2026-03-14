@@ -2,6 +2,7 @@
 
 1. Download the latest [release](https://github.com/therepos/excelUI/releases/excelUI/latest/download/excelUI.zip). 
 2. Install with excelUIsetup.cmd
+3. The addin will be located at `%APPDATA%\Microsoft\AddIns`.
 
 ## Structure
 
