@@ -22,7 +22,7 @@ jobs:
           release_branches: main
           tag_prefix: excelUI-v
       - run: >
-          New-Item -Path src\rel
+          New-Item -ItemType Directory -Force -Path rel | Out-Null;
           Compress-Archive -Path src\cmd\excelUIsetup.cmd
           -DestinationPath rel\excelUI.zip -Force
       - uses: softprops/action-gh-release@v2
