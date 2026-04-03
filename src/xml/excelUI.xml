@@ -1,0 +1,93 @@
+<customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="RibbonOnLoad">
+	<ribbon>
+		<tabs>
+			<tab id="t1" tag="t1" label="ExcelUI">
+				<!-- Group: Workbook -->
+				<group id="t1g1" label="Workbook">
+					<splitButton id="t1g1sb01" size="large">
+						<button id="t1g1sb01b00" tag="RunWorkbookFontRepeat" onAction="RunByName" getLabel="GetWorkbookFontLabel" imageMso="CharacterBorder"/>
+						<menu id="t1g1sb01menu">
+							<button id="t1g1sb01b01" label="Arial" tag="WorkbookArial" onAction="RunByName"/>
+							<button id="t1g1sb01b02" label="EY" tag="WorkbookEY" onAction="RunByName"/>
+						</menu>
+					</splitButton>
+					<splitButton id="t1g1sb02" size="large">
+						<button id="t1g1sb02b00" tag="RunWorkbookFontSizeRepeat" onAction="RunByName" getLabel="GetWorkbookFontSizeLabel" imageMso="FontSizeIncrease"/>
+						<menu id="t1g1sb02menu">
+							<button id="t1g1sb02b01" label="8" tag="WorkbookFontSize8" onAction="RunByName"/>
+							<button id="t1g1sb02b02" label="9" tag="WorkbookFontSize9" onAction="RunByName"/>
+							<button id="t1g1sb02b03" label="10" tag="WorkbookFontSize10" onAction="RunByName"/>
+							<button id="t1g1sb02b04" label="11" tag="WorkbookFontSize11" onAction="RunByName"/>
+						</menu>
+					</splitButton>
+					<button id="t1g1b01" label="Unhide Sheets" size="normal" tag="UnhideSheets" onAction="RunByName" imageMso="ShapesDuplicate"/>
+					<button id="t1g1b02" label="PageBreak Off" size="normal" tag="WorkbookPageBreakOff" onAction="RunByName" imageMso="CreateMacro"/>
+				</group>
+				<!-- Group: Sheet -->
+				<group id="t1g2" label="Sheet">
+					<splitButton id="t1g2sb01" size="large">
+						<button id="t1g2sb01b00" tag="RunSheetFontRepeat" onAction="RunByName" getLabel="GetSheetFontLabel" imageMso="CharacterBorder"/>
+						<menu id="t1g2sb01menu">
+							<button id="t1g2sb01b01" label="Arial" tag="SheetFontArial" onAction="RunByName"/>
+							<button id="t1g2sb01b02" label="SheetFontEY" tag="SheetFontEY" onAction="RunByName"/>
+						</menu>
+					</splitButton>
+					<splitButton id="t1g2sb02" size="large">
+						<button id="t1g2sb02b00" label="Tab" tag="RunSheetTabRepeat" onAction="RunByName" getImage="GetSheetTabColor"/>
+						<menu id="t1g2sb02menu">
+							<button id="t1g2sb02b01" label="Green" tag="SheetTabGreen" onAction="RunByName" imageMso="AppointmentColor3"/>
+							<button id="t1g2sb02b02" label="Red" tag="SheetTabRed" onAction="RunByName" imageMso="AppointmentColor1"/>
+							<button id="t1g2sb02b03" label="Yellow" tag="SheetTabYellow" onAction="RunByName" imageMso="AppointmentColor10"/>
+							<menuSeparator id="t1g2sb02s01"/>
+							<button id="t1g2sb02b04" label="Reset" tag="SheetTabReset" onAction="RunByName" imageMso="BlackAndWhiteDontShow"/>
+						</menu>
+					</splitButton>
+					<button id="t1g2b01" label="F2V" size="normal" tag="SheetFormulaToValue" onAction="RunByName" imageMso="CustomEquationsGallery"/>
+					<button id="t1g2b02" label="Reset Comments" size="normal" tag="SheetResetComments" onAction="RunByName" imageMso="NewNote"/>
+					<button id="t1g2b03" label="Blank Rows" size="normal" tag="SheetRemoveBlankRows" onAction="RunByName" imageMso="TableRowsDelete"/>
+					<button id="t1g2b04" label="Blank Sheets" size="normal" tag="InsertBlankSheet" onAction="RunByName" imageMso="CreateMacro"/>
+				</group>
+				<!-- Group: Selection -->
+				<group id="t1g3" label="Selection">
+					<splitButton id="t1g3sb01" size="large">
+						<button id="t1g3sb01b00" tag="RunSelNumberRepeat" onAction="RunByName" getLabel="GetSelNumberLabel" imageMso="EquationMatrixGallery"/>
+						<menu id="t1g3sb01menu">
+							<button id="t1g3sb01b01" label="Accounting" tag="FormatAccounting" onAction="RunByName"/>
+							<button id="t1g3sb01b02" label="Round" tag="FormulaRound" onAction="RunByName"/>
+							<button id="t1g3sb01b03" label="Absolute" tag="FormulaAbsolute" onAction="RunByName"/>
+							<button id="t1g3sb01b04" label="Reverse Sign" tag="FormulaReverseSign" onAction="RunByName"/>
+						</menu>
+					</splitButton>
+					<splitButton id="t1g3sb02" size="large">
+						<button id="t1g3sb02b00" tag="RunSelCaseRepeat" onAction="RunByName" getLabel="GetSelCaseLabel" imageMso="TableTextStylesGallery"/>
+						<menu id="t1g3sb02menu">
+							<button id="t1g3sb02b01" label="Proper" tag="CaseProper" onAction="RunByName"/>
+							<button id="t1g3sb02b02" label="Upper" tag="CaseUpper" onAction="RunByName"/>
+							<button id="t1g3sb02b03" label="Sentence" tag="CaseSentence" onAction="RunByName"/>
+						</menu>
+					</splitButton>
+					<button id="t1g3b01" label="CrossRef" size="normal" tag="InsertCrossReference" onAction="RunByName" imageMso="CrossReferenceInsert"/>					    
+					<button id="t1g3b02" label="F2V" size="normal" tag="FormulaToValue" onAction="RunByName" imageMso="CustomEquationsGallery"/>
+					<button id="t1g3b03" label="T2V" size="normal" tag="FormatTextToValue" onAction="RunByName" imageMso="EquationMatrixGallery"/>
+					<button id="t1g3b04" label="Column Width" size="normal" tag="InsertColumnWidth" onAction="RunByName" imageMso="HorizontalSpacingIncrease"/>
+					<button id="t1g3b05" label="CellTrim" size="normal" tag="CellTrim" onAction="RunByName" imageMso="LassoSelect"/>
+					<button id="t1g3b06" label="dd/mm/yy" size="normal" tag="FormatDateDDMMYY" onAction="RunByName" imageMso="HeaderFooterCurrentTimeInsert"/>
+					<button id="t1g3b07" label="Grey" size="normal" tag="FormatTableBordersGrey" onAction="RunByName" imageMso="BordersAll"/>
+				</group>
+				<!-- Group: Format -->
+				<group id="t1g4" label="Format">
+					<splitButton id="t1g4sb01" size="large">
+						<button id="t1g4sb01b00" label="Cell" tag="RunFormatHighlightRepeat" onAction="RunByName" getImage="GetHighlightColor"/>
+						<menu id="t1g4sb01menu">
+							<button id="t1g4sb01b01" label="Green" tag="FormatHighlightGreen" onAction="RunByName" imageMso="AppointmentColor3"/>
+							<button id="t1g4sb01b02" label="Red" tag="FormatHighlightRed" onAction="RunByName" imageMso="AppointmentColor1"/>
+							<button id="t1g4sb01b03" label="Yellow" tag="FormatHighlightYellow" onAction="RunByName" imageMso="AppointmentColor10"/>
+							<menuSeparator id="t1g4sb01s01"/>
+							<button id="t1g4sb01b04" label="Clear" tag="FormatHighlightReset" onAction="RunByName" imageMso="BlackAndWhiteDontShow"/>
+						</menu>
+					</splitButton>
+				</group>
+			</tab>
+		</tabs>
+	</ribbon>
+</customUI>
