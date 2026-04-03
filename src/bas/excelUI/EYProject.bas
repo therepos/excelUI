@@ -539,9 +539,9 @@ NextRes:
     Next cel
     
     ' Page setup
-    wsOut.PageSetup.Orientation = xlLandscape
+    wsOut.PageSetup.Orientation = 2
     wsOut.PageSetup.FitToPagesWide = 1
-    wsOut.PageSetup.FitToPagesTall = False
+    wsOut.PageSetup.FitToPagesTall = 999
     
     ' --- Count unique jobs ---
     Dim uniqueJobs As Long
@@ -564,4 +564,6 @@ Cleanup:
     Application.Calculation = xlCalculationAutomatic
     
 End Sub
+
+
 

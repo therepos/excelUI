@@ -350,7 +350,7 @@ NextStaff:
     
     ' Page setup
     wsOut.PageSetup.FitToPagesWide = 1
-    wsOut.PageSetup.FitToPagesTall = False
+    wsOut.PageSetup.FitToPagesTall = 999
     
     MsgBox "Retain Availability generated in new workbook!" & vbCrLf & _
         staffNum & " staff processed" & vbCrLf & _
@@ -497,4 +497,6 @@ Function ExtractTotalPercent(cellText As String) As Long
     
     ExtractTotalPercent = total
 End Function
+
+
 
