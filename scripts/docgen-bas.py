@@ -1,7 +1,7 @@
 import re
 from pathlib import Path
 
-BAS_DIR = Path("src/bas")
+BAS_DIR = Path("src/bas/excelUI")
 OUT_FILE = Path("docs") / "bas.md"
 
 
