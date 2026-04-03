@@ -17,7 +17,7 @@ excelUI
 │   └── docgen-bas.py   # Autogenerate doc/bas.md
 ├── src
 │   └── bas             # Documentation
-├── tmp                 # Temporary files
+└── tmp                 # Temporary files
 ```
 
 ## Resources
