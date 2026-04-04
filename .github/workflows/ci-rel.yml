@@ -1,4 +1,5 @@
 name: Release
+
 on:
   push:
     branches: [ main ]
@@ -13,6 +14,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         with: { fetch-depth: 0 }
+
       - id: tag
         uses: mathieudutour/github-tag-action@v6.2
         with:
@@ -20,10 +22,17 @@ jobs:
           default_bump: patch
           release_branches: main
           tag_prefix: excelUI-v
-      - run: >
-          New-Item -ItemType Directory -Force -Path rel | Out-Null;
-          Compress-Archive -Path src\excelUI\excelUI.xlam, src\excelUI\excelUIsetup.cmd
-          -DestinationPath rel\excelUI.zip -Force
+
+      - name: Lock VBA project
+        run: python scripts/lock-vba.py src/excelUI/excelUI.xlam src/excelUI/excelUI-locked.xlam
+
+      - name: Package release
+        run: |
+          New-Item -ItemType Directory -Force -Path rel | Out-Null
+          Copy-Item src\excelUI\excelUI-locked.xlam rel\excelUI.xlam
+          Copy-Item src\excelUI\excelUIsetup.cmd rel\excelUIsetup.cmd
+          Compress-Archive -Path rel\excelUI.xlam, rel\excelUIsetup.cmd -DestinationPath rel\excelUI.zip -Force
+
       - uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.tag.outputs.new_tag }}
