@@ -3,8 +3,8 @@
 		<tabs>
 			<tab id="eyTab" label="EY">
 				<group id="eyG1" label="Retain">
-					<button id="eyG1b01" label="Availability" size="large" onAction="GenerateRetainAvailability" imageMso="CreateQueryFromWizard"/>
-					<button id="eyG1b02" label="Project" size="large" onAction="ExtractJobsByManager" imageMso="CreateReportFromWizard"/>
+					<button id="eyG1b01" label="Availability" size="large" tag="GenerateRetainAvailability" onAction="RunByName" imageMso="CreateQueryFromWizard"/>
+					<button id="eyG1b02" label="Project" size="large" tag="ExtractJobsByManager" onAction="RunByName" imageMso="CreateReportFromWizard"/>
 				</group>
 			</tab>
 		</tabs>
