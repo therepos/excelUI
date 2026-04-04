@@ -3,8 +3,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - src/xlam/excelUI.xlam
-      - src/cmd/excelUIsetup.cmd
+      - src/excelUI
   workflow_dispatch:
 
 jobs:
@@ -23,7 +22,7 @@ jobs:
           tag_prefix: excelUI-v
       - run: >
           New-Item -ItemType Directory -Force -Path rel | Out-Null;
-          Compress-Archive -Path src\cmd\excelUIsetup.cmd
+          Compress-Archive -Path src\excelUI\excelUI.xlam, src\excelUI\excelUIsetup.cmd
           -DestinationPath rel\excelUI.zip -Force
       - uses: softprops/action-gh-release@v2
         with:
