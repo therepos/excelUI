@@ -10,7 +10,7 @@ set "ADDIN=excelUI.xlam"
 set "ADDIN_NAME=excelUI"
 set "DEST=%APPDATA%\Microsoft\AddIns"
 set "DST=%DEST%\%ADDIN%"
-set "DOWNLOAD_URL=https://raw.githubusercontent.com/therepos/excelUI/refs/heads/main/src/xlam/excelUI.xlam"
+set "DOWNLOAD_URL=https://raw.githubusercontent.com/therepos/excelUI/refs/heads/main/src/excelUI/excelUI.xlam"
 
 echo.
 echo  ========================================
