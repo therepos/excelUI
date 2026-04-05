@@ -1,6 +1,5 @@
 """
 Purpose: Lock a VBA project in an Office add-in (.xlam/.dotm/.ppam) with a password.
-
 Usage:
     python lock-vba.py <input_file> [output_file]
     If output_file is omitted, the input file is overwritten.
