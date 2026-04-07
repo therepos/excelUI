@@ -1,197 +1,279 @@
 @echo off
-setlocal EnableExtensions
+setlocal EnableDelayedExpansion
+:: ============================================================
+::  Office Add-in Setup — install / update / uninstall
+::  Auto-detects Excel / Word / PowerPoint from file extension.
+::  Double-click to run. No admin rights needed.
+:: ============================================================
 
-:: excelUI Setup — one-click install/update/uninstall
-:: Downloads sealed excelUI.xlam from GitHub Releases and installs to %APPDATA%\Microsoft\AddIns
-:: Registers via HKCU registry so Excel loads it automatically.
-:: No admin rights needed.
+set "PS_TEMP=%TEMP%\addin-setup-%RANDOM%.ps1"
 
-set "ADDIN=excelUI.xlam"
-set "ADDIN_NAME=excelUI"
-set "DEST=%APPDATA%\Microsoft\AddIns"
-set "DST=%DEST%\%ADDIN%"
-set "DOWNLOAD_URL=https://github.com/therepos/excelUI/releases/latest/download/excelUI.xlam"
+set "FOUND="
+(
+    for /f "usebackq delims=" %%L in ("%~f0") do (
+        if defined FOUND echo(%%L
+        if "%%L"=="::__PS_BEGIN__" set "FOUND=1"
+    )
+) > "%PS_TEMP%"
 
-echo.
-echo  ========================================
-echo    excelUI - Excel Add-in Setup
-echo  ========================================
-echo.
+powershell.exe -NoProfile -ExecutionPolicy Bypass -File "%PS_TEMP%"
+set "RC=%ERRORLEVEL%"
 
-:: Check if already installed
-if exist "%DST%" goto :existing
+del /f /q "%PS_TEMP%" >nul 2>&1
+exit /b %RC%
 
-:: ---- FRESH INSTALL ----
-:install
+::__PS_BEGIN__
+# =============================================================
+# Office Add-in Setup - PowerShell
+# =============================================================
 
-call :checkexcel
-if %errorlevel%==1 exit /b 1
+$ErrorActionPreference = 'Stop'
 
-echo  Downloading %ADDIN% ...
-call :download
-if %errorlevel%==1 exit /b 1
+# ═════════════════════════════════════════════════════════════
+# CONFIG — change these for each add-in
+# ═════════════════════════════════════════════════════════════
 
-call :register
+$AddinFile    = 'excelUI.xlam'
+$AddinName    = 'excelUI'
+$DownloadUrl  = 'https://github.com/therepos/excelUI/releases/latest/download/excelUI.xlam'
 
-echo.
-echo  Installed. The ExcelUI tab will appear next time
-echo  you open Excel.
-echo.
-pause
-exit /b 0
+# ═════════════════════════════════════════════════════════════
+# AUTO-DETECT — do not edit below
+# ═════════════════════════════════════════════════════════════
 
-:: ---- ALREADY INSTALLED ----
-:existing
+$appdata = $env:APPDATA
+$ext = [System.IO.Path]::GetExtension($AddinFile).ToLower()
 
-echo  excelUI is already installed at:
-echo    %DST%
-echo.
-echo  [U] Update    - download latest version
-echo  [R] Uninstall - remove add-in
-echo  [C] Cancel
-echo.
-set /p "ANS=  Choose (U/R/C): "
-if /i "%ANS%"=="U" goto :update
-if /i "%ANS%"=="R" goto :uninstall
-echo  Cancelled.
-echo.
-pause
-exit /b 0
+# Determine app type, install path, process name, and registry app key
+switch ($ext) {
+    { $_ -in '.xlam', '.xla' } {
+        $AppType     = 'Excel'
+        $DestDir     = "$appdata\Microsoft\AddIns"
+        $ProcessName = 'EXCEL'
+        $RegAppKey   = 'Excel'
+        $NeedReg     = $true
+    }
+    { $_ -in '.dotm', '.dot' } {
+        $AppType     = 'Word'
+        $DestDir     = "$appdata\Microsoft\Word\STARTUP"
+        $ProcessName = 'WINWORD'
+        $RegAppKey   = 'Word'
+        $NeedReg     = $false   # Word auto-loads from STARTUP
+    }
+    { $_ -in '.ppam', '.ppa' } {
+        $AppType     = 'PowerPoint'
+        $DestDir     = "$appdata\Microsoft\PowerPoint\AddIns"
+        $ProcessName = 'POWERPNT'
+        $RegAppKey   = 'PowerPoint'
+        $NeedReg     = $true
+    }
+    default {
+        Write-Host "  ERROR: Unsupported file type: $ext" -ForegroundColor Red
+        Read-Host "`nPress Enter to exit"
+        exit 1
+    }
+}
 
-:: ---- UPDATE ----
-:update
+$DestFile = Join-Path $DestDir $AddinFile
+$OfficeVersions = @('16.0','15.0','14.0')
+$Host.UI.RawUI.WindowTitle = "$AddinName Setup"
 
-call :checkexcel
-if %errorlevel%==1 exit /b 1
+# =============================================================
+# FUNCTIONS
+# =============================================================
 
-echo  Downloading latest %ADDIN% ...
-call :download
-if %errorlevel%==1 exit /b 1
+function Test-AppRunning {
+    $proc = Get-Process -Name $ProcessName -ErrorAction SilentlyContinue
+    if ($proc) {
+        Write-Host "  $AppType is running. Please close it first." -ForegroundColor Red
+        Read-Host "`n  Press Enter to exit"
+        exit 1
+    }
+}
 
-call :register
+function Invoke-Download {
+    if (-not (Test-Path $DestDir)) {
+        New-Item -Path $DestDir -ItemType Directory -Force | Out-Null
+    }
 
-echo.
-echo  Updated. Restart Excel to load the new version.
-echo.
-pause
-exit /b 0
+    Write-Host "  Downloading $AddinFile ..."
+    try {
+        $ProgressPreference = 'SilentlyContinue'
+        [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls13
+        Invoke-WebRequest -Uri $DownloadUrl -OutFile $DestFile -ErrorAction Stop
 
-:: ---- UNINSTALL ----
-:uninstall
+        if (-not (Test-Path $DestFile)) { throw 'File not created' }
+        Write-Host "  Downloaded successfully." -ForegroundColor Green
+    } catch {
+        Write-Host "  Download failed: $($_.Exception.Message)" -ForegroundColor Red
+        Write-Host "  Check your internet connection." -ForegroundColor Yellow
+        Read-Host "`n  Press Enter to exit"
+        exit 1
+    }
+}
 
-call :checkexcel
-if %errorlevel%==1 exit /b 1
+function Invoke-Register {
+    if (-not $NeedReg) {
+        Write-Host "  $AddinFile will auto-load from $AppType STARTUP folder." -ForegroundColor Green
+        # Still add trusted location
+        Add-TrustedLocation
+        return
+    }
 
-:: Remove OPEN entries from Excel Options registry
-call :deregister
+    $ErrorActionPreference = 'SilentlyContinue'
 
-:: Remove file
-del /f "%DST%" >nul 2>&1
+    foreach ($ver in $OfficeVersions) {
+        $verBase = "HKCU:\Software\Microsoft\Office\$ver"
+        if (-not (Test-Path $verBase)) { continue }
 
-if exist "%DST%" (
-    echo  ERROR: Could not remove %ADDIN%.
-    echo.
-    pause
-    exit /b 1
-)
+        # Register OPEN value
+        $optKey = "$verBase\$RegAppKey\Options"
+        if (Test-Path $optKey) {
+            $props = Get-ItemProperty -Path $optKey
+            $existingValues = $props.PSObject.Properties |
+                Where-Object { $_.Name -match '^OPEN\d*$' } |
+                Select-Object -ExpandProperty Value
 
-echo.
-echo  excelUI uninstalled.
-echo.
-pause
-exit /b 0
+            # Skip if already registered
+            if ($existingValues -contains $DestFile) { continue }
 
-:: ===========================================================
-::  SUBROUTINES
-:: ===========================================================
+            # Find next available OPEN name
+            $i = 0
+            while ($true) {
+                $name = if ($i -eq 0) { 'OPEN' } else { "OPEN$i" }
+                $cur = (Get-ItemProperty -Path $optKey -Name $name -ErrorAction SilentlyContinue).$name
+                if (-not $cur) {
+                    New-ItemProperty -Path $optKey -Name $name -Value $DestFile -PropertyType String -Force | Out-Null
+                    break
+                }
+                $i++
+            }
+        }
+    }
 
-:checkexcel
-tasklist /fi "imagename eq EXCEL.EXE" 2>nul | find /i "EXCEL.EXE" >nul
-if %errorlevel%==0 (
-    echo  Excel is running. Please close it first.
-    echo.
-    pause
-    exit /b 1
-)
-exit /b 0
+    Add-TrustedLocation
+    Write-Host "  Registered add-in for auto-load." -ForegroundColor Green
+    $ErrorActionPreference = 'Stop'
+}
 
-:download
-if not exist "%DEST%" mkdir "%DEST%"
-powershell -NoProfile -Command "$ProgressPreference='SilentlyContinue'; [Net.ServicePointManager]::SecurityProtocol=[Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls13; Invoke-WebRequest -Uri '%DOWNLOAD_URL%' -OutFile '%DST%'; if(!(Test-Path '%DST%')){exit 1}"
-if errorlevel 1 (
-    echo  Download failed. Check your internet connection.
-    echo.
-    pause
-    exit /b 1
-)
-echo  Downloaded successfully.
-exit /b 0
+function Add-TrustedLocation {
+    $ErrorActionPreference = 'SilentlyContinue'
+    $tlPath = $DestDir.TrimEnd('\') + '\'
 
-:register
-:: Excel uses OPEN / OPEN1 / OPEN2 ... entries under Options to auto-load add-ins.
-:: Also add the AddIns folder as a Trusted Location.
-powershell -NoProfile -Command ^
- "$ErrorActionPreference='SilentlyContinue'; "^
- "$versions = @('16.0','15.0','14.0') | Where-Object { Test-Path \"HKCU:\Software\Microsoft\Office\$_\" }; "^
- "foreach ($ver in $versions) { "^
- "  $optKey = \"HKCU:\Software\Microsoft\Office\$ver\Excel\Options\"; "^
- "  if (Test-Path $optKey) { "^
- "    $props = Get-ItemProperty -Path $optKey; "^
- "    $existing = $props.PSObject.Properties | Where-Object { $_.Name -match '^OPEN\d*$' } | Select-Object -ExpandProperty Value; "^
- "    if ($existing -contains '%DST%') { continue }; "^
- "    $i = 1; $done = $false; "^
- "    while (-not $done) { "^
- "      $name = if ($i -eq 1) { 'OPEN' } else { 'OPEN' + ($i - 1) }; "^
- "      $cur = (Get-ItemProperty -Path $optKey -Name $name -ErrorAction SilentlyContinue).$name; "^
- "      if (-not $cur) { New-ItemProperty -Path $optKey -Name $name -Value '%DST%' -PropertyType String -Force | Out-Null; $done = $true }; "^
- "      $i++ "^
- "    } "^
- "  }; "^
- "  $tlBase = \"HKCU:\Software\Microsoft\Office\$ver\Excel\Security\Trusted Locations\"; "^
- "  if (Test-Path $tlBase) { "^
- "    $tlPath = '%DEST%\'.TrimEnd('\') + '\'; "^
- "    $found = $false; "^
- "    Get-ChildItem $tlBase | ForEach-Object { "^
- "      $p = (Get-ItemProperty $_.PsPath -ErrorAction SilentlyContinue); "^
- "      if ($p.Path -and ($p.Path.TrimEnd('\') + '\') -ieq $tlPath) { $found = $true } "^
- "    }; "^
- "    if (-not $found) { "^
- "      $n = 1; while (Test-Path \"$tlBase\Location$n\") { $n++ }; "^
- "      $k = \"$tlBase\Location$n\"; "^
- "      New-Item -Path $k -Force | Out-Null; "^
- "      New-ItemProperty -Path $k -Name Path -Value $tlPath -PropertyType String -Force | Out-Null; "^
- "      New-ItemProperty -Path $k -Name AllowSubFolders -Value 1 -PropertyType DWord -Force | Out-Null; "^
- "      New-ItemProperty -Path $k -Name Description -Value 'excelUI Add-in' -PropertyType String -Force | Out-Null "^
- "    } "^
- "  } "^
- "}"
-echo  Registered add-in for auto-load.
-exit /b 0
+    foreach ($ver in $OfficeVersions) {
+        $tlBase = "HKCU:\Software\Microsoft\Office\$ver\$RegAppKey\Security\Trusted Locations"
+        if (-not (Test-Path $tlBase)) { continue }
 
-:deregister
-powershell -NoProfile -Command ^
- "$ErrorActionPreference='SilentlyContinue'; "^
- "$versions = @('16.0','15.0','14.0') | Where-Object { Test-Path \"HKCU:\Software\Microsoft\Office\$_\" }; "^
- "foreach ($ver in $versions) { "^
- "  $optKey = \"HKCU:\Software\Microsoft\Office\$ver\Excel\Options\"; "^
- "  if (Test-Path $optKey) { "^
- "    $props = Get-ItemProperty -Path $optKey; "^
- "    foreach ($p in $props.PSObject.Properties) { "^
- "      if ($p.Name -match '^OPEN\d*$' -and $p.Value -eq '%DST%') { "^
- "        Remove-ItemProperty -Path $optKey -Name $p.Name -ErrorAction SilentlyContinue "^
- "      } "^
- "    } "^
- "  }; "^
- "  $tlBase = \"HKCU:\Software\Microsoft\Office\$ver\Excel\Security\Trusted Locations\"; "^
- "  if (Test-Path $tlBase) { "^
- "    $tlPath = '%DEST%\'.TrimEnd('\') + '\'; "^
- "    Get-ChildItem $tlBase | ForEach-Object { "^
- "      $p = (Get-ItemProperty $_.PsPath -ErrorAction SilentlyContinue); "^
- "      if ($p.Path -and ($p.Path.TrimEnd('\') + '\') -ieq $tlPath -and $p.Description -like 'excelUI*') { "^
- "        Remove-Item $_.PsPath -Recurse -Force -ErrorAction SilentlyContinue "^
- "      } "^
- "    } "^
- "  } "^
- "}"
-echo  Deregistered add-in.
-exit /b 0
+        # Check if already trusted
+        $found = $false
+        Get-ChildItem $tlBase | ForEach-Object {
+            $p = Get-ItemProperty $_.PSPath -ErrorAction SilentlyContinue
+            if ($p.Path -and ($p.Path.TrimEnd('\') + '\') -ieq $tlPath) { $found = $true }
+        }
+
+        if (-not $found) {
+            $n = 1
+            while (Test-Path "$tlBase\Location$n") { $n++ }
+            $k = "$tlBase\Location$n"
+            New-Item -Path $k -Force | Out-Null
+            New-ItemProperty -Path $k -Name Path -Value $tlPath -PropertyType String -Force | Out-Null
+            New-ItemProperty -Path $k -Name AllowSubFolders -Value 1 -PropertyType DWord -Force | Out-Null
+            New-ItemProperty -Path $k -Name Description -Value "$AddinName Add-in" -PropertyType String -Force | Out-Null
+        }
+    }
+    $ErrorActionPreference = 'Stop'
+}
+
+function Invoke-Deregister {
+    $ErrorActionPreference = 'SilentlyContinue'
+
+    foreach ($ver in $OfficeVersions) {
+        $verBase = "HKCU:\Software\Microsoft\Office\$ver"
+        if (-not (Test-Path $verBase)) { continue }
+
+        # Remove OPEN entries
+        if ($NeedReg) {
+            $optKey = "$verBase\$RegAppKey\Options"
+            if (Test-Path $optKey) {
+                $props = Get-ItemProperty -Path $optKey
+                foreach ($p in $props.PSObject.Properties) {
+                    if ($p.Name -match '^OPEN\d*$' -and $p.Value -eq $DestFile) {
+                        Remove-ItemProperty -Path $optKey -Name $p.Name -ErrorAction SilentlyContinue
+                    }
+                }
+            }
+        }
+
+        # Remove trusted location
+        $tlBase = "$verBase\$RegAppKey\Security\Trusted Locations"
+        if (Test-Path $tlBase) {
+            $tlPath = $DestDir.TrimEnd('\') + '\'
+            Get-ChildItem $tlBase | ForEach-Object {
+                $p = Get-ItemProperty $_.PSPath -ErrorAction SilentlyContinue
+                if ($p.Path -and ($p.Path.TrimEnd('\') + '\') -ieq $tlPath -and $p.Description -like "$AddinName*") {
+                    Remove-Item $_.PSPath -Recurse -Force -ErrorAction SilentlyContinue
+                }
+            }
+        }
+    }
+
+    Write-Host "  Deregistered add-in." -ForegroundColor Green
+    $ErrorActionPreference = 'Stop'
+}
+
+# =============================================================
+# MAIN
+# =============================================================
+
+Write-Host ''
+Write-Host '  ========================================' -ForegroundColor Cyan
+Write-Host "    $AddinName - $AppType Add-in Setup" -ForegroundColor Cyan
+Write-Host '  ========================================' -ForegroundColor Cyan
+Write-Host ''
+
+if (Test-Path $DestFile) {
+    # Already installed
+    Write-Host "  $AddinName is already installed at:"
+    Write-Host "    $DestFile"
+    Write-Host ''
+    Write-Host '  [U] Update    - download latest version'
+    Write-Host '  [R] Uninstall - remove add-in'
+    Write-Host '  [C] Cancel'
+    Write-Host ''
+
+    $ans = Read-Host '  Choose (U/R/C)'
+
+    switch ($ans.Trim().ToUpper()) {
+        'U' {
+            Test-AppRunning
+            Invoke-Download
+            Invoke-Register
+            Write-Host ''
+            Write-Host "  Updated. Restart $AppType to load the new version." -ForegroundColor Green
+        }
+        'R' {
+            Test-AppRunning
+            Invoke-Deregister
+            try {
+                Remove-Item -Path $DestFile -Force -ErrorAction Stop
+                Write-Host "  $AddinName uninstalled." -ForegroundColor Green
+            } catch {
+                Write-Host "  ERROR: Could not remove $AddinFile." -ForegroundColor Red
+            }
+        }
+        default {
+            Write-Host '  Cancelled.'
+        }
+    }
+} else {
+    # Fresh install
+    Test-AppRunning
+    Invoke-Download
+    Invoke-Register
+    Write-Host ''
+    Write-Host "  Installed. The $AddinName tab will appear next time" -ForegroundColor Green
+    Write-Host "  you open $AppType." -ForegroundColor Green
+}
+
+Write-Host ''
+Read-Host '  Press Enter to exit'
