@@ -24,7 +24,7 @@ jobs:
           tag_prefix: excelUI-v
 
       - name: Lock VBA project
-        run: python scripts/lock-vba.py src/excelUI/excelUI.xlam src/excelUI/excelUI-locked.xlam
+        run: python scripts/vbaseal.py src/excelUI/excelUI.xlam src/excelUI/excelUI-locked.xlam
 
       - name: Package release
         run: |
