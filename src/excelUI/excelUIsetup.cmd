@@ -2,7 +2,7 @@
 setlocal EnableExtensions
 
 :: excelUI Setup — one-click install/update/uninstall
-:: Downloads excelUI.xlam from GitHub and installs to %APPDATA%\Microsoft\AddIns
+:: Downloads sealed excelUI.xlam from GitHub Releases and installs to %APPDATA%\Microsoft\AddIns
 :: Registers via HKCU registry so Excel loads it automatically.
 :: No admin rights needed.
 
@@ -10,7 +10,7 @@ set "ADDIN=excelUI.xlam"
 set "ADDIN_NAME=excelUI"
 set "DEST=%APPDATA%\Microsoft\AddIns"
 set "DST=%DEST%\%ADDIN%"
-set "DOWNLOAD_URL=https://raw.githubusercontent.com/therepos/excelUI/refs/heads/main/src/excelUI/excelUI.xlam"
+set "DOWNLOAD_URL=https://github.com/therepos/excelUI/releases/latest/download/excelUI.xlam"
 
 echo.
 echo  ========================================
