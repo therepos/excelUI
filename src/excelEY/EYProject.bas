@@ -6,6 +6,7 @@
 
 Sub ExtractJobsByManager()
     
+    Dim wbSrc As Workbook
     Dim wsSrc As Worksheet
     Dim wsOut As Worksheet
     Dim wbOut As Workbook
@@ -22,19 +23,27 @@ Sub ExtractJobsByManager()
         Exit Sub
     End If
     
+    ' --- Find the workbook containing "ER and P&C" (skip add-ins) ---
     Dim sheetFound As Boolean
     sheetFound = False
+    Dim wb As Workbook
     Dim ws As Worksheet
-    For Each ws In ActiveWorkbook.Sheets
-        If ws.Name = "ER and P&C" Then
-            sheetFound = True
-            Exit For
+    For Each wb In Application.Workbooks
+        If Not wb.IsAddin Then
+            For Each ws In wb.Sheets
+                If ws.Name = "ER and P&C" Then
+                    sheetFound = True
+                    Set wbSrc = wb
+                    Exit For
+                End If
+            Next ws
+            If sheetFound Then Exit For
         End If
-    Next ws
+    Next wb
     
     If Not sheetFound Then
-        MsgBox "Could not find the ""ER and P&C"" sheet in the active workbook." & vbCrLf & vbCrLf & _
-            "Please open the Retain file and make sure it is the active workbook, then try again.", _
+        MsgBox "Could not find the ""ER and P&C"" sheet in any open workbook." & vbCrLf & vbCrLf & _
+            "Please open the Retain file and try again.", _
             vbExclamation, "Extract Jobs by Manager"
         Exit Sub
     End If
@@ -55,13 +64,13 @@ Sub ExtractJobsByManager()
     Application.Calculation = xlCalculationManual
     
     ' --- Configuration ---
-    Set wsSrc = ActiveWorkbook.Sheets("ER and P&C")
+    Set wsSrc = wbSrc.Sheets("ER and P&C")
     headerRow = 7
     dataStartRow = 8
     dateStartCol = 4
     
-    lastRow = wsSrc.Cells(wsSrc.Rows.Count, 2).End(xlUp).Row
-    lastCol = wsSrc.Cells(headerRow, wsSrc.Columns.Count).End(xlToLeft).Column
+    lastRow = wsSrc.Cells(wsSrc.Rows.count, 2).End(xlUp).Row
+    lastCol = wsSrc.Cells(headerRow, wsSrc.Columns.count).End(xlToLeft).Column
     
     ' --- Get ALL date headers ---
     Dim allDates() As Date
@@ -92,10 +101,10 @@ Sub ExtractJobsByManager()
     Dim searchLower As String
     searchLower = LCase(mgrName)
     
-    Dim r As Long, i As Long
-    For r = dataStartRow To lastRow
+    Dim R As Long, i As Long
+    For R = dataStartRow To lastRow
         Dim staffRaw As String
-        staffRaw = CStr(wsSrc.Cells(r, 2).Value & "")
+        staffRaw = CStr(wsSrc.Cells(R, 2).Value & "")
         If Len(Trim(staffRaw)) = 0 Then GoTo NextRow
         
         Dim staffName As String
@@ -109,7 +118,7 @@ Sub ExtractJobsByManager()
         Loop
         
         Dim rank As String
-        rank = Trim(CStr(wsSrc.Cells(r, 3).Value & ""))
+        rank = Trim(CStr(wsSrc.Cells(R, 3).Value & ""))
         Dim rankAbbr As String
         Select Case rank
             Case "Senior-Grade 3": rankAbbr = "S3"
@@ -129,19 +138,12 @@ Sub ExtractJobsByManager()
         
         For i = 1 To numAllDates
             Dim cellVal As String
-            cellVal = CStr(wsSrc.Cells(r, allDateCols(i)).Value & "")
+            cellVal = CStr(wsSrc.Cells(R, allDateCols(i)).Value & "")
             If InStr(LCase(cellVal), searchLower) = 0 Then GoTo NextDate2
             
-            ' ============================================================
-            ' CRITICAL: Rejoin split lines before parsing
-            ' Some cells have the manager on a separate line, e.g.:
-            '   "50% - WSG \n(Nida/Ryan)"
-            ' We must merge "(..." lines back onto the previous "%" line
-            ' ============================================================
             Dim rawLines() As String
             rawLines = Split(Replace(cellVal, vbLf, Chr(10)), Chr(10))
             
-            ' Build merged lines array
             Dim merged() As String
             Dim numMerged As Long
             numMerged = 0
@@ -153,7 +155,6 @@ Sub ExtractJobsByManager()
                 If Len(stripped) = 0 Then GoTo NextRawLine
                 
                 If Left(stripped, 1) = "(" And numMerged > 0 Then
-                    ' This line starts with "(" - merge onto previous line if it had "%"
                     If InStr(merged(numMerged), "%") > 0 Then
                         merged(numMerged) = Trim(merged(numMerged)) & " " & stripped
                     Else
@@ -169,7 +170,6 @@ Sub ExtractJobsByManager()
 NextRawLine:
             Next m
             
-            ' Now process merged lines
             Dim j As Long
             For j = 1 To numMerged
                 Dim ln As String
@@ -177,8 +177,6 @@ NextRawLine:
                 If Len(ln) = 0 Then GoTo NextLine
                 If InStr(LCase(ln), searchLower) = 0 Then GoTo NextLine
                 
-                ' --- Extract job name and TOTAL percentage from the line ---
-                ' Sum all percentages in the line
                 Dim totalPct As Long
                 totalPct = 0
                 Dim numStr As String
@@ -202,7 +200,6 @@ NextRawLine:
                 Dim pctVal As Long
                 pctVal = totalPct
                 
-                ' Find the LAST "%" position to get the actual job name
                 Dim lastPctPos As Long
                 lastPctPos = 0
                 For k = Len(ln) To 1 Step -1
@@ -212,7 +209,6 @@ NextRawLine:
                     End If
                 Next k
                 
-                ' Job name is between last "% - " and "("
                 Dim afterPct As String
                 afterPct = Mid(ln, lastPctPos + 1)
                 afterPct = Trim(afterPct)
@@ -227,14 +223,12 @@ NextRawLine:
                     jobName = Trim(afterPct)
                 End If
                 
-                ' Clean trailing dashes/spaces
                 Do While Len(jobName) > 0 And (Right(jobName, 1) = "-" Or Right(jobName, 1) = " ")
                     jobName = Left(jobName, Len(jobName) - 1)
                 Loop
                 
                 If Len(jobName) = 0 Then GoTo NextLine
                 
-                ' Store result
                 numRes = numRes + 1
                 ReDim Preserve resJob(1 To numRes)
                 ReDim Preserve resStaff(1 To numRes)
@@ -252,7 +246,7 @@ NextLine:
 NextDate2:
         Next i
 NextRow:
-    Next r
+    Next R
     
     If numRes = 0 Then
         MsgBox "No jobs found for """ & mgrName & """.", vbInformation
@@ -523,7 +517,9 @@ NextRes:
         outRow = outRow + 1
     Next s
     
-    ' --- Freeze panes ---
+    ' --- Freeze panes (must activate the output sheet/window first) ---
+    wbOut.Activate
+    wsOut.Activate
     wsOut.Cells(4, dateColStart).Select
     ActiveWindow.FreezePanes = True
     
@@ -539,9 +535,14 @@ NextRes:
     Next cel
     
     ' Page setup
-    wsOut.PageSetup.Orientation = 2
-    wsOut.PageSetup.FitToPagesWide = 1
-    wsOut.PageSetup.FitToPagesTall = 999
+    On Error Resume Next
+    With wsOut.PageSetup
+        .Orientation = xlLandscape
+        .Zoom = False
+        .FitToPagesWide = 1
+        .FitToPagesTall = False
+    End With
+    On Error GoTo 0
     
     ' --- Count unique jobs ---
     Dim uniqueJobs As Long
@@ -564,6 +565,3 @@ Cleanup:
     Application.Calculation = xlCalculationAutomatic
     
 End Sub
-
-
-

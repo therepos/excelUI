@@ -49,8 +49,8 @@ Sub GenerateRetainAvailability()
     dataStartRow = 8
     dateStartCol = 4 ' Column D
     
-    lastRow = wsSrc.Cells(wsSrc.Rows.Count, 2).End(xlUp).Row
-    lastCol = wsSrc.Cells(headerRow, wsSrc.Columns.Count).End(xlToLeft).Column
+    lastRow = wsSrc.Cells(wsSrc.Rows.count, 2).End(xlUp).Row
+    lastCol = wsSrc.Cells(headerRow, wsSrc.Columns.count).End(xlToLeft).Column
     
     ' --- Prompt for date range ---
     Dim startWeek As Date, endWeek As Date
@@ -179,17 +179,17 @@ Sub GenerateRetainAvailability()
     outRow = 5
     staffNum = 0
     
-    Dim r As Long
-    For r = dataStartRow To lastRow
+    Dim R As Long
+    For R = dataStartRow To lastRow
         Dim staffName As String
-        staffName = Trim(Replace(CStr(wsSrc.Cells(r, 2).Value & ""), vbLf, " "))
+        staffName = Trim(Replace(CStr(wsSrc.Cells(R, 2).Value & ""), vbLf, " "))
         If Len(staffName) = 0 Then GoTo NextStaff
         
         Dim status As String
-        status = LCase(Trim(Replace(CStr(wsSrc.Cells(r, 1).Value & ""), vbLf, " ")))
+        status = LCase(Trim(Replace(CStr(wsSrc.Cells(R, 1).Value & ""), vbLf, " ")))
         
         Dim rank As String
-        rank = Trim(CStr(wsSrc.Cells(r, 3).Value & ""))
+        rank = Trim(CStr(wsSrc.Cells(R, 3).Value & ""))
         
         ' Abbreviate rank
         Dim rankAbbr As String
@@ -309,7 +309,7 @@ Sub GenerateRetainAvailability()
             
             ' Calculate availability
             Dim cellVal As Variant
-            cellVal = wsSrc.Cells(r, dateCols(i)).Value
+            cellVal = wsSrc.Cells(R, dateCols(i)).Value
             
             Dim totalPct As Long
             totalPct = ExtractTotalPercent(CStr(cellVal & ""))
@@ -328,7 +328,7 @@ NextDate:
         
         outRow = outRow + 1
 NextStaff:
-    Next r
+    Next R
     
     ' Freeze panes
     wsOut.Range("D5").Select
@@ -497,6 +497,3 @@ Function ExtractTotalPercent(cellText As String) As Long
     
     ExtractTotalPercent = total
 End Function
-
-
-
