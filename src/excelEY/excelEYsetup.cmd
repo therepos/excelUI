@@ -1,5 +1,4 @@
 @echo off
-setlocal EnableDelayedExpansion
 :: ============================================================
 ::  Office Add-in Setup — install / update / uninstall
 ::  Auto-detects Excel / Word / PowerPoint from file extension.
@@ -34,7 +33,8 @@ $ErrorActionPreference = 'Stop'
 
 $AddinFile    = 'excelEY.xlam'
 $AddinName    = 'excelEY'
-$DownloadUrl  = 'https://github.com/therepos/excelEY/releases/latest/download/excelEY.xlam'
+$GithubRepo   = 'therepos/excelUI'
+$TagPrefix    = 'excelEY-v'
 
 # ═════════════════════════════════════════════════════════════
 # AUTO-DETECT — do not edit below
@@ -43,7 +43,6 @@ $DownloadUrl  = 'https://github.com/therepos/excelEY/releases/latest/download/ex
 $appdata = $env:APPDATA
 $ext = [System.IO.Path]::GetExtension($AddinFile).ToLower()
 
-# Determine app type, install path, process name, and registry app key
 switch ($ext) {
     { $_ -in '.xlam', '.xla' } {
         $AppType     = 'Excel'
@@ -57,7 +56,7 @@ switch ($ext) {
         $DestDir     = "$appdata\Microsoft\Word\STARTUP"
         $ProcessName = 'WINWORD'
         $RegAppKey   = 'Word'
-        $NeedReg     = $false   # Word auto-loads from STARTUP
+        $NeedReg     = $false
     }
     { $_ -in '.ppam', '.ppa' } {
         $AppType     = 'PowerPoint'
@@ -81,6 +80,39 @@ $Host.UI.RawUI.WindowTitle = "$AddinName Setup"
 # FUNCTIONS
 # =============================================================
 
+function Resolve-DownloadUrl {
+    # Query GitHub API to find the latest release matching our tag prefix,
+    # then return the download URL for our add-in file.
+    Write-Host "  Finding latest $AddinName release..."
+
+    $ProgressPreference = 'SilentlyContinue'
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls13
+
+    $apiUrl = "https://api.github.com/repos/$GithubRepo/releases"
+    try {
+        $releases = Invoke-RestMethod -Uri $apiUrl -Headers @{ 'User-Agent' = 'addin-setup' } -ErrorAction Stop
+    } catch {
+        throw "Cannot reach GitHub API: $($_.Exception.Message)"
+    }
+
+    # Find the latest release whose tag starts with our prefix
+    $matched = $releases | Where-Object { $_.tag_name -like "$TagPrefix*" } | Select-Object -First 1
+
+    if (-not $matched) {
+        throw "No release found with tag prefix '$TagPrefix'"
+    }
+
+    # Find our file in the release assets
+    $asset = $matched.assets | Where-Object { $_.name -eq $AddinFile } | Select-Object -First 1
+
+    if (-not $asset) {
+        throw "$AddinFile not found in release $($matched.tag_name)"
+    }
+
+    Write-Host "  Found: $($matched.tag_name)" -ForegroundColor Green
+    return $asset.browser_download_url
+}
+
 function Test-AppRunning {
     $proc = Get-Process -Name $ProcessName -ErrorAction SilentlyContinue
     if ($proc) {
@@ -95,11 +127,19 @@ function Invoke-Download {
         New-Item -Path $DestDir -ItemType Directory -Force | Out-Null
     }
 
+    try {
+        $url = Resolve-DownloadUrl
+    } catch {
+        Write-Host "  $($_.Exception.Message)" -ForegroundColor Red
+        Read-Host "`n  Press Enter to exit"
+        exit 1
+    }
+
     Write-Host "  Downloading $AddinFile ..."
     try {
         $ProgressPreference = 'SilentlyContinue'
         [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12 -bor [Net.SecurityProtocolType]::Tls13
-        Invoke-WebRequest -Uri $DownloadUrl -OutFile $DestFile -ErrorAction Stop
+        Invoke-WebRequest -Uri $url -OutFile $DestFile -ErrorAction Stop
 
         if (-not (Test-Path $DestFile)) { throw 'File not created' }
         Write-Host "  Downloaded successfully." -ForegroundColor Green
@@ -114,7 +154,6 @@ function Invoke-Download {
 function Invoke-Register {
     if (-not $NeedReg) {
         Write-Host "  $AddinFile will auto-load from $AppType STARTUP folder." -ForegroundColor Green
-        # Still add trusted location
         Add-TrustedLocation
         return
     }
@@ -125,7 +164,6 @@ function Invoke-Register {
         $verBase = "HKCU:\Software\Microsoft\Office\$ver"
         if (-not (Test-Path $verBase)) { continue }
 
-        # Register OPEN value
         $optKey = "$verBase\$RegAppKey\Options"
         if (Test-Path $optKey) {
             $props = Get-ItemProperty -Path $optKey
@@ -133,10 +171,8 @@ function Invoke-Register {
                 Where-Object { $_.Name -match '^OPEN\d*$' } |
                 Select-Object -ExpandProperty Value
 
-            # Skip if already registered
             if ($existingValues -contains $DestFile) { continue }
 
-            # Find next available OPEN name
             $i = 0
             while ($true) {
                 $name = if ($i -eq 0) { 'OPEN' } else { "OPEN$i" }
@@ -163,7 +199,6 @@ function Add-TrustedLocation {
         $tlBase = "HKCU:\Software\Microsoft\Office\$ver\$RegAppKey\Security\Trusted Locations"
         if (-not (Test-Path $tlBase)) { continue }
 
-        # Check if already trusted
         $found = $false
         Get-ChildItem $tlBase | ForEach-Object {
             $p = Get-ItemProperty $_.PSPath -ErrorAction SilentlyContinue
@@ -190,7 +225,6 @@ function Invoke-Deregister {
         $verBase = "HKCU:\Software\Microsoft\Office\$ver"
         if (-not (Test-Path $verBase)) { continue }
 
-        # Remove OPEN entries
         if ($NeedReg) {
             $optKey = "$verBase\$RegAppKey\Options"
             if (Test-Path $optKey) {
@@ -203,7 +237,6 @@ function Invoke-Deregister {
             }
         }
 
-        # Remove trusted location
         $tlBase = "$verBase\$RegAppKey\Security\Trusted Locations"
         if (Test-Path $tlBase) {
             $tlPath = $DestDir.TrimEnd('\') + '\'
@@ -231,7 +264,6 @@ Write-Host '  ========================================' -ForegroundColor Cyan
 Write-Host ''
 
 if (Test-Path $DestFile) {
-    # Already installed
     Write-Host "  $AddinName is already installed at:"
     Write-Host "    $DestFile"
     Write-Host ''
@@ -265,7 +297,6 @@ if (Test-Path $DestFile) {
         }
     }
 } else {
-    # Fresh install
     Test-AppRunning
     Invoke-Download
     Invoke-Register
