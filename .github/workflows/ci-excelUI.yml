@@ -4,7 +4,7 @@ on:
   push:
     branches: [ main ]
     paths:
-      - src/excelUI
+      - src/excelUI/**
   workflow_dispatch:
 
 jobs:
