@@ -87,13 +87,10 @@
 						</menu>
 					</splitButton>
 				</group>
-				<!-- Group: Pack (loader for extra function packs) -->
-				<group id="t1g5" label="Pack">
-					<button id="t1g5b01" label="Load Pack" size="large" tag="LoadPack" onAction="RunByName" imageMso="AdpStoredProcedureNew"/>
-					<separator id="t1g5s01"/>
-					<!-- EY buttons - only visible when EY pack is loaded -->
-					<button id="t1g5b02" label="Availability" size="normal" tag="PackRunAvailability" onAction="RunByName" imageMso="CreateQueryFromWizard" getVisible="GetPackButtonVisible"/>
-					<button id="t1g5b03" label="Project" size="normal" tag="PackRunProject" onAction="RunByName" imageMso="CreateQueryFromWizard" getVisible="GetPackButtonVisible"/>
+				<!-- Group: EY -->
+				<group id="t1g5" label="EY">
+					<button id="t1g5b01" label="Availability" size="normal" tag="PackRunAvailability" onAction="RunByName" imageMso="CreateQueryFromWizard" getVisible="GetPackButtonVisible"/>
+					<button id="t1g5b02" label="Project" size="normal" tag="PackRunProject" onAction="RunByName" imageMso="CreateQueryFromWizard" getVisible="GetPackButtonVisible"/>
 				</group>
 			</tab>
 		</tabs>
