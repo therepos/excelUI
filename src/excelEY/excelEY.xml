@@ -1,7 +1,7 @@
 <customUI xmlns="http://schemas.microsoft.com/office/2009/07/customui" onLoad="RibbonOnLoad">
 	<ribbon>
 		<tabs>
-			<tab id="t1" tag="t1" label="ExcelUI">
+			<tab id="t1" tag="t1" label="ExcelEY">
 				<!-- Group: Workbook -->
 				<group id="t1g1" label="Workbook">
 					<splitButton id="t1g1sb01" size="large">
@@ -89,7 +89,7 @@
 				</group>
 				<!-- Group: EY -->
 				<group id="t1g5" label="EY">
-					<button id="t1g5b01" label="Availability" size="normal" tag="PackRunAvailability" onAction="RunByName" imageMso="CreateQueryFromWizard" getVisible="GetPackButtonVisible"/>
+					<button id="t1g5b01" label="Availability" size="normal" tag="GenerateRetainAvailability" onAction="RunByName" imageMso="CreateQueryFromWizard"/>
 				</group>
 			</tab>
 		</tabs>
