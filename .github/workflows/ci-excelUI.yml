@@ -23,13 +23,13 @@ jobs:
           release_branches: main
           tag_prefix: excelUI-v
 
-      - name: Lock VBA project
-        run: python scripts/vbaseal.py src/excelUI/excelUI.xlam src/excelUI/excelUI-locked.xlam
+      - name: Seal VBA project
+        run: python scripts/vbaseal.py src/excelUI/excelUI.xlam
 
       - name: Package release
         run: |
           New-Item -ItemType Directory -Force -Path rel | Out-Null
-          Copy-Item src\excelUI\excelUI-locked.xlam rel\excelUI.xlam
+          Copy-Item src\excelUI\excelUI.xlam rel\excelUI.xlam
           Copy-Item src\excelUI\excelUIsetup.cmd rel\excelUIsetup.cmd
           Compress-Archive -Path rel\excelUI.xlam, rel\excelUIsetup.cmd -DestinationPath rel\excelUI.zip -Force
 
