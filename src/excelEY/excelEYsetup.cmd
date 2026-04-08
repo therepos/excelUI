@@ -81,8 +81,6 @@ $Host.UI.RawUI.WindowTitle = "$AddinName Setup"
 # =============================================================
 
 function Resolve-DownloadUrl {
-    # Query GitHub API to find the latest release matching our tag prefix,
-    # then return the download URL for our add-in file.
     Write-Host "  Finding latest $AddinName release..."
 
     $ProgressPreference = 'SilentlyContinue'
@@ -95,8 +93,14 @@ function Resolve-DownloadUrl {
         throw "Cannot reach GitHub API: $($_.Exception.Message)"
     }
 
-    # Find the latest release whose tag starts with our prefix
-    $matched = $releases | Where-Object { $_.tag_name -like "$TagPrefix*" } | Select-Object -First 1
+    # Find the latest release by version number (not by API order)
+    $matched = $releases |
+        Where-Object { $_.tag_name -like "$TagPrefix*" } |
+        Sort-Object {
+            $v = $_.tag_name -replace [regex]::Escape($TagPrefix), ''
+            try { [version]$v } catch { [version]'0.0' }
+        } -Descending |
+        Select-Object -First 1
 
     if (-not $matched) {
         throw "No release found with tag prefix '$TagPrefix'"
