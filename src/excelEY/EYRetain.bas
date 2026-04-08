@@ -1,10 +1,9 @@
+Attribute VB_Name = "EYRetain"
 ' ============================================================
 ' RETAIN AVAILABILITY GENERATOR
-' Reads the ACTIVE sheet and generates "Retain Availability"
+' Auto-detects sheet structure and generates "Retain Availability"
 ' in a NEW workbook
-' Works on any tab with the standard structure:
-'   Row 6 = PH annotations, Row 7 = date headers, Row 8+ = data
-'   Col A = Status, Col B = Name, Col C = Rank, Col D+ = weeks
+' Works on any tab regardless of column layout
 ' ============================================================
 
 ' --- Helper: locale-safe DD/MM/YYYY parser ---
@@ -29,6 +28,42 @@ Private Function ParseDMY(ByVal s As String) As Date
     ParseDMY = DateSerial(CInt(parts(2)), CInt(parts(1)), CInt(parts(0)))
 End Function
 
+' --- Helper: find a column by header keywords ---
+Private Function FindColumnByHeader(ws As Worksheet, headerRow As Long, lastCol As Long, ParamArray keywords() As Variant) As Long
+    ' Returns the column number whose header matches any of the keywords (case-insensitive)
+    ' Returns 0 if not found
+    Dim c As Long
+    Dim kw As Variant
+    Dim cellText As String
+    
+    For c = 1 To lastCol
+        If Not IsError(ws.Cells(headerRow, c).Value) Then
+            cellText = LCase(Trim(CStr(ws.Cells(headerRow, c).Value & "")))
+            For Each kw In keywords
+                If cellText = LCase(CStr(kw)) Then
+                    FindColumnByHeader = c
+                    Exit Function
+                End If
+            Next kw
+        End If
+    Next c
+    
+    ' Fallback: partial match
+    For c = 1 To lastCol
+        If Not IsError(ws.Cells(headerRow, c).Value) Then
+            cellText = LCase(Trim(CStr(ws.Cells(headerRow, c).Value & "")))
+            For Each kw In keywords
+                If InStr(cellText, LCase(CStr(kw))) > 0 Then
+                    FindColumnByHeader = c
+                    Exit Function
+                End If
+            Next kw
+        End If
+    Next c
+    
+    FindColumnByHeader = 0
+End Function
+
 Sub GenerateRetainAvailability()
     
     Dim wsSrc As Worksheet
@@ -39,6 +74,11 @@ Sub GenerateRetainAvailability()
     Dim dataStartRow As Long
     Dim dateStartCol As Long
     Dim srcSheetName As String
+    
+    ' --- Column references (auto-detected) ---
+    Dim colStatus As Long
+    Dim colName As Long
+    Dim colRank As Long
     
     ' --- Validate source workbook ---
     If ActiveWorkbook Is Nothing Then
@@ -52,39 +92,97 @@ Sub GenerateRetainAvailability()
     Set wsSrc = ActiveSheet
     srcSheetName = wsSrc.Name
     
-    ' --- Quick structure validation ---
-    ' Check that row 7 has at least one date starting from col D
-    Dim hasDate As Boolean
-    hasDate = False
-    Dim testCol As Long
-    For testCol = 4 To 100
-        If Not IsError(wsSrc.Cells(7, testCol).Value) Then
-            If IsDate(wsSrc.Cells(7, testCol).Value) Then
-                hasDate = True
-                Exit For
-            End If
-        End If
-        If IsEmpty(wsSrc.Cells(7, testCol).Value) Then Exit For
-    Next testCol
+    ' ============================================================
+    ' AUTO-DETECT: Find header row (first row with dates)
+    ' ============================================================
+    Dim scanRow As Long, scanCol As Long
+    Dim foundHeaderRow As Long
+    Dim foundDateStartCol As Long
+    foundHeaderRow = 0
+    foundDateStartCol = 0
     
-    If Not hasDate Then
-        MsgBox "The active sheet """ & srcSheetName & """ does not appear to have the expected structure." & vbCrLf & vbCrLf & _
-            "Expected date headers in row 7 starting from column D." & vbCrLf & _
+    For scanRow = 1 To 20
+        For scanCol = 1 To 50
+            If Not IsEmpty(wsSrc.Cells(scanRow, scanCol).Value) Then
+                If Not IsError(wsSrc.Cells(scanRow, scanCol).Value) Then
+                    If IsDate(wsSrc.Cells(scanRow, scanCol).Value) Then
+                        ' Confirm it's a real date (not just a number that looks like a date)
+                        ' Check that the next cell is also a date (dates come in sequences)
+                        If scanCol < 50 Then
+                            If Not IsError(wsSrc.Cells(scanRow, scanCol + 1).Value) Then
+                                If IsDate(wsSrc.Cells(scanRow, scanCol + 1).Value) Then
+                                    foundHeaderRow = scanRow
+                                    foundDateStartCol = scanCol
+                                    GoTo FoundDates
+                                End If
+                            End If
+                        End If
+                    End If
+                End If
+            End If
+        Next scanCol
+    Next scanRow
+    
+FoundDates:
+    If foundHeaderRow = 0 Then
+        MsgBox "Could not find date headers on the active sheet """ & srcSheetName & """." & vbCrLf & vbCrLf & _
+            "The script looks for a row (within rows 1-20) that contains consecutive dates." & vbCrLf & _
             "Please switch to the correct tab and try again.", _
             vbExclamation, "Retain Availability Generator"
         Exit Sub
+    End If
+    
+    headerRow = foundHeaderRow
+    dateStartCol = foundDateStartCol
+    dataStartRow = headerRow + 1
+    
+    ' ============================================================
+    ' AUTO-DETECT: Find Status, Name, and Rank columns
+    ' ============================================================
+    ' Look in the header row itself for column labels
+    ' Some sheets have labels in the same row as dates, others one row above
+    
+    Dim labelRow As Long
+    Dim tempLastCol As Long
+    tempLastCol = wsSrc.Cells(headerRow, wsSrc.Columns.Count).End(xlToLeft).Column
+    
+    ' Try header row first
+    colStatus = FindColumnByHeader(wsSrc, headerRow, tempLastCol, "Status")
+    colName = FindColumnByHeader(wsSrc, headerRow, tempLastCol, "Person Name", "ResourceName", "Resource Name", "Name", "Staff Name")
+    colRank = FindColumnByHeader(wsSrc, headerRow, tempLastCol, "Rank", "Current Grade", "Grade", "Current Grade Order")
+    
+    ' If not found, try one row above (some sheets split label row and date row)
+    If headerRow > 1 Then
+        If colStatus = 0 Then colStatus = FindColumnByHeader(wsSrc, headerRow - 1, tempLastCol, "Status")
+        If colName = 0 Then colName = FindColumnByHeader(wsSrc, headerRow - 1, tempLastCol, "Person Name", "ResourceName", "Resource Name", "Name", "Staff Name")
+        If colRank = 0 Then colRank = FindColumnByHeader(wsSrc, headerRow - 1, tempLastCol, "Rank", "Current Grade", "Grade", "Current Grade Order")
+    End If
+    
+    ' Validation
+    If colName = 0 Then
+        MsgBox "Could not find the staff name column on """ & srcSheetName & """." & vbCrLf & vbCrLf & _
+            "Expected a header like ""Person Name"" or ""ResourceName"" in row " & headerRow & " or " & headerRow - 1 & "." & vbCrLf & _
+            "Please check the sheet structure.", _
+            vbExclamation, "Retain Availability Generator"
+        Exit Sub
+    End If
+    
+    ' Default fallbacks if Status or Rank not found
+    If colStatus = 0 Then
+        ' Assume column A
+        colStatus = 1
+    End If
+    If colRank = 0 Then
+        ' Assume column after name
+        colRank = colName + 1
     End If
     
     ' --- Now safe to change app settings ---
     Application.ScreenUpdating = False
     Application.Calculation = xlCalculationManual
     
-    ' --- Configuration ---
-    headerRow = 7
-    dataStartRow = 8
-    dateStartCol = 4 ' Column D
-    
-    lastRow = wsSrc.Cells(wsSrc.Rows.Count, 2).End(xlUp).Row
+    ' --- Determine data extent ---
+    lastRow = wsSrc.Cells(wsSrc.Rows.Count, colName).End(xlUp).Row
     lastCol = wsSrc.Cells(headerRow, wsSrc.Columns.Count).End(xlToLeft).Column
     
     ' --- Prompt for date range ---
@@ -95,29 +193,34 @@ Sub GenerateRetainAvailability()
     
     ' Safe read of first/last date headers
     If IsError(wsSrc.Cells(headerRow, dateStartCol).Value) Then
-        MsgBox "The first date header cell (row " & headerRow & ", col " & dateStartCol & ") contains an error." & vbCrLf & _
+        MsgBox "The first date header cell contains an error." & vbCrLf & _
             "Please fix the source data and try again.", vbExclamation, "Retain Availability Generator"
-        GoTo Cleanup
-    End If
-    If Not IsDate(wsSrc.Cells(headerRow, dateStartCol).Value) Then
-        MsgBox "The first date header cell does not contain a valid date.", vbExclamation, "Retain Availability Generator"
         GoTo Cleanup
     End If
     firstDate = wsSrc.Cells(headerRow, dateStartCol).Value
     
-    If IsError(wsSrc.Cells(headerRow, lastCol).Value) Then
-        MsgBox "The last date header cell (row " & headerRow & ", col " & lastCol & ") contains an error." & vbCrLf & _
+    ' Find the actual last date column
+    Dim lastDateCol As Long
+    lastDateCol = dateStartCol
+    Dim sc As Long
+    For sc = dateStartCol To lastCol
+        If Not IsError(wsSrc.Cells(headerRow, sc).Value) Then
+            If IsDate(wsSrc.Cells(headerRow, sc).Value) Then
+                lastDateCol = sc
+            End If
+        End If
+    Next sc
+    
+    If IsError(wsSrc.Cells(headerRow, lastDateCol).Value) Then
+        MsgBox "The last date header cell contains an error." & vbCrLf & _
             "Please fix the source data and try again.", vbExclamation, "Retain Availability Generator"
         GoTo Cleanup
     End If
-    If Not IsDate(wsSrc.Cells(headerRow, lastCol).Value) Then
-        MsgBox "The last date header cell does not contain a valid date.", vbExclamation, "Retain Availability Generator"
-        GoTo Cleanup
-    End If
-    lastDate = wsSrc.Cells(headerRow, lastCol).Value
+    lastDate = wsSrc.Cells(headerRow, lastDateCol).Value
     
     inputStart = InputBox("Enter START week date (DD/MM/YYYY):" & vbCrLf & vbCrLf & _
         "Source tab: " & srcSheetName & vbCrLf & _
+        "Detected layout: dates in row " & headerRow & ", names in col " & Chr(64 + colName) & vbCrLf & _
         "Available range: " & Format(firstDate, "DD/MM/YYYY") & " to " & Format(lastDate, "DD/MM/YYYY"), _
         "Retain Availability Generator", Format(Date, "DD/MM/YYYY"))
     
@@ -178,11 +281,16 @@ Sub GenerateRetainAvailability()
     wsOut.Range("A1").Font.Size = 14
     
     ' --- PH annotations (row 2) ---
+    ' Check the row above the header row for PH info
+    Dim phRow As Long
+    phRow = headerRow - 1
+    If phRow < 1 Then phRow = 1
+    
     Dim i As Long
     For i = 1 To numDates
         Dim phVal As Variant
-        If Not IsError(wsSrc.Cells(6, dateCols(i)).Value) Then
-            phVal = wsSrc.Cells(6, dateCols(i)).Value
+        If Not IsError(wsSrc.Cells(phRow, dateCols(i)).Value) Then
+            phVal = wsSrc.Cells(phRow, dateCols(i)).Value
             If Len(Trim(CStr(phVal & ""))) > 0 And Not IsNumeric(phVal) Then
                 wsOut.Cells(2, 3 + i).Value = "PH: " & Format(dateVals(i), "D MMM")
                 wsOut.Cells(2, 3 + i).Font.Size = 8
@@ -244,37 +352,53 @@ Sub GenerateRetainAvailability()
     Dim R As Long
     For R = dataStartRow To lastRow
         Dim staffName As String
-        If IsError(wsSrc.Cells(R, 2).Value) Then GoTo NextStaff
-        staffName = Trim(Replace(CStr(wsSrc.Cells(R, 2).Value & ""), vbLf, " "))
+        If IsError(wsSrc.Cells(R, colName).Value) Then GoTo NextStaff
+        staffName = Trim(Replace(CStr(wsSrc.Cells(R, colName).Value & ""), vbLf, " "))
         If Len(staffName) = 0 Then GoTo NextStaff
         
         Dim status As String
-        If IsError(wsSrc.Cells(R, 1).Value) Then
+        If IsError(wsSrc.Cells(R, colStatus).Value) Then
             status = ""
         Else
-            status = LCase(Trim(Replace(CStr(wsSrc.Cells(R, 1).Value & ""), vbLf, " ")))
+            status = LCase(Trim(Replace(CStr(wsSrc.Cells(R, colStatus).Value & ""), vbLf, " ")))
         End If
         
         Dim rank As String
-        If IsError(wsSrc.Cells(R, 3).Value) Then
+        If IsError(wsSrc.Cells(R, colRank).Value) Then
             rank = ""
         Else
-            rank = Trim(CStr(wsSrc.Cells(R, 3).Value & ""))
+            rank = Trim(CStr(wsSrc.Cells(R, colRank).Value & ""))
         End If
         
         ' Abbreviate rank
         Dim rankAbbr As String
         Select Case rank
-            Case "Senior-Grade 3": rankAbbr = "S3"
-            Case "Senior-Grade 2": rankAbbr = "S2"
-            Case "Senior-Grade 1": rankAbbr = "S1"
-            Case "Assistant-Grade 2": rankAbbr = "A2"
-            Case "Assistant-Grade 1": rankAbbr = "A1"
+            Case "Senior-Grade 3", "Senior 3": rankAbbr = "S3"
+            Case "Senior-Grade 2", "Senior 2": rankAbbr = "S2"
+            Case "Senior-Grade 1", "Senior 1", "Senior 1 ": rankAbbr = "S1"
+            Case "Assistant-Grade 2", "Assistant 2": rankAbbr = "A2"
+            Case "Assistant-Grade 1", "Assistant 1": rankAbbr = "A1"
             Case "Assistant": rankAbbr = "A1"
             Case "Staff/Assistant 1": rankAbbr = "S/A1"
+            Case "Staff/Assistant 2": rankAbbr = "S/A2"
+            Case "Risk Consulting": rankAbbr = "RC"
             Case Else
                 If InStr(LCase(rank), "intern") > 0 Then
                     rankAbbr = "Intern"
+                ElseIf InStr(LCase(rank), "senior") > 0 And InStr(LCase(rank), "1") > 0 Then
+                    rankAbbr = "S1"
+                ElseIf InStr(LCase(rank), "senior") > 0 And InStr(LCase(rank), "2") > 0 Then
+                    rankAbbr = "S2"
+                ElseIf InStr(LCase(rank), "senior") > 0 And InStr(LCase(rank), "3") > 0 Then
+                    rankAbbr = "S3"
+                ElseIf InStr(LCase(rank), "assistant") > 0 And InStr(LCase(rank), "1") > 0 Then
+                    rankAbbr = "A1"
+                ElseIf InStr(LCase(rank), "assistant") > 0 And InStr(LCase(rank), "2") > 0 Then
+                    rankAbbr = "A2"
+                ElseIf InStr(LCase(rank), "staff") > 0 And InStr(LCase(rank), "1") > 0 Then
+                    rankAbbr = "S/A1"
+                ElseIf InStr(LCase(rank), "staff") > 0 And InStr(LCase(rank), "2") > 0 Then
+                    rankAbbr = "S/A2"
                 Else
                     rankAbbr = rank
                 End If
@@ -331,7 +455,7 @@ Sub GenerateRetainAvailability()
                     If Len(monStr) >= 3 Then monStr = Left(monStr, 3)
                     
                     If Len(dayNum) > 0 And Len(monStr) > 0 Then
-                        wefDate = DateSerial(2026, Month(DateValue("1 " & monStr & " 2026")), CInt(dayNum))
+                        wefDate = DateSerial(Year(Date), Month(DateValue("1 " & monStr & " 2026")), CInt(dayNum))
                         If dateVals(i) < wefDate Then
                             oCell.Interior.Color = RGB(0, 0, 0)
                             GoTo NextDate
@@ -369,7 +493,7 @@ Sub GenerateRetainAvailability()
                 If Len(ldMon) >= 3 Then ldMon = Left(ldMon, 3)
                 If Len(ldDay) > 0 And Len(ldMon) > 0 Then
                     Dim lastDayDate As Date
-                    lastDayDate = DateSerial(2026, Month(DateValue("1 " & ldMon & " 2026")), CInt(ldDay))
+                    lastDayDate = DateSerial(Year(Date), Month(DateValue("1 " & ldMon & " 2026")), CInt(ldDay))
                     If dateVals(i) > lastDayDate Then
                         oCell.Interior.Color = RGB(0, 0, 0)
                         GoTo NextDate
@@ -428,6 +552,7 @@ NextStaff:
     
     MsgBox "Retain Availability generated in new workbook!" & vbCrLf & _
         "Source tab: " & srcSheetName & vbCrLf & _
+        "Layout: row " & headerRow & ", names in col " & Chr(64 + colName) & ", dates from col " & Chr(64 + dateStartCol) & vbCrLf & _
         staffNum & " staff processed" & vbCrLf & _
         numDates & " weeks displayed", vbInformation
     
