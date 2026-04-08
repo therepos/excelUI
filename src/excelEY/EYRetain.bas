@@ -1,8 +1,33 @@
 ' ============================================================
 ' RETAIN AVAILABILITY GENERATOR
-' Reads "ER and P&C" sheet and generates "Retain Availability"
+' Reads the ACTIVE sheet and generates "Retain Availability"
 ' in a NEW workbook
+' Works on any tab with the standard structure:
+'   Row 6 = PH annotations, Row 7 = date headers, Row 8+ = data
+'   Col A = Status, Col B = Name, Col C = Rank, Col D+ = weeks
 ' ============================================================
+
+' --- Helper: locale-safe DD/MM/YYYY parser ---
+Private Function ParseDMY(ByVal s As String) As Date
+    Dim parts() As String
+    Dim sep As String
+    If InStr(s, "/") > 0 Then
+        sep = "/"
+    ElseIf InStr(s, "-") > 0 Then
+        sep = "-"
+    ElseIf InStr(s, ".") > 0 Then
+        sep = "."
+    Else
+        ParseDMY = CDate(s)
+        Exit Function
+    End If
+    parts = Split(s, sep)
+    If UBound(parts) < 2 Then
+        ParseDMY = CDate(s)
+        Exit Function
+    End If
+    ParseDMY = DateSerial(CInt(parts(2)), CInt(parts(1)), CInt(parts(0)))
+End Function
 
 Sub GenerateRetainAvailability()
     
@@ -13,28 +38,39 @@ Sub GenerateRetainAvailability()
     Dim headerRow As Long
     Dim dataStartRow As Long
     Dim dateStartCol As Long
+    Dim srcSheetName As String
     
-    ' --- Validate source workbook/sheet FIRST (before changing app settings) ---
+    ' --- Validate source workbook ---
     If ActiveWorkbook Is Nothing Then
         MsgBox "No workbook is open." & vbCrLf & vbCrLf & _
-            "Please open the Retain file (containing the ""ER and P&C"" sheet) and try again.", _
+            "Please open the Retain file and try again.", _
             vbExclamation, "Retain Availability Generator"
         Exit Sub
     End If
     
-    Dim sheetFound As Boolean
-    sheetFound = False
-    Dim ws As Worksheet
-    For Each ws In ActiveWorkbook.Sheets
-        If ws.Name = "ER and P&C" Then
-            sheetFound = True
-            Exit For
-        End If
-    Next ws
+    ' --- Use whatever sheet the user is currently on ---
+    Set wsSrc = ActiveSheet
+    srcSheetName = wsSrc.Name
     
-    If Not sheetFound Then
-        MsgBox "Could not find the ""ER and P&C"" sheet in the active workbook." & vbCrLf & vbCrLf & _
-            "Please open the Retain file and make sure it is the active workbook, then try again.", _
+    ' --- Quick structure validation ---
+    ' Check that row 7 has at least one date starting from col D
+    Dim hasDate As Boolean
+    hasDate = False
+    Dim testCol As Long
+    For testCol = 4 To 100
+        If Not IsError(wsSrc.Cells(7, testCol).Value) Then
+            If IsDate(wsSrc.Cells(7, testCol).Value) Then
+                hasDate = True
+                Exit For
+            End If
+        End If
+        If IsEmpty(wsSrc.Cells(7, testCol).Value) Then Exit For
+    Next testCol
+    
+    If Not hasDate Then
+        MsgBox "The active sheet """ & srcSheetName & """ does not appear to have the expected structure." & vbCrLf & vbCrLf & _
+            "Expected date headers in row 7 starting from column D." & vbCrLf & _
+            "Please switch to the correct tab and try again.", _
             vbExclamation, "Retain Availability Generator"
         Exit Sub
     End If
@@ -44,23 +80,44 @@ Sub GenerateRetainAvailability()
     Application.Calculation = xlCalculationManual
     
     ' --- Configuration ---
-    Set wsSrc = ActiveWorkbook.Sheets("ER and P&C")
     headerRow = 7
     dataStartRow = 8
     dateStartCol = 4 ' Column D
     
-    lastRow = wsSrc.Cells(wsSrc.Rows.count, 2).End(xlUp).Row
-    lastCol = wsSrc.Cells(headerRow, wsSrc.Columns.count).End(xlToLeft).Column
+    lastRow = wsSrc.Cells(wsSrc.Rows.Count, 2).End(xlUp).Row
+    lastCol = wsSrc.Cells(headerRow, wsSrc.Columns.Count).End(xlToLeft).Column
     
     ' --- Prompt for date range ---
     Dim startWeek As Date, endWeek As Date
     Dim inputStart As String, inputEnd As String
     
     Dim firstDate As Date, lastDate As Date
+    
+    ' Safe read of first/last date headers
+    If IsError(wsSrc.Cells(headerRow, dateStartCol).Value) Then
+        MsgBox "The first date header cell (row " & headerRow & ", col " & dateStartCol & ") contains an error." & vbCrLf & _
+            "Please fix the source data and try again.", vbExclamation, "Retain Availability Generator"
+        GoTo Cleanup
+    End If
+    If Not IsDate(wsSrc.Cells(headerRow, dateStartCol).Value) Then
+        MsgBox "The first date header cell does not contain a valid date.", vbExclamation, "Retain Availability Generator"
+        GoTo Cleanup
+    End If
     firstDate = wsSrc.Cells(headerRow, dateStartCol).Value
+    
+    If IsError(wsSrc.Cells(headerRow, lastCol).Value) Then
+        MsgBox "The last date header cell (row " & headerRow & ", col " & lastCol & ") contains an error." & vbCrLf & _
+            "Please fix the source data and try again.", vbExclamation, "Retain Availability Generator"
+        GoTo Cleanup
+    End If
+    If Not IsDate(wsSrc.Cells(headerRow, lastCol).Value) Then
+        MsgBox "The last date header cell does not contain a valid date.", vbExclamation, "Retain Availability Generator"
+        GoTo Cleanup
+    End If
     lastDate = wsSrc.Cells(headerRow, lastCol).Value
     
     inputStart = InputBox("Enter START week date (DD/MM/YYYY):" & vbCrLf & vbCrLf & _
+        "Source tab: " & srcSheetName & vbCrLf & _
         "Available range: " & Format(firstDate, "DD/MM/YYYY") & " to " & Format(lastDate, "DD/MM/YYYY"), _
         "Retain Availability Generator", Format(Date, "DD/MM/YYYY"))
     
@@ -70,18 +127,19 @@ Sub GenerateRetainAvailability()
     End If
     
     inputEnd = InputBox("Enter END week date (DD/MM/YYYY):", _
-        "Retain Availability Generator", Format(DateAdd("ww", 12, CDate(inputStart)), "DD/MM/YYYY"))
+        "Retain Availability Generator", Format(DateAdd("ww", 12, ParseDMY(inputStart)), "DD/MM/YYYY"))
     
     If inputEnd = "" Then
         MsgBox "Cancelled.", vbInformation
         GoTo Cleanup
     End If
     
-    startWeek = CDate(inputStart)
-    endWeek = CDate(inputEnd)
+    ' Locale-safe date parsing
+    startWeek = ParseDMY(inputStart)
+    endWeek = ParseDMY(inputEnd)
     
     ' --- Create new workbook ---
-    Set wbOut = Workbooks.Add(xlWBATWorksheet) ' New workbook with 1 sheet
+    Set wbOut = Workbooks.Add(xlWBATWorksheet)
     Set wsOut = wbOut.Sheets(1)
     wsOut.Name = "Retain Availability"
     
@@ -93,15 +151,17 @@ Sub GenerateRetainAvailability()
     
     Dim c As Long
     For c = dateStartCol To lastCol
-        If IsDate(wsSrc.Cells(headerRow, c).Value) Then
-            Dim dt As Date
-            dt = wsSrc.Cells(headerRow, c).Value
-            If dt >= startWeek And dt <= endWeek Then
-                numDates = numDates + 1
-                ReDim Preserve dateCols(1 To numDates)
-                ReDim Preserve dateVals(1 To numDates)
-                dateCols(numDates) = c
-                dateVals(numDates) = dt
+        If Not IsError(wsSrc.Cells(headerRow, c).Value) Then
+            If IsDate(wsSrc.Cells(headerRow, c).Value) Then
+                Dim dt As Date
+                dt = wsSrc.Cells(headerRow, c).Value
+                If dt >= startWeek And dt <= endWeek Then
+                    numDates = numDates + 1
+                    ReDim Preserve dateCols(1 To numDates)
+                    ReDim Preserve dateVals(1 To numDates)
+                    dateCols(numDates) = c
+                    dateVals(numDates) = dt
+                End If
             End If
         End If
     Next c
@@ -112,8 +172,8 @@ Sub GenerateRetainAvailability()
         GoTo Cleanup
     End If
     
-    ' --- Title ---
-    wsOut.Range("A1").Value = "Retain Availability (ER and P&C)"
+    ' --- Title (includes source tab name) ---
+    wsOut.Range("A1").Value = "Retain Availability (" & srcSheetName & ")"
     wsOut.Range("A1").Font.Bold = True
     wsOut.Range("A1").Font.Size = 14
     
@@ -121,11 +181,13 @@ Sub GenerateRetainAvailability()
     Dim i As Long
     For i = 1 To numDates
         Dim phVal As Variant
-        phVal = wsSrc.Cells(6, dateCols(i)).Value
-        If Len(Trim(CStr(phVal & ""))) > 0 And Not IsNumeric(phVal) Then
-            wsOut.Cells(2, 3 + i).Value = "PH: " & Format(dateVals(i), "D MMM")
-            wsOut.Cells(2, 3 + i).Font.Size = 8
-            wsOut.Cells(2, 3 + i).Font.Bold = True
+        If Not IsError(wsSrc.Cells(6, dateCols(i)).Value) Then
+            phVal = wsSrc.Cells(6, dateCols(i)).Value
+            If Len(Trim(CStr(phVal & ""))) > 0 And Not IsNumeric(phVal) Then
+                wsOut.Cells(2, 3 + i).Value = "PH: " & Format(dateVals(i), "D MMM")
+                wsOut.Cells(2, 3 + i).Font.Size = 8
+                wsOut.Cells(2, 3 + i).Font.Bold = True
+            End If
         End If
     Next i
     
@@ -182,14 +244,23 @@ Sub GenerateRetainAvailability()
     Dim R As Long
     For R = dataStartRow To lastRow
         Dim staffName As String
+        If IsError(wsSrc.Cells(R, 2).Value) Then GoTo NextStaff
         staffName = Trim(Replace(CStr(wsSrc.Cells(R, 2).Value & ""), vbLf, " "))
         If Len(staffName) = 0 Then GoTo NextStaff
         
         Dim status As String
-        status = LCase(Trim(Replace(CStr(wsSrc.Cells(R, 1).Value & ""), vbLf, " ")))
+        If IsError(wsSrc.Cells(R, 1).Value) Then
+            status = ""
+        Else
+            status = LCase(Trim(Replace(CStr(wsSrc.Cells(R, 1).Value & ""), vbLf, " ")))
+        End If
         
         Dim rank As String
-        rank = Trim(CStr(wsSrc.Cells(R, 3).Value & ""))
+        If IsError(wsSrc.Cells(R, 3).Value) Then
+            rank = ""
+        Else
+            rank = Trim(CStr(wsSrc.Cells(R, 3).Value & ""))
+        End If
         
         ' Abbreviate rank
         Dim rankAbbr As String
@@ -307,8 +378,11 @@ Sub GenerateRetainAvailability()
                 On Error GoTo 0
             End If
             
-            ' Calculate availability
+            ' Safe read of source cell
             Dim cellVal As Variant
+            If IsError(wsSrc.Cells(R, dateCols(i)).Value) Then
+                GoTo NextDate
+            End If
             cellVal = wsSrc.Cells(R, dateCols(i)).Value
             
             Dim totalPct As Long
@@ -353,6 +427,7 @@ NextStaff:
     wsOut.PageSetup.FitToPagesTall = 999
     
     MsgBox "Retain Availability generated in new workbook!" & vbCrLf & _
+        "Source tab: " & srcSheetName & vbCrLf & _
         staffNum & " staff processed" & vbCrLf & _
         numDates & " weeks displayed", vbInformation
     
@@ -363,17 +438,10 @@ Cleanup:
 End Sub
 
 Function CleanStaffName(rawName As String, rangeStart As Date, rangeEnd As Date) As String
-    ' Parses staff name and handles multiple parenthetical blocks individually.
-    ' - "(Join date: ...)" -> only keep if join date is near/within display range
-    ' - "(Last day: ...)" -> always keep
-    ' - "(EY SCALE ...)" -> always keep
-    ' - "(4 May 26 to 31 Jul 26)" -> always keep (intern ranges)
-    
     Dim result As String
     Dim tmpName As String
     tmpName = rawName
     
-    ' Extract the base name (everything before first parenthesis)
     Dim firstParen As Long
     firstParen = InStr(tmpName, "(")
     
@@ -384,7 +452,6 @@ Function CleanStaffName(rawName As String, rangeStart As Date, rangeEnd As Date)
     
     result = Trim(Left(tmpName, firstParen - 1))
     
-    ' Process each parenthetical block
     Dim remaining As String
     remaining = Mid(tmpName, firstParen)
     
@@ -397,7 +464,6 @@ Function CleanStaffName(rawName As String, rangeStart As Date, rangeEnd As Date)
         
         pEnd = InStr(pStart, remaining, ")")
         If pEnd = 0 Then
-            ' Unclosed paren - take rest
             block = Mid(remaining, pStart)
             remaining = ""
         Else
@@ -407,21 +473,16 @@ Function CleanStaffName(rawName As String, rangeStart As Date, rangeEnd As Date)
         
         lowerBlock = LCase(block)
         
-        ' Decide whether to keep this block
         If InStr(lowerBlock, "last day") > 0 Then
-            ' Always keep Last day
             result = result & " " & block
             
         ElseIf InStr(lowerBlock, "ey scale") > 0 Then
-            ' Always keep EY SCALE
             result = result & " " & block
             
         ElseIf InStr(lowerBlock, " to ") > 0 And InStr(lowerBlock, "join date") = 0 Then
-            ' Intern date range - always keep
             result = result & " " & block
             
         ElseIf InStr(lowerBlock, "join date") > 0 Then
-            ' Parse join date - only keep if recent
             Dim jdText As String
             Dim jdPos As Long
             jdPos = InStr(lowerBlock, "join date")
@@ -434,7 +495,6 @@ Function CleanStaffName(rawName As String, rangeStart As Date, rangeEnd As Date)
             Dim joinDate As Date
             joinDate = CDate(jdText)
             If Err.Number = 0 Then
-                ' Keep only if join date is within 1 month before range start or later
                 If joinDate >= DateAdd("m", -1, rangeStart) Then
                     result = result & " " & block
                 End If
@@ -442,12 +502,10 @@ Function CleanStaffName(rawName As String, rangeStart As Date, rangeEnd As Date)
             On Error GoTo 0
             
         Else
-            ' Unknown - keep it
             result = result & " " & block
         End If
     Loop
     
-    ' Clean up double spaces
     Do While InStr(result, "  ") > 0
         result = Replace(result, "  ", " ")
     Loop
