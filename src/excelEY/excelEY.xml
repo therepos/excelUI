@@ -90,6 +90,7 @@
 				<!-- Group: EY -->
 				<group id="t1g5" label="EY">
 					<button id="t1g5b01" label="Availability" size="normal" tag="GenerateRetainAvailability" onAction="RunByName" imageMso="CreateQueryFromWizard"/>
+					<button id="t1g5b01" label="Jobs" size="normal" tag="ExtractJobsByManager" onAction="RunByName" imageMso="CreateQueryFromWizard"/>
 				</group>
 			</tab>
 		</tabs>
