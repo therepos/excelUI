@@ -66,7 +66,7 @@
 							<button id="t1g3sb02b03" label="Sentence" tag="CaseSentence" onAction="RunByName"/>
 						</menu>
 					</splitButton>
-					<button id="t1g3b01" label="CrossRef" size="normal" tag="InsertCrossReference" onAction="RunByName" imageMso="CrossReferenceInsert"/>
+					<button id="t1g3b01" label="CrossRef" size="normal" tag="InsertCrossReference" onAction="RunByName" imageMso="CrossReferenceInsert"/>					    
 					<button id="t1g3b02" label="F2V" size="normal" tag="FormulaToValue" onAction="RunByName" imageMso="CustomEquationsGallery"/>
 					<button id="t1g3b03" label="T2V" size="normal" tag="FormatTextToValue" onAction="RunByName" imageMso="EquationMatrixGallery"/>
 					<button id="t1g3b04" label="Column Width" size="normal" tag="InsertColumnWidth" onAction="RunByName" imageMso="HorizontalSpacingIncrease"/>
@@ -87,10 +87,10 @@
 						</menu>
 					</splitButton>
 				</group>
-				<!-- Group: EY -->
-				<group id="t1g5" label="EY">
-					<button id="t1g5b01" label="Availability" size="normal" tag="PackRunAvailability" onAction="RunByName" imageMso="CreateQueryFromWizard" getVisible="GetPackButtonVisible"/>
-					<button id="t1g5b02" label="Project" size="normal" tag="PackRunProject" onAction="RunByName" imageMso="CreateQueryFromWizard" getVisible="GetPackButtonVisible"/>
+				<!-- Group: Pack -->
+				<group id="t1g5" label="Pack">
+					<button id="t1g5b01" label="Availability" size="normal" tag="GenerateRetainAvailability" onAction="RunByName" imageMso="ShapeFillTextureGallery"/>
+					<button id="t1g5b02" label="Jobs" size="normal" tag="ExtractJobsByManager" onAction="RunByName" imageMso="CreateQueryFromWizard"/>
 				</group>
 			</tab>
 		</tabs>
