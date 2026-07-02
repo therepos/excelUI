@@ -6,6 +6,20 @@ Attribute VB_Name = "EYRetain"
 ' Works on any tab regardless of column layout
 ' ============================================================
 
+' ============================================================
+' NON-CHARGEABLE CODES
+' Percentages tagged with any of these codes are treated as
+' AVAILABLE time (i.e. NOT counted as an engagement).
+' Add codes here as a comma-separated list (case-insensitive).
+'   e.g. "BD" or "BD,XYZ"
+' BD = Business Development.
+' NOTE: a percentage is only excluded when the code stands alone
+' as the leading code of that percentage block. Blended blocks
+' such as "60% HPB+BD" keep counting as engagement, because the
+' chargeable/non-chargeable split is unknown.
+' ============================================================
+Private Const NON_CHARGEABLE_CODES As String = "BD"
+
 ' --- Helper: locale-safe DD/MM/YYYY parser ---
 Private Function ParseDMY(ByVal s As String) As Date
     Dim parts() As String
@@ -663,20 +677,85 @@ Function ExtractTotalPercent(cellText As String) As Long
     Dim i As Long
     Dim numStr As String
     numStr = ""
-    
+
     For i = 1 To Len(cellText)
         Dim ch As String
         ch = Mid(cellText, i, 1)
-        
+
         If ch >= "0" And ch <= "9" Then
             numStr = numStr & ch
         ElseIf ch = "%" And Len(numStr) > 0 Then
-            total = total + CLng(numStr)
+            ' A percentage was found. Look at the code that follows it.
+            ' Skip this percentage if the code is non-chargeable (e.g. BD),
+            ' so that BD time is reported as AVAILABLE rather than engaged.
+            Dim followingCode As String
+            followingCode = LeadingCodeAfter(cellText, i + 1)
+            If Not IsNonChargeable(followingCode) Then
+                total = total + CLng(numStr)
+            End If
             numStr = ""
         Else
             numStr = ""
         End If
     Next i
-    
+
     ExtractTotalPercent = total
+End Function
+
+' --- Helper: get the code that immediately follows a percentage sign ---
+' Starting at startPos, skips leading separators (spaces, dashes,
+' punctuation) and returns the first run of letters (the activity code).
+' Returns "" if a line break or digit is reached before any letter,
+' meaning the percentage has no code label attached to it.
+Private Function LeadingCodeAfter(ByVal s As String, ByVal startPos As Long) As String
+    Dim p As Long
+    Dim ch As String
+    p = startPos
+
+    ' Skip separators until the first letter (stop at line break / digit)
+    Do While p <= Len(s)
+        ch = Mid(s, p, 1)
+        If (ch >= "A" And ch <= "Z") Or (ch >= "a" And ch <= "z") Then
+            Exit Do
+        ElseIf ch = vbCr Or ch = vbLf Then
+            LeadingCodeAfter = ""
+            Exit Function
+        ElseIf ch >= "0" And ch <= "9" Then
+            LeadingCodeAfter = ""
+            Exit Function
+        End If
+        p = p + 1
+    Loop
+
+    ' Read consecutive letters as the code token
+    Dim codeTok As String
+    codeTok = ""
+    Do While p <= Len(s)
+        ch = Mid(s, p, 1)
+        If (ch >= "A" And ch <= "Z") Or (ch >= "a" And ch <= "z") Then
+            codeTok = codeTok & ch
+            p = p + 1
+        Else
+            Exit Do
+        End If
+    Loop
+
+    LeadingCodeAfter = codeTok
+End Function
+
+' --- Helper: is a code in the non-chargeable list? ---
+Private Function IsNonChargeable(ByVal code As String) As Boolean
+    IsNonChargeable = False
+    If Len(Trim(code)) = 0 Then Exit Function
+
+    Dim codes() As String
+    codes = Split(NON_CHARGEABLE_CODES, ",")
+
+    Dim k As Long
+    For k = LBound(codes) To UBound(codes)
+        If LCase(Trim(codes(k))) = LCase(Trim(code)) Then
+            IsNonChargeable = True
+            Exit Function
+        End If
+    Next k
 End Function
