@@ -1,4 +1,3 @@
-Attribute VB_Name = "EYRetain"
 ' ============================================================
 ' RETAIN AVAILABILITY GENERATOR
 ' Auto-detects sheet structure and generates "Retain Availability"
