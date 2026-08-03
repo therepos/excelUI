@@ -88,7 +88,7 @@
 					</splitButton>
 				</group>
 				<!-- Group: EY -->
-				<group id="t1g5" label="EY">
+				<group id="t1g5" label="EY Retain">
 					<button id="t1g5b01" label="Availability" size="normal" tag="GenerateRetainAvailability" onAction="RunByName" imageMso="WindowsCascade"/>
 					<button id="t1g5b02" label="Manager" size="normal" tag="ExtractJobsByManager" onAction="RunByName" imageMso="CondolatoryEvent"/>
 					<button id="t1g5b03" label="Project" size="normal" tag="ExtractJobsByEngagement" onAction="RunByName" imageMso="ChartTypeBarInsertGallery"/>
