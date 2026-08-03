@@ -89,10 +89,10 @@
 				</group>
 				<!-- Group: EY -->
 				<group id="t1g5" label="EY">
-					<button id="t1g5b01" label="Availability" size="normal" tag="GenerateRetainAvailability" onAction="RunByName" imageMso="CreateQueryFromWizard"/>
-					<button id="t1g5b02" label="By Mgr" size="normal" tag="ExtractJobsByManager" onAction="RunByName" imageMso="CreateQueryFromWizard"/>
-					<button id="t1g5b04" label="By Job" size="normal" tag="ExtractJobsByEngagement" onAction="RunByName" imageMso="CreateQueryFromWizard"/>
-					<button id="t1g5b03" label="Colours" size="normal" tag="NormaliseRetainColours" onAction="RunByName" imageMso="CellFillColorPicker"/>
+					<button id="t1g5b01" label="Availability" size="normal" tag="GenerateRetainAvailability" onAction="RunByName" imageMso="ScheduleView"/>
+					<button id="t1g5b02" label="Manager" size="normal" tag="ExtractJobsByManager" onAction="RunByName" imageMso="AccountManagement"/>
+					<button id="t1g5b03" label="Project" size="normal" tag="ExtractJobsByEngagement" onAction="RunByName" imageMso="ChartTypeBarInsertGallery"/>
+					<button id="t1g5b04" label="Colours" size="normal" tag="NormaliseRetainColours" onAction="RunByName" imageMso="CellFillColorPicker"/>
 				</group>
 			</tab>
 		</tabs>
