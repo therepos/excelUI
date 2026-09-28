@@ -70,9 +70,41 @@ Sub ExtractJobsByEngagement()
 
     ' --- Configuration ---
     Set wsSrc = wbSrc.Sheets("ER and P&C")
-    headerRow = 7
-    dataStartRow = 8
+
+    ' --- Auto-detect the weekly date header row ---
+    ' Different Retain exports place the header on different rows (e.g. row 5
+    ' or row 7), so locate the row within the first 20 that holds the most
+    ' date cells rather than assuming a fixed offset.
+    Dim hr As Long, cc As Long, dCount As Long, bestRow As Long, bestCount As Long
+    bestRow = 0: bestCount = 0
+    For hr = 1 To 20
+        dCount = 0
+        For cc = 3 To 150
+            If IsDate(wsSrc.Cells(hr, cc).Value) Then dCount = dCount + 1
+        Next cc
+        If dCount > bestCount Then
+            bestCount = dCount
+            bestRow = hr
+        End If
+    Next hr
+
+    If bestRow = 0 Then
+        MsgBox "Could not locate the weekly date header row in the ""ER and P&C"" sheet.", _
+            vbExclamation, "Extract Jobs by Engagement"
+        GoTo Cleanup
+    End If
+
+    headerRow = bestRow
+    dataStartRow = headerRow + 1
+
+    ' First column on the header row that actually contains a date
     dateStartCol = 4
+    For cc = 2 To 150
+        If IsDate(wsSrc.Cells(headerRow, cc).Value) Then
+            dateStartCol = cc
+            Exit For
+        End If
+    Next cc
 
     lastRow = wsSrc.Cells(wsSrc.Rows.count, 2).End(xlUp).Row
     lastCol = wsSrc.Cells(headerRow, wsSrc.Columns.count).End(xlToLeft).Column
