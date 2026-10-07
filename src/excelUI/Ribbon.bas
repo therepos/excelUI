@@ -59,6 +59,10 @@ Public Sub GetSheetFontLabel(control As IRibbonControl, ByRef label)
     label = GetSetting("ExcelUI", "Preferences", "LastShFont", "Arial")
 End Sub
 
+Public Sub GetSheetFontSizeLabel(control As IRibbonControl, ByRef label)
+    label = GetSetting("ExcelUI", "Preferences", "LastShFontSize", "10")
+End Sub
+
 Public Sub GetSelNumberLabel(control As IRibbonControl, ByRef label)
     label = GetSetting("ExcelUI", "Preferences", "LastSelNumber", "Accounting")
 End Sub
