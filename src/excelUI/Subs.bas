@@ -1313,7 +1313,7 @@ Sub WorkbookFontSize8()
 
     On Error GoTo ErrorHandler
     
-    For Each ws In ThisWorkbook.Worksheets
+    For Each ws In ActiveWorkbook.Worksheets
         ws.Cells.Font.Size = 8
     Next ws
 
@@ -1331,7 +1331,7 @@ Sub WorkbookFontSize9()
 
     On Error GoTo ErrorHandler
     
-    For Each ws In ThisWorkbook.Worksheets
+    For Each ws In ActiveWorkbook.Worksheets
         ws.Cells.Font.Size = 9
     Next ws
 
@@ -1349,7 +1349,7 @@ Sub WorkbookFontSize10()
 
     On Error GoTo ErrorHandler
     
-    For Each ws In ThisWorkbook.Worksheets
+    For Each ws In ActiveWorkbook.Worksheets
         ws.Cells.Font.Size = 10
     Next ws
 
@@ -1367,7 +1367,7 @@ Sub WorkbookFontSize11()
 
     On Error GoTo ErrorHandler
     
-    For Each ws In ThisWorkbook.Worksheets
+    For Each ws In ActiveWorkbook.Worksheets
         ws.Cells.Font.Size = 11
     Next ws
 
