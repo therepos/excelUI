@@ -32,6 +32,15 @@
 							<button id="t1g2sb01b02" label="SheetFontEY" tag="SheetFontEY" onAction="RunByName"/>
 						</menu>
 					</splitButton>
+					<splitButton id="t1g2sb03" size="large">
+						<button id="t1g2sb03b00" tag="RunSheetFontSizeRepeat" onAction="RunByName" getLabel="GetSheetFontSizeLabel" imageMso="FontSizeIncrease"/>
+						<menu id="t1g2sb03menu">
+							<button id="t1g2sb03b01" label="8" tag="SheetFontSize8" onAction="RunByName"/>
+							<button id="t1g2sb03b02" label="9" tag="SheetFontSize9" onAction="RunByName"/>
+							<button id="t1g2sb03b03" label="10" tag="SheetFontSize10" onAction="RunByName"/>
+							<button id="t1g2sb03b04" label="11" tag="SheetFontSize11" onAction="RunByName"/>
+						</menu>
+					</splitButton>
 					<splitButton id="t1g2sb02" size="large">
 						<button id="t1g2sb02b00" label="Tab" tag="RunSheetTabRepeat" onAction="RunByName" getImage="GetSheetTabColor"/>
 						<menu id="t1g2sb02menu">
