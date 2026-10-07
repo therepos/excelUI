@@ -1013,27 +1013,69 @@ ErrorHandler:
     
 End Sub
 
-Sub SheetFontSize10()
+Sub SheetFontSize8()
 
     On Error GoTo ErrorHandler
     
-    ActiveSheet.Cells.Font.Size = 10
+    If ActiveSheet.ProtectContents Then Exit Sub
+    ActiveSheet.Cells.Font.Size = 8
     ActiveSheet.Activate
     ActiveWindow.Zoom = 100
+    
+    SaveSetting "ExcelUI", "Preferences", "LastShFontSize", "8"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
     
 ErrorHandler:
     Exit Sub
     
 End Sub
 
-Sub SheetFontSize8()
+Sub SheetFontSize9()
 
     On Error GoTo ErrorHandler
     
-    ActiveSheet.Cells.Font.Size = 8
+    If ActiveSheet.ProtectContents Then Exit Sub
+    ActiveSheet.Cells.Font.Size = 9
     ActiveSheet.Activate
     ActiveWindow.Zoom = 100
+    
+    SaveSetting "ExcelUI", "Preferences", "LastShFontSize", "9"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
+ErrorHandler:
+    Exit Sub
+    
+End Sub
 
+Sub SheetFontSize10()
+
+    On Error GoTo ErrorHandler
+    
+    If ActiveSheet.ProtectContents Then Exit Sub
+    ActiveSheet.Cells.Font.Size = 10
+    ActiveSheet.Activate
+    ActiveWindow.Zoom = 100
+    
+    SaveSetting "ExcelUI", "Preferences", "LastShFontSize", "10"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
+ErrorHandler:
+    Exit Sub
+    
+End Sub
+
+Sub SheetFontSize11()
+
+    On Error GoTo ErrorHandler
+    
+    If ActiveSheet.ProtectContents Then Exit Sub
+    ActiveSheet.Cells.Font.Size = 11
+    ActiveSheet.Activate
+    ActiveWindow.Zoom = 100
+    
+    SaveSetting "ExcelUI", "Preferences", "LastShFontSize", "11"
+    If Not RibbonUI Is Nothing Then RibbonUI.Invalidate
+    
 ErrorHandler:
     Exit Sub
     
@@ -1416,6 +1458,17 @@ Sub RunSheetFontRepeat()
     Select Case last
         Case "Arial": SheetFontArial
         Case "EY":    SheetFontEY
+    End Select
+End Sub
+
+Sub RunSheetFontSizeRepeat()
+    Dim last As String
+    last = GetSetting("ExcelUI", "Preferences", "LastShFontSize", "10")
+    Select Case last
+        Case "8":  SheetFontSize8
+        Case "9":  SheetFontSize9
+        Case "10": SheetFontSize10
+        Case "11": SheetFontSize11
     End Select
 End Sub
 
