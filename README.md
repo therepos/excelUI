@@ -4,6 +4,11 @@
 2. Install with excelUIsetup.cmd
 3. The addin will be located at `%APPDATA%\Microsoft\AddIns`.
 
+## Updating the add-in
+
+Edit the `.bas` / `.cls` / `.xml` files in `src/excelUI` and push to `main`. CI rebuilds `excelUI.xlam` from source
+(`scripts/vbabuild.py`, no Excel needed), commits it back and publishes a release. Don't edit the `.xlam` directly.
+
 ## Structure
 
 ```
